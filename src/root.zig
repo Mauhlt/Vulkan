@@ -1,3 +1,4 @@
+pub const VulkanErrors = @import("vulkan_errors.zig").VulkanErrors;
 pub const PES = @import("PackedEnumSet").PackedEnumSet;
 pub const DWORD = @import("..\\windows\\windows.zig").DWORD;
 pub const HINSTANCE = @import("..\\windows\\windows.zig").HINSTANCE;
