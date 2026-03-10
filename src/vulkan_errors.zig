@@ -1,4 +1,4 @@
-pub const VulkanErrors = error{
+pub const Errors = error{
     FailedToEnumerateInstanceExtensions,
     MissingRequiredInstanceExtension,
     FailedToCreateInstance,
