@@ -12,6 +12,8 @@ pub fn build(b: *std.Build) void {
     // imports
     const Windows = b.dependency("Windows", .{});
     mod.addImport("Windows", Windows.module("Windows"));
+    const PES = b.dependency("PackedEnumSet", .{});
+    mod.addImport("PackedEnumSet", PES.module("PackedEnumSet"));
     // create tests
     const run_mod_tests = b.addRunArtifact(mod_tests);
     const test_step = b.step("test", "Run tests");
