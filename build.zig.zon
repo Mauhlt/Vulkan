@@ -12,6 +12,10 @@
             .url = "git+https://github.com/Mauhlt/PackedEnumSet.git#5bc91f5da86b2785235107a17229dfabc66142fd",
             .hash = "PackedEnumSet-0.0.0-oZSdHoMmAAAYreJImJtxf7SvOhnpKrPqiB2krj9gDaQt",
         },
+        .ExternEnumSet = .{
+            .url = "git+https://github.com/Mauhlt/ExternEnumSet.git#ba66b8033f10988d53451cb917341f769c20a5e1",
+            .hash = "ExternEnumSet-0.0.0-G_EVp0oiAABVr3LLVPLmAglK08V4aEAbMwH-vSvKCqN1",
+        },
     },
     .paths = .{
         "build.zig",

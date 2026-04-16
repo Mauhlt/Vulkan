@@ -1,5 +1,6 @@
 pub const Errors = @import("vulkan_errors.zig").Errors;
-pub const PES = @import("PackedEnumSet").PackedEnumSet;
+pub const EES = @import("PackedEnumSet").PackedEnumSet;
+pub const EES = @import("ExternEnumSet").ExternEnumSet;
 pub const DWORD = @import("Windows").DWORD;
 pub const HINSTANCE = @import("Windows").HINSTANCE;
 pub const HANDLE = @import("Windows").HANDLE;
@@ -169,7 +170,7 @@ pub const Result = enum(i32) {
     error_not_enough_space_khr = -1000483000,
     max_enum = 2147483647,
 };
-pub const ResultFlags = PES(Result);
+pub const ResultFlags = EES(Result);
 pub const StructureType = enum(u32) {
     application_info = 0,
     instance_create_info = 1,
@@ -1169,12 +1170,12 @@ pub const StructureType = enum(u32) {
     physical_device_pipeline_cache_incremental_mode_features_sec = 1000637000,
     max_enum = 2147483647,
 };
-pub const StructureTypeFlags = PES(StructureType);
+pub const StructureTypeFlags = EES(StructureType);
 pub const PipelineCacheHeaderVersion = enum(u32) {
     one = 1,
     max_enum = 2147483647,
 };
-pub const PipelineCacheHeaderVersionFlags = PES(PipelineCacheHeaderVersion);
+pub const PipelineCacheHeaderVersionFlags = EES(PipelineCacheHeaderVersion);
 pub const ImageLayout = enum(u32) {
     undefined = 0,
     general = 1,
@@ -1210,7 +1211,7 @@ pub const ImageLayout = enum(u32) {
     zero_initialized_ext = 1000620000,
     max_enum = 2147483647,
 };
-pub const ImageLayoutFlags = PES(ImageLayout);
+pub const ImageLayoutFlags = EES(ImageLayout);
 pub const ObjectType = enum(u32) {
     unknown = 0,
     instance = 1,
@@ -1270,7 +1271,7 @@ pub const ObjectType = enum(u32) {
     indirect_execution_set_ext = 1000572001,
     max_enum = 2147483647,
 };
-pub const ObjectTypeFlags = PES(ObjectType);
+pub const ObjectTypeFlags = EES(ObjectType);
 pub const VendorId = enum(u32) {
     khronos = 65536,
     viv = 65537,
@@ -1282,7 +1283,7 @@ pub const VendorId = enum(u32) {
     mobileye = 65543,
     max_enum = 2147483647,
 };
-pub const VendorIdFlags = PES(VendorId);
+pub const VendorIdFlags = EES(VendorId);
 pub const SystemAllocationScope = enum(u32) {
     command = 0,
     object = 1,
@@ -1291,12 +1292,12 @@ pub const SystemAllocationScope = enum(u32) {
     instance = 4,
     max_enum = 2147483647,
 };
-pub const SystemAllocationScopeFlags = PES(SystemAllocationScope);
+pub const SystemAllocationScopeFlags = EES(SystemAllocationScope);
 pub const InternalAllocationType = enum(u32) {
     executable = 0,
     max_enum = 2147483647,
 };
-pub const InternalAllocationTypeFlags = PES(InternalAllocationType);
+pub const InternalAllocationTypeFlags = EES(InternalAllocationType);
 pub const Format = enum(u32) {
     undefined = 0,
     r4g4_unorm_pack8 = 1,
@@ -1520,21 +1521,21 @@ pub const Format = enum(u32) {
     r12x4g12x4b12x4a12x4_uint_4pack16_arm = 1000609005,
     max_enum = 2147483647,
 };
-pub const FormatFlags = PES(Format);
+pub const FormatFlags = EES(Format);
 pub const ImageTilingFlagBits = enum(u32) {
     optimal = 0,
     linear = 1,
     drm_format_modifier_ext = 1000158000,
     max_enum = 2147483647,
 };
-pub const ImageTilingFlags = PES(ImageTilingFlagBits);
+pub const ImageTilingFlags = EES(ImageTilingFlagBits);
 pub const ImageType = enum(u32) {
     @"1d" = 0,
     @"2d" = 1,
     @"3d" = 2,
     max_enum = 2147483647,
 };
-pub const ImageTypeFlags = PES(ImageType);
+pub const ImageTypeFlags = EES(ImageType);
 pub const PhysicalDeviceType = enum(u32) {
     other = 0,
     integrated_gpu = 1,
@@ -1543,7 +1544,7 @@ pub const PhysicalDeviceType = enum(u32) {
     cpu = 4,
     max_enum = 2147483647,
 };
-pub const PhysicalDeviceTypeFlags = PES(PhysicalDeviceType);
+pub const PhysicalDeviceTypeFlags = EES(PhysicalDeviceType);
 pub const QueryType = enum(u32) {
     occlusion = 0,
     pipeline_statistics = 1,
@@ -1564,13 +1565,13 @@ pub const QueryType = enum(u32) {
     micromap_compacted_size_ext = 1000396001,
     max_enum = 2147483647,
 };
-pub const QueryTypeFlags = PES(QueryType);
+pub const QueryTypeFlags = EES(QueryType);
 pub const SharingMode = enum(u32) {
     exclusive = 0,
     concurrent = 1,
     max_enum = 2147483647,
 };
-pub const SharingModeFlags = PES(SharingMode);
+pub const SharingModeFlags = EES(SharingMode);
 pub const ComponentSwizzle = enum(u32) {
     identity = 0,
     zero = 1,
@@ -1581,7 +1582,7 @@ pub const ComponentSwizzle = enum(u32) {
     a = 6,
     max_enum = 2147483647,
 };
-pub const ComponentSwizzleFlags = PES(ComponentSwizzle);
+pub const ComponentSwizzleFlags = EES(ComponentSwizzle);
 pub const ImageViewType = enum(u32) {
     @"1d" = 0,
     @"2d" = 1,
@@ -1592,7 +1593,7 @@ pub const ImageViewType = enum(u32) {
     cube_array = 6,
     max_enum = 2147483647,
 };
-pub const ImageViewTypeFlags = PES(ImageViewType);
+pub const ImageViewTypeFlags = EES(ImageViewType);
 pub const BlendFactor = enum(u32) {
     zero = 0,
     one = 1,
@@ -1615,7 +1616,7 @@ pub const BlendFactor = enum(u32) {
     one_minus_src1_alpha = 18,
     max_enum = 2147483647,
 };
-pub const BlendFactorFlags = PES(BlendFactor);
+pub const BlendFactorFlags = EES(BlendFactor);
 pub const BlendOp = enum(u32) {
     add = 0,
     subtract = 1,
@@ -1670,7 +1671,7 @@ pub const BlendOp = enum(u32) {
     blue_ext = 1000148045,
     max_enum = 2147483647,
 };
-pub const BlendOpFlags = PES(BlendOp);
+pub const BlendOpFlags = EES(BlendOp);
 pub const CompareOp = enum(u32) {
     never = 0,
     less = 1,
@@ -1682,7 +1683,7 @@ pub const CompareOp = enum(u32) {
     always = 7,
     max_enum = 2147483647,
 };
-pub const CompareOpFlags = PES(CompareOp);
+pub const CompareOpFlags = EES(CompareOp);
 pub const DynamicState = enum(u32) {
     viewport = 0,
     scissor = 1,
@@ -1759,19 +1760,19 @@ pub const DynamicState = enum(u32) {
     depth_clamp_range_ext = 1000582000,
     max_enum = 2147483647,
 };
-pub const DynamicStateFlags = PES(DynamicState);
+pub const DynamicStateFlags = EES(DynamicState);
 pub const FrontFace = enum(u32) {
     counter_clockwise = 0,
     clockwise = 1,
     max_enum = 2147483647,
 };
-pub const FrontFaceFlags = PES(FrontFace);
+pub const FrontFaceFlags = EES(FrontFace);
 pub const VertexInputRate = enum(u32) {
     vertex = 0,
     instance = 1,
     max_enum = 2147483647,
 };
-pub const VertexInputRateFlags = PES(VertexInputRate);
+pub const VertexInputRateFlags = EES(VertexInputRate);
 pub const PrimitiveTopology = enum(u32) {
     point_list = 0,
     line_list = 1,
@@ -1786,7 +1787,7 @@ pub const PrimitiveTopology = enum(u32) {
     patch_list = 10,
     max_enum = 2147483647,
 };
-pub const PrimitiveTopologyFlags = PES(PrimitiveTopology);
+pub const PrimitiveTopologyFlags = EES(PrimitiveTopology);
 pub const PolygonMode = enum(u32) {
     fill = 0,
     line = 1,
@@ -1794,7 +1795,7 @@ pub const PolygonMode = enum(u32) {
     fill_rectangle_nv = 1000153000,
     max_enum = 2147483647,
 };
-pub const PolygonModeFlags = PES(PolygonMode);
+pub const PolygonModeFlags = EES(PolygonMode);
 pub const StencilOp = enum(u32) {
     keep = 0,
     zero = 1,
@@ -1806,7 +1807,7 @@ pub const StencilOp = enum(u32) {
     decrement_and_wrap = 7,
     max_enum = 2147483647,
 };
-pub const StencilOpFlags = PES(StencilOp);
+pub const StencilOpFlags = EES(StencilOp);
 pub const LogicOp = enum(u32) {
     clear = 0,
     @"and" = 1,
@@ -1826,7 +1827,7 @@ pub const LogicOp = enum(u32) {
     set = 15,
     max_enum = 2147483647,
 };
-pub const LogicOpFlags = PES(LogicOp);
+pub const LogicOpFlags = EES(LogicOp);
 pub const BorderColor = enum(u32) {
     float_transparent_black = 0,
     int_transparent_black = 1,
@@ -1838,14 +1839,14 @@ pub const BorderColor = enum(u32) {
     int_custom_ext = 1000287004,
     max_enum = 2147483647,
 };
-pub const BorderColorFlags = PES(BorderColor);
+pub const BorderColorFlags = EES(BorderColor);
 pub const Filter = enum(u32) {
     nearest = 0,
     linear = 1,
     cubic_ext = 1000015000,
     max_enum = 2147483647,
 };
-pub const FilterFlags = PES(Filter);
+pub const FilterFlags = EES(Filter);
 pub const SamplerAddressMode = enum(u32) {
     repeat = 0,
     mirrored_repeat = 1,
@@ -1854,13 +1855,13 @@ pub const SamplerAddressMode = enum(u32) {
     mirror_clamp_to_edge = 4,
     max_enum = 2147483647,
 };
-pub const SamplerAddressModeFlags = PES(SamplerAddressMode);
+pub const SamplerAddressModeFlags = EES(SamplerAddressMode);
 pub const SamplerMipmapMode = enum(u32) {
     nearest = 0,
     linear = 1,
     max_enum = 2147483647,
 };
-pub const SamplerMipmapModeFlags = PES(SamplerMipmapMode);
+pub const SamplerMipmapModeFlags = EES(SamplerMipmapMode);
 pub const DescriptorType = enum(u32) {
     sampler = 0,
     combined_image_sampler = 1,
@@ -1883,7 +1884,7 @@ pub const DescriptorType = enum(u32) {
     partitioned_acceleration_structure_nv = 1000570000,
     max_enum = 2147483647,
 };
-pub const DescriptorTypeFlags = PES(DescriptorType);
+pub const DescriptorTypeFlags = EES(DescriptorType);
 pub const AttachmentLoadOp = enum(u32) {
     load = 0,
     clear = 1,
@@ -1891,14 +1892,14 @@ pub const AttachmentLoadOp = enum(u32) {
     none = 1000400000,
     max_enum = 2147483647,
 };
-pub const AttachmentLoadOpFlags = PES(AttachmentLoadOp);
+pub const AttachmentLoadOpFlags = EES(AttachmentLoadOp);
 pub const AttachmentStoreOp = enum(u32) {
     store = 0,
     dont_care = 1,
     none = 1000301000,
     max_enum = 2147483647,
 };
-pub const AttachmentStoreOpFlags = PES(AttachmentStoreOp);
+pub const AttachmentStoreOpFlags = EES(AttachmentStoreOp);
 pub const PipelineBindPoint = enum(u32) {
     graphics = 0,
     compute = 1,
@@ -1907,13 +1908,13 @@ pub const PipelineBindPoint = enum(u32) {
     data_graph_arm = 1000507000,
     max_enum = 2147483647,
 };
-pub const PipelineBindPointFlags = PES(PipelineBindPoint);
+pub const PipelineBindPointFlags = EES(PipelineBindPoint);
 pub const CommandBufferLevel = enum(u32) {
     primary = 0,
     secondary = 1,
     max_enum = 2147483647,
 };
-pub const CommandBufferLevelFlags = PES(CommandBufferLevel);
+pub const CommandBufferLevelFlags = EES(CommandBufferLevel);
 pub const IndexType = enum(u32) {
     uint16 = 0,
     uint32 = 1,
@@ -1921,14 +1922,14 @@ pub const IndexType = enum(u32) {
     none_khr = 1000165000,
     max_enum = 2147483647,
 };
-pub const IndexTypeFlags = PES(IndexType);
+pub const IndexTypeFlags = EES(IndexType);
 pub const SubpassContents = enum(u32) {
     @"inline" = 0,
     secondary_command_buffers = 1,
     inline_and_secondary_command_buffers_khr = 1000451000,
     max_enum = 2147483647,
 };
-pub const SubpassContentsFlags = PES(SubpassContents);
+pub const SubpassContentsFlags = EES(SubpassContents);
 pub const AccessFlagBits = enum(u32) {
     indirect_command_read_bit = 1,
     index_read_bit = 2,
@@ -1961,7 +1962,7 @@ pub const AccessFlagBits = enum(u32) {
     command_preprocess_write_bit_ext = 262144,
     max_enum = 2147483647,
 };
-pub const AccessFlags = PES(AccessFlagBits);
+pub const AccessFlags = EES(AccessFlagBits);
 pub const ImageAspectFlagBits = enum(u32) {
     color_bit = 1,
     depth_bit = 2,
@@ -1975,7 +1976,7 @@ pub const ImageAspectFlagBits = enum(u32) {
     memory_plane_3_bit_ext = 1024,
     max_enum = 2147483647,
 };
-pub const ImageAspectFlags = PES(ImageAspectFlagBits);
+pub const ImageAspectFlags = EES(ImageAspectFlagBits);
 pub const FormatFeatureFlagBits = enum(u32) {
     sampled_image_bit = 1,
     storage_image_bit = 2,
@@ -2010,7 +2011,7 @@ pub const FormatFeatureFlagBits = enum(u32) {
     video_encode_dpb_bit_khr = 268435456,
     max_enum = 2147483647,
 };
-pub const FormatFeatureFlags = PES(FormatFeatureFlagBits);
+pub const FormatFeatureFlags = EES(FormatFeatureFlagBits);
 pub const ImageCreateFlagBits = enum(u32) {
     sparse_binding_bit = 1,
     sparse_residency_bit = 2,
@@ -2032,7 +2033,7 @@ pub const ImageCreateFlagBits = enum(u32) {
     fragment_density_map_offset_bit_ext = 32768,
     max_enum = 2147483647,
 };
-pub const ImageCreateFlags = PES(ImageCreateFlagBits);
+pub const ImageCreateFlags = EES(ImageCreateFlagBits);
 pub const SampleCountFlagBits = enum(u32) {
     null = 0,
     @"1_bit" = 1,
@@ -2043,7 +2044,7 @@ pub const SampleCountFlagBits = enum(u32) {
     @"64_bit" = 64,
     max_enum = 2147483647,
 };
-pub const SampleCountFlags = PES(SampleCountFlagBits);
+pub const SampleCountFlags = EES(SampleCountFlagBits);
 pub const ImageUsageFlagBits = enum(u32) {
     transfer_src_bit = 1,
     transfer_dst_bit = 2,
@@ -2072,19 +2073,19 @@ pub const ImageUsageFlagBits = enum(u32) {
     video_encode_emphasis_map_bit_khr = 67108864,
     max_enum = 2147483647,
 };
-pub const ImageUsageFlags = PES(ImageUsageFlagBits);
+pub const ImageUsageFlags = EES(ImageUsageFlagBits);
 pub const InstanceCreateFlagBits = enum(u32) {
     enumerate_portability_bit_khr = 1,
     max_enum = 2147483647,
 };
-pub const InstanceCreateFlags = PES(InstanceCreateFlagBits);
+pub const InstanceCreateFlags = EES(InstanceCreateFlagBits);
 pub const MemoryHeapFlagBits = enum(u32) {
     device_local_bit = 1,
     multi_instance_bit = 2,
     tile_memory_bit_qcom = 8,
     max_enum = 2147483647,
 };
-pub const MemoryHeapFlags = PES(MemoryHeapFlagBits);
+pub const MemoryHeapFlags = EES(MemoryHeapFlagBits);
 pub const MemoryPropertyFlagBits = enum(u32) {
     device_local_bit = 1,
     host_visible_bit = 2,
@@ -2097,7 +2098,7 @@ pub const MemoryPropertyFlagBits = enum(u32) {
     rdma_capable_bit_nv = 256,
     max_enum = 2147483647,
 };
-pub const MemoryPropertyFlags = PES(MemoryPropertyFlagBits);
+pub const MemoryPropertyFlags = EES(MemoryPropertyFlagBits);
 pub const QueueFlagBits = enum(u32) {
     graphics_bit = 1,
     compute_bit = 2,
@@ -2110,13 +2111,13 @@ pub const QueueFlagBits = enum(u32) {
     data_graph_bit_arm = 1024,
     max_enum = 2147483647,
 };
-pub const QueueFlags = PES(QueueFlagBits);
+pub const QueueFlags = EES(QueueFlagBits);
 pub const DeviceCreateFlags = Flags;
 pub const DeviceQueueCreateFlagBits = enum(u32) {
     protected_bit = 1,
     max_enum = 2147483647,
 };
-pub const DeviceQueueCreateFlags = PES(DeviceQueueCreateFlagBits);
+pub const DeviceQueueCreateFlags = EES(DeviceQueueCreateFlagBits);
 pub const PipelineStageFlagBits = enum(u32) {
     top_of_pipe_bit = 1,
     draw_indirect_bit = 2,
@@ -2147,35 +2148,35 @@ pub const PipelineStageFlagBits = enum(u32) {
     command_preprocess_bit_ext = 131072,
     max_enum = 2147483647,
 };
-pub const PipelineStageFlags = PES(PipelineStageFlagBits);
+pub const PipelineStageFlags = EES(PipelineStageFlagBits);
 pub const MemoryMapFlagBits = enum(u32) {
     placed_bit_ext = 1,
     max_enum = 2147483647,
 };
-pub const MemoryMapFlags = PES(MemoryMapFlagBits);
+pub const MemoryMapFlags = EES(MemoryMapFlagBits);
 pub const SparseMemoryBindFlagBits = enum(u32) {
     metadata_bit = 1,
     max_enum = 2147483647,
 };
-pub const SparseMemoryBindFlags = PES(SparseMemoryBindFlagBits);
+pub const SparseMemoryBindFlags = EES(SparseMemoryBindFlagBits);
 pub const SparseImageFormatFlagBits = enum(u32) {
     single_miptail_bit = 1,
     aligned_mip_size_bit = 2,
     nonstandard_block_size_bit = 4,
     max_enum = 2147483647,
 };
-pub const SparseImageFormatFlags = PES(SparseImageFormatFlagBits);
+pub const SparseImageFormatFlags = EES(SparseImageFormatFlagBits);
 pub const FenceCreateFlagBits = enum(u32) {
     signaled_bit = 1,
     max_enum = 2147483647,
 };
-pub const FenceCreateFlags = PES(FenceCreateFlagBits);
+pub const FenceCreateFlags = EES(FenceCreateFlagBits);
 pub const SemaphoreCreateFlags = Flags;
 pub const EventCreateFlagBits = enum(u32) {
     device_only_bit = 1,
     max_enum = 2147483647,
 };
-pub const EventCreateFlags = PES(EventCreateFlagBits);
+pub const EventCreateFlags = EES(EventCreateFlagBits);
 pub const QueryPipelineStatisticFlagBits = enum(u32) {
     input_assembly_vertices_bit = 1,
     input_assembly_primitives_bit = 2,
@@ -2193,12 +2194,12 @@ pub const QueryPipelineStatisticFlagBits = enum(u32) {
     cluster_culling_shader_invocations_bit_huawei = 8192,
     max_enum = 2147483647,
 };
-pub const QueryPipelineStatisticFlags = PES(QueryPipelineStatisticFlagBits);
+pub const QueryPipelineStatisticFlags = EES(QueryPipelineStatisticFlagBits);
 pub const QueryPoolCreateFlagBits = enum(u32) {
     reset_bit_khr = 1,
     max_enum = 2147483647,
 };
-pub const QueryPoolCreateFlags = PES(QueryPoolCreateFlagBits);
+pub const QueryPoolCreateFlags = EES(QueryPoolCreateFlagBits);
 pub const QueryResultFlagBits = enum(u32) {
     @"64_bit" = 1,
     wait_bit = 2,
@@ -2207,7 +2208,7 @@ pub const QueryResultFlagBits = enum(u32) {
     with_status_bit_khr = 16,
     max_enum = 2147483647,
 };
-pub const QueryResultFlags = PES(QueryResultFlagBits);
+pub const QueryResultFlags = EES(QueryResultFlagBits);
 pub const BufferCreateFlagBits = enum(u32) {
     sparse_binding_bit = 1,
     sparse_residency_bit = 2,
@@ -2218,7 +2219,7 @@ pub const BufferCreateFlagBits = enum(u32) {
     video_profile_independent_bit_khr = 64,
     max_enum = 2147483647,
 };
-pub const BufferCreateFlags = PES(BufferCreateFlagBits);
+pub const BufferCreateFlags = EES(BufferCreateFlagBits);
 pub const BufferUsageFlagBits = enum(u32) {
     transfer_src_bit = 1,
     transfer_dst_bit = 2,
@@ -2248,7 +2249,7 @@ pub const BufferUsageFlagBits = enum(u32) {
     tile_memory_bit_qcom = 134217728,
     max_enum = 2147483647,
 };
-pub const BufferUsageFlags = PES(BufferUsageFlagBits);
+pub const BufferUsageFlags = EES(BufferUsageFlagBits);
 pub const BufferViewCreateFlags = Flags;
 pub const ImageViewCreateFlagBits = enum(u32) {
     fragment_density_map_dynamic_bit_ext = 1,
@@ -2256,14 +2257,14 @@ pub const ImageViewCreateFlagBits = enum(u32) {
     fragment_density_map_deferred_bit_ext = 2,
     max_enum = 2147483647,
 };
-pub const ImageViewCreateFlags = PES(ImageViewCreateFlagBits);
+pub const ImageViewCreateFlags = EES(ImageViewCreateFlagBits);
 pub const ShaderModuleCreateFlags = Flags;
 pub const PipelineCacheCreateFlagBits = enum(u32) {
     externally_synchronized_bit = 1,
     internally_synchronized_merge_bit_khr = 8,
     max_enum = 2147483647,
 };
-pub const PipelineCacheCreateFlags = PES(PipelineCacheCreateFlagBits);
+pub const PipelineCacheCreateFlags = EES(PipelineCacheCreateFlagBits);
 pub const ColorComponentFlagBits = enum(u32) {
     r_bit = 1,
     g_bit = 2,
@@ -2271,7 +2272,7 @@ pub const ColorComponentFlagBits = enum(u32) {
     a_bit = 8,
     max_enum = 2147483647,
 };
-pub const ColorComponentFlags = PES(ColorComponentFlagBits);
+pub const ColorComponentFlags = EES(ColorComponentFlagBits);
 pub const PipelineCreateFlagBits = enum(u32) {
     disable_optimization_bit = 1,
     allow_derivatives_bit = 2,
@@ -2305,13 +2306,13 @@ pub const PipelineCreateFlagBits = enum(u32) {
     ray_tracing_opacity_micromap_bit_ext = 16777216,
     max_enum = 2147483647,
 };
-pub const PipelineCreateFlags = PES(PipelineCreateFlagBits);
+pub const PipelineCreateFlags = EES(PipelineCreateFlagBits);
 pub const PipelineShaderStageCreateFlagBits = enum(u32) {
     allow_varying_subgroup_size_bit = 1,
     require_full_subgroups_bit = 2,
     max_enum = 2147483647,
 };
-pub const PipelineShaderStageCreateFlags = PES(PipelineShaderStageCreateFlagBits);
+pub const PipelineShaderStageCreateFlags = EES(PipelineShaderStageCreateFlagBits);
 pub const ShaderStageFlagBits = enum(u32) {
     vertex_bit = 1,
     tessellation_control_bit = 2,
@@ -2332,7 +2333,7 @@ pub const ShaderStageFlagBits = enum(u32) {
     subpass_shading_bit_huawei = 16384,
     cluster_culling_bit_huawei = 524288,
 };
-pub const ShaderStageFlags = PES(ShaderStageFlagBits);
+pub const ShaderStageFlags = EES(ShaderStageFlagBits);
 pub const CullModeFlagBits = enum(u32) {
     none = 0,
     front_bit = 1,
@@ -2340,7 +2341,7 @@ pub const CullModeFlagBits = enum(u32) {
     front_and_back = 3,
     max_enum = 2147483647,
 };
-pub const CullModeFlags = PES(CullModeFlagBits);
+pub const CullModeFlags = EES(CullModeFlagBits);
 pub const PipelineVertexInputStateCreateFlags = Flags;
 pub const PipelineInputAssemblyStateCreateFlags = Flags;
 pub const PipelineTessellationStateCreateFlags = Flags;
@@ -2352,18 +2353,18 @@ pub const PipelineDepthStencilStateCreateFlagBits = enum(u32) {
     rasterization_order_attachment_stencil_access_bit_ext = 2,
     max_enum = 2147483647,
 };
-pub const PipelineDepthStencilStateCreateFlags = PES(PipelineDepthStencilStateCreateFlagBits);
+pub const PipelineDepthStencilStateCreateFlags = EES(PipelineDepthStencilStateCreateFlagBits);
 pub const PipelineColorBlendStateCreateFlagBits = enum(u32) {
     rasterization_order_attachment_access_bit_ext = 1,
     max_enum = 2147483647,
 };
-pub const PipelineColorBlendStateCreateFlags = PES(PipelineColorBlendStateCreateFlagBits);
+pub const PipelineColorBlendStateCreateFlags = EES(PipelineColorBlendStateCreateFlagBits);
 pub const PipelineDynamicStateCreateFlags = Flags;
 pub const PipelineLayoutCreateFlagBits = enum(u32) {
     independent_sets_bit_ext = 2,
     max_enum = 2147483647,
 };
-pub const PipelineLayoutCreateFlags = PES(PipelineLayoutCreateFlagBits);
+pub const PipelineLayoutCreateFlags = EES(PipelineLayoutCreateFlagBits);
 pub const SamplerCreateFlagBits = enum(u32) {
     subsampled_bit_ext = 1,
     subsampled_coarse_reconstruction_bit_ext = 2,
@@ -2372,7 +2373,7 @@ pub const SamplerCreateFlagBits = enum(u32) {
     image_processing_bit_qcom = 16,
     max_enum = 2147483647,
 };
-pub const SamplerCreateFlags = PES(SamplerCreateFlagBits);
+pub const SamplerCreateFlags = EES(SamplerCreateFlagBits);
 pub const DescriptorPoolCreateFlagBits = enum(u32) {
     free_descriptor_set_bit = 1,
     update_after_bind_bit = 2,
@@ -2381,7 +2382,7 @@ pub const DescriptorPoolCreateFlagBits = enum(u32) {
     allow_overallocation_pools_bit_nv = 16,
     max_enum = 2147483647,
 };
-pub const DescriptorPoolCreateFlags = PES(DescriptorPoolCreateFlagBits);
+pub const DescriptorPoolCreateFlags = EES(DescriptorPoolCreateFlagBits);
 pub const DescriptorPoolResetFlags = Flags;
 pub const DescriptorSetLayoutCreateFlagBits = enum(u32) {
     update_after_bind_pool_bit = 2,
@@ -2393,12 +2394,12 @@ pub const DescriptorSetLayoutCreateFlagBits = enum(u32) {
     per_stage_bit_nv = 64,
     max_enum = 2147483647,
 };
-pub const DescriptorSetLayoutCreateFlags = PES(DescriptorSetLayoutCreateFlagBits);
+pub const DescriptorSetLayoutCreateFlags = EES(DescriptorSetLayoutCreateFlagBits);
 pub const AttachmentDescriptionFlagBits = enum(u32) {
     may_alias_bit = 1,
     max_enum = 2147483647,
 };
-pub const AttachmentDescriptionFlags = PES(AttachmentDescriptionFlagBits);
+pub const AttachmentDescriptionFlags = EES(AttachmentDescriptionFlagBits);
 pub const DependencyFlagBits = enum(u32) {
     by_region_bit = 1,
     device_group_bit = 4,
@@ -2408,18 +2409,18 @@ pub const DependencyFlagBits = enum(u32) {
     asymmetric_event_bit_khr = 64,
     max_enum = 2147483647,
 };
-pub const DependencyFlags = PES(DependencyFlagBits);
+pub const DependencyFlags = EES(DependencyFlagBits);
 pub const FramebufferCreateFlagBits = enum(u32) {
     imageless_bit = 1,
     max_enum = 2147483647,
 };
-pub const FramebufferCreateFlags = PES(FramebufferCreateFlagBits);
+pub const FramebufferCreateFlags = EES(FramebufferCreateFlagBits);
 pub const RenderPassCreateFlagBits = enum(u32) {
     transform_bit_qcom = 2,
     per_layer_fragment_density_bit_valve = 4,
     max_enum = 2147483647,
 };
-pub const RenderPassCreateFlags = PES(RenderPassCreateFlagBits);
+pub const RenderPassCreateFlags = EES(RenderPassCreateFlagBits);
 pub const SubpassDescriptionFlagBits = enum(u32) {
     per_view_attributes_bit_nvx = 1,
     per_view_position_x_only_bit_nvx = 2,
@@ -2432,43 +2433,43 @@ pub const SubpassDescriptionFlagBits = enum(u32) {
     enable_legacy_dithering_bit_ext = 128,
     max_enum = 2147483647,
 };
-pub const SubpassDescriptionFlags = PES(SubpassDescriptionFlagBits);
+pub const SubpassDescriptionFlags = EES(SubpassDescriptionFlagBits);
 pub const CommandPoolCreateFlagBits = enum(u32) {
     transient_bit = 1,
     reset_command_buffer_bit = 2,
     protected_bit = 4,
     max_enum = 2147483647,
 };
-pub const CommandPoolCreateFlags = PES(CommandPoolCreateFlagBits);
+pub const CommandPoolCreateFlags = EES(CommandPoolCreateFlagBits);
 pub const CommandPoolResetFlagBits = enum(u32) {
     release_resources_bit = 1,
     max_enum = 2147483647,
 };
-pub const CommandPoolResetFlags = PES(CommandPoolResetFlagBits);
+pub const CommandPoolResetFlags = EES(CommandPoolResetFlagBits);
 pub const CommandBufferUsageFlagBits = enum(u32) {
     one_time_submit_bit = 1,
     render_pass_continue_bit = 2,
     simultaneous_use_bit = 4,
     max_enum = 2147483647,
 };
-pub const CommandBufferUsageFlags = PES(CommandBufferUsageFlagBits);
+pub const CommandBufferUsageFlags = EES(CommandBufferUsageFlagBits);
 pub const QueryControlFlagBits = enum(u32) {
     precise_bit = 1,
     max_enum = 2147483647,
 };
-pub const QueryControlFlags = PES(QueryControlFlagBits);
+pub const QueryControlFlags = EES(QueryControlFlagBits);
 pub const CommandBufferResetFlagBits = enum(u32) {
     release_resources_bit = 1,
     max_enum = 2147483647,
 };
-pub const CommandBufferResetFlags = PES(CommandBufferResetFlagBits);
+pub const CommandBufferResetFlags = EES(CommandBufferResetFlagBits);
 pub const StencilFaceFlagBits = enum(u32) {
     front_bit = 1,
     back_bit = 2,
     front_and_back = 3,
     max_enum = 2147483647,
 };
-pub const StencilFaceFlags = PES(StencilFaceFlagBits);
+pub const StencilFaceFlags = EES(StencilFaceFlagBits);
 pub const Extent2D = extern struct {
     width: u32 = @import("std").mem.zeroes(u32),
     height: u32 = @import("std").mem.zeroes(u32),
@@ -4025,13 +4026,13 @@ pub const PointClippingBehavior = enum(u32) {
     user_clip_planes_only = 1,
     max_enum = 2147483647,
 };
-pub const PointClippingBehaviorFlags = PES(PointClippingBehavior);
+pub const PointClippingBehaviorFlags = EES(PointClippingBehavior);
 pub const TessellationDomainOrigin = enum(u32) {
     upper_left = 0,
     lower_left = 1,
     max_enum = 2147483647,
 };
-pub const TessellationDomainOriginFlags = PES(TessellationDomainOrigin);
+pub const TessellationDomainOriginFlags = EES(TessellationDomainOrigin);
 pub const SamplerYcbcrModelConversion = enum(u32) {
     rgb_identity = 0,
     ycbcr_identity = 1,
@@ -4040,25 +4041,25 @@ pub const SamplerYcbcrModelConversion = enum(u32) {
     ycbcr_2020 = 4,
     max_enum = 2147483647,
 };
-pub const SamplerYcbcrModelConversionFlags = PES(SamplerYcbcrModelConversion);
+pub const SamplerYcbcrModelConversionFlags = EES(SamplerYcbcrModelConversion);
 pub const SamplerYcbcrRange = enum(u32) {
     itu_full = 0,
     itu_narrow = 1,
     max_enum = 2147483647,
 };
-pub const SamplerYcbcrRangeFlags = PES(SamplerYcbcrRange);
+pub const SamplerYcbcrRangeFlags = EES(SamplerYcbcrRange);
 pub const ChromaLocation = enum(u32) {
     cosited_even = 0,
     midpoint = 1,
     max_enum = 2147483647,
 };
-pub const ChromaLocationFlags = PES(ChromaLocation);
+pub const ChromaLocationFlags = EES(ChromaLocation);
 pub const DescriptorUpdateTemplateType = enum(u32) {
     descriptor_set = 0,
     push_descriptors = 1,
     max_enum = 2147483647,
 };
-pub const DescriptorUpdateTemplateTypeFlags = PES(DescriptorUpdateTemplateType);
+pub const DescriptorUpdateTemplateTypeFlags = EES(DescriptorUpdateTemplateType);
 pub const SubgroupFeatureFlagBits = enum(u32) {
     basic_bit = 1,
     vote_bit = 2,
@@ -4073,7 +4074,7 @@ pub const SubgroupFeatureFlagBits = enum(u32) {
     partitioned_bit_nv = 256,
     max_enum = 2147483647,
 };
-pub const SubgroupFeatureFlags = PES(SubgroupFeatureFlagBits);
+pub const SubgroupFeatureFlags = EES(SubgroupFeatureFlagBits);
 pub const PeerMemoryFeatureFlagBits = enum(u32) {
     copy_src_bit = 1,
     copy_dst_bit = 2,
@@ -4081,7 +4082,7 @@ pub const PeerMemoryFeatureFlagBits = enum(u32) {
     generic_dst_bit = 8,
     max_enum = 2147483647,
 };
-pub const PeerMemoryFeatureFlags = PES(PeerMemoryFeatureFlagBits);
+pub const PeerMemoryFeatureFlags = EES(PeerMemoryFeatureFlagBits);
 pub const MemoryAllocateFlagBits = enum(u32) {
     device_mask_bit = 1,
     device_address_bit = 2,
@@ -4089,7 +4090,7 @@ pub const MemoryAllocateFlagBits = enum(u32) {
     zero_initialize_bit_ext = 8,
     max_enum = 2147483647,
 };
-pub const MemoryAllocateFlags = PES(MemoryAllocateFlagBits);
+pub const MemoryAllocateFlags = EES(MemoryAllocateFlagBits);
 pub const CommandPoolTrimFlags = Flags;
 pub const DescriptorUpdateTemplateCreateFlags = Flags;
 pub const ExternalMemoryHandleTypeFlagBits = enum(u32) {
@@ -4112,14 +4113,14 @@ pub const ExternalMemoryHandleTypeFlagBits = enum(u32) {
     mtlheap_bit_ext = 262144,
     max_enum = 2147483647,
 };
-pub const ExternalMemoryHandleTypeFlags = PES(ExternalMemoryHandleTypeFlagBits);
+pub const ExternalMemoryHandleTypeFlags = EES(ExternalMemoryHandleTypeFlagBits);
 pub const ExternalMemoryFeatureFlagBits = enum(u32) {
     dedicated_only_bit = 1,
     exportable_bit = 2,
     importable_bit = 4,
     max_enum = 2147483647,
 };
-pub const ExternalMemoryFeatureFlags = PES(ExternalMemoryFeatureFlagBits);
+pub const ExternalMemoryFeatureFlags = EES(ExternalMemoryFeatureFlagBits);
 pub const ExternalFenceHandleTypeFlagBits = enum(u32) {
     opaque_fd_bit = 1,
     opaque_win32_bit = 2,
@@ -4127,23 +4128,23 @@ pub const ExternalFenceHandleTypeFlagBits = enum(u32) {
     sync_fd_bit = 8,
     max_enum = 2147483647,
 };
-pub const ExternalFenceHandleTypeFlags = PES(ExternalFenceHandleTypeFlagBits);
+pub const ExternalFenceHandleTypeFlags = EES(ExternalFenceHandleTypeFlagBits);
 pub const ExternalFenceFeatureFlagBits = enum(u32) {
     exportable_bit = 1,
     importable_bit = 2,
     max_enum = 2147483647,
 };
-pub const ExternalFenceFeatureFlags = PES(ExternalFenceFeatureFlagBits);
+pub const ExternalFenceFeatureFlags = EES(ExternalFenceFeatureFlagBits);
 pub const FenceImportFlagBits = enum(u32) {
     temporary_bit = 1,
     max_enum = 2147483647,
 };
-pub const FenceImportFlags = PES(FenceImportFlagBits);
+pub const FenceImportFlags = EES(FenceImportFlagBits);
 pub const SemaphoreImportFlagBits = enum(u32) {
     temporary_bit = 1,
     max_enum = 2147483647,
 };
-pub const SemaphoreImportFlags = PES(SemaphoreImportFlagBits);
+pub const SemaphoreImportFlags = EES(SemaphoreImportFlagBits);
 pub const ExternalSemaphoreHandleTypeFlagBits = enum(u32) {
     opaque_fd_bit = 1,
     opaque_win32_bit = 2,
@@ -4153,13 +4154,13 @@ pub const ExternalSemaphoreHandleTypeFlagBits = enum(u32) {
     zircon_event_bit_fuchsia = 128,
     max_enum = 2147483647,
 };
-pub const ExternalSemaphoreHandleTypeFlags = PES(ExternalSemaphoreHandleTypeFlagBits);
+pub const ExternalSemaphoreHandleTypeFlags = EES(ExternalSemaphoreHandleTypeFlagBits);
 pub const ExternalSemaphoreFeatureFlagBits = enum(u32) {
     exportable_bit = 1,
     importable_bit = 2,
     max_enum = 2147483647,
 };
-pub const ExternalSemaphoreFeatureFlags = PES(ExternalSemaphoreFeatureFlagBits);
+pub const ExternalSemaphoreFeatureFlags = EES(ExternalSemaphoreFeatureFlagBits);
 pub const PhysicalDeviceSubgroupProperties = extern struct {
     s_type: StructureType = .physical_device_subgroup_properties,
     p_next: ?*anyopaque = null,
@@ -4720,14 +4721,14 @@ pub const DriverId = enum(u32) {
     vulkan_sc_emulation_on_vulkan = 27,
     max_enum = 2147483647,
 };
-pub const DriverIdFlags = PES(DriverId);
+pub const DriverIdFlags = EES(DriverId);
 pub const ShaderFloatControlsIndependence = enum(u32) {
     @"32_bit_only" = 0,
     all = 1,
     none = 2,
     max_enum = 2147483647,
 };
-pub const ShaderFloatControlsIndependenceFlags = PES(ShaderFloatControlsIndependence);
+pub const ShaderFloatControlsIndependenceFlags = EES(ShaderFloatControlsIndependence);
 pub const SamplerReductionMode = enum(u32) {
     weighted_average = 0,
     min = 1,
@@ -4735,13 +4736,13 @@ pub const SamplerReductionMode = enum(u32) {
     weighted_average_rangeclamp_qcom = 1000521000,
     max_enum = 2147483647,
 };
-pub const SamplerReductionModeFlags = PES(SamplerReductionMode);
+pub const SamplerReductionModeFlags = EES(SamplerReductionMode);
 pub const SemaphoreType = enum(u32) {
     binary = 0,
     timeline = 1,
     max_enum = 2147483647,
 };
-pub const SemaphoreTypeFlags = PES(SemaphoreType);
+pub const SemaphoreTypeFlags = EES(SemaphoreType);
 pub const ResolveModeFlagBits = enum(u32) {
     none = 0,
     sample_zero_bit = 1,
@@ -4751,7 +4752,7 @@ pub const ResolveModeFlagBits = enum(u32) {
     external_format_downsample_bit_android = 16,
     max_enum = 2147483647,
 };
-pub const ResolveModeFlags = PES(ResolveModeFlagBits);
+pub const ResolveModeFlags = EES(ResolveModeFlagBits);
 pub const DescriptorBindingFlagBits = enum(u32) {
     update_after_bind_bit = 1,
     update_unused_while_pending_bit = 2,
@@ -4759,12 +4760,12 @@ pub const DescriptorBindingFlagBits = enum(u32) {
     variable_descriptor_count_bit = 8,
     max_enum = 2147483647,
 };
-pub const DescriptorBindingFlags = PES(DescriptorBindingFlagBits);
+pub const DescriptorBindingFlags = EES(DescriptorBindingFlagBits);
 pub const SemaphoreWaitFlagBits = enum(u32) {
     any_bit = 1,
     max_enum = 2147483647,
 };
-pub const SemaphoreWaitFlags = PES(SemaphoreWaitFlagBits);
+pub const SemaphoreWaitFlags = EES(SemaphoreWaitFlagBits);
 pub const PhysicalDeviceVulkan11Features = extern struct {
     s_type: StructureType = .physical_device_vulkan11_features,
     p_next: ?*anyopaque = null,
@@ -5334,7 +5335,7 @@ pub const PipelineCreationFeedbackFlagBits = enum(u32) {
     base_pipeline_acceleration_bit = 4,
     max_enum = 2147483647,
 };
-pub const PipelineCreationFeedbackFlags = PES(PipelineCreationFeedbackFlagBits);
+pub const PipelineCreationFeedbackFlags = EES(PipelineCreationFeedbackFlagBits);
 pub const ToolPurposeFlagBits = enum(u32) {
     validation_bit = 1,
     profiling_bit = 2,
@@ -5345,7 +5346,7 @@ pub const ToolPurposeFlagBits = enum(u32) {
     debug_markers_bit_ext = 64,
     max_enum = 2147483647,
 };
-pub const ToolPurposeFlags = PES(ToolPurposeFlagBits);
+pub const ToolPurposeFlags = EES(ToolPurposeFlagBits);
 pub const PrivateDataSlotCreateFlags = Flags;
 pub const PipelineStageFlagBits2 = enum(u64) {
     none = 0,
@@ -5393,7 +5394,7 @@ pub const PipelineStageFlagBits2 = enum(u64) {
     convert_cooperative_vector_matrix_bit_nv = 17592186044416,
     data_graph_bit_arm = 4398046511104,
 };
-pub const PipelineStageFlags2 = PES(PipelineStageFlagBits2);
+pub const PipelineStageFlags2 = EES(PipelineStageFlagBits2);
 pub const AccessFlagBits2 = enum(u64) {
     none = 0,
     indirect_command_read_bit = 1,
@@ -5443,12 +5444,12 @@ pub const AccessFlagBits2 = enum(u64) {
     data_graph_read_bit_arm = 140737488355328,
     data_graph_write_bit_arm = 281474976710656,
 };
-pub const AccessFlags2 = PES(AccessFlagBits2);
+pub const AccessFlags2 = EES(AccessFlagBits2);
 pub const SubmitFlagBits = enum(u32) {
     protected_bit = 1,
     max_enum = 2147483647,
 };
-pub const SubmitFlags = PES(SubmitFlagBits);
+pub const SubmitFlags = EES(SubmitFlagBits);
 pub const RenderingFlagBits = enum(u32) {
     contents_secondary_command_buffers_bit = 1,
     suspending_bit = 2,
@@ -5458,7 +5459,7 @@ pub const RenderingFlagBits = enum(u32) {
     per_layer_fragment_density_bit_valve = 32,
     max_enum = 2147483647,
 };
-pub const RenderingFlags = PES(RenderingFlagBits);
+pub const RenderingFlags = EES(RenderingFlagBits);
 pub const FormatFeatureFlagBits2 = enum(u64) {
     sampled_image_bit = 1,
     storage_image_bit = 2,
@@ -5510,7 +5511,7 @@ pub const FormatFeatureFlagBits2 = enum(u64) {
     video_encode_quantization_delta_map_bit_khr = 562949953421312,
     video_encode_emphasis_map_bit_khr = 1125899906842624,
 };
-pub const FormatFeatureFlags2 = PES(FormatFeatureFlagBits2);
+pub const FormatFeatureFlags2 = EES(FormatFeatureFlagBits2);
 pub const PhysicalDeviceVulkan13Features = extern struct {
     s_type: StructureType = .physical_device_vulkan13_features,
     p_next: ?*anyopaque = null,
@@ -6143,14 +6144,14 @@ pub const PipelineRobustnessBufferBehavior = enum(u32) {
     robust_buffer_access = 2,
     max_enum = 2147483647,
 };
-pub const PipelineRobustnessBufferBehaviorFlags = PES(PipelineRobustnessBufferBehavior);
+pub const PipelineRobustnessBufferBehaviorFlags = EES(PipelineRobustnessBufferBehavior);
 pub const PipelineRobustnessImageBehavior = enum(u32) {
     device_default = 0,
     disabled = 1,
     robust_image_access = 2,
     max_enum = 2147483647,
 };
-pub const PipelineRobustnessImageBehaviorFlags = PES(PipelineRobustnessImageBehavior);
+pub const PipelineRobustnessImageBehaviorFlags = EES(PipelineRobustnessImageBehavior);
 pub const QueueGlobalPriority = enum(u32) {
     low = 128,
     medium = 256,
@@ -6158,7 +6159,7 @@ pub const QueueGlobalPriority = enum(u32) {
     realtime = 1024,
     max_enum = 2147483647,
 };
-pub const QueueGlobalPriorityFlags = PES(QueueGlobalPriority);
+pub const QueueGlobalPriorityFlags = EES(QueueGlobalPriority);
 pub const LineRasterizationMode = enum(u32) {
     default = 0,
     rectangular = 1,
@@ -6166,12 +6167,12 @@ pub const LineRasterizationMode = enum(u32) {
     rectangular_smooth = 3,
     max_enum = 2147483647,
 };
-pub const LineRasterizationModeFlags = PES(LineRasterizationMode);
+pub const LineRasterizationModeFlags = EES(LineRasterizationMode);
 pub const MemoryUnmapFlagBits = enum(u32) {
     reserve_bit_ext = 1,
     max_enum = 2147483647,
 };
-pub const MemoryUnmapFlags = PES(MemoryUnmapFlagBits);
+pub const MemoryUnmapFlags = EES(MemoryUnmapFlagBits);
 pub const PipelineCreateFlagBits2 = enum(u64) {
     disable_optimization_bit = 1,
     allow_derivatives_bit = 2,
@@ -6211,7 +6212,7 @@ pub const PipelineCreateFlagBits2 = enum(u64) {
     indirect_bindable_bit_ext = 274877906944,
     per_layer_fragment_density_bit_valve = 1099511627776,
 };
-pub const PipelineCreateFlags2 = PES(PipelineCreateFlagBits2);
+pub const PipelineCreateFlags2 = EES(PipelineCreateFlagBits2);
 pub const BufferUsageFlagBits2 = enum(u64) {
     transfer_src_bit = 1,
     transfer_dst_bit = 2,
@@ -6242,12 +6243,12 @@ pub const BufferUsageFlagBits2 = enum(u64) {
     tile_memory_bit_qcom = 134217728,
     preprocess_buffer_bit_ext = 2147483648,
 };
-pub const BufferUsageFlags2 = PES(BufferUsageFlagBits2);
+pub const BufferUsageFlags2 = EES(BufferUsageFlagBits2);
 pub const HostImageCopyFlagBits = enum(u32) {
     memcpy_bit = 1,
     max_enum = 2147483647,
 };
-pub const HostImageCopyFlags = PES(HostImageCopyFlagBits);
+pub const HostImageCopyFlags = EES(HostImageCopyFlagBits);
 pub const PhysicalDeviceVulkan14Features = extern struct {
     s_type: StructureType = .physical_device_vulkan14_features,
     p_next: ?*anyopaque = null,
@@ -6725,7 +6726,7 @@ pub const PresentModeKHR = enum(u32) {
     fifo_latest_ready = 1000361000,
     max_enum = 2147483647,
 };
-pub const PresentModeKHRFlags = PES(PresentModeKHR);
+pub const PresentModeKHRFlags = EES(PresentModeKHR);
 pub const ColorSpaceKHR = enum(u32) {
     srgb_nonlinear = 0,
     display_p3_nonlinear_ext = 1000104001,
@@ -6745,7 +6746,7 @@ pub const ColorSpaceKHR = enum(u32) {
     display_native_amd = 1000213000,
     max_enum = 2147483647,
 };
-pub const ColorSpaceKHRFlags = PES(ColorSpaceKHR);
+pub const ColorSpaceKHRFlags = EES(ColorSpaceKHR);
 pub const SurfaceTransformFlagBitsKHR = enum(u32) {
     identity_bit = 1,
     rotate_90_bit = 2,
@@ -6758,7 +6759,7 @@ pub const SurfaceTransformFlagBitsKHR = enum(u32) {
     inherit_bit = 256,
     max_enum = 2147483647,
 };
-pub const SurfaceTransformFlagsKHR = PES(SurfaceTransformFlagBitsKHR);
+pub const SurfaceTransformFlagsKHR = EES(SurfaceTransformFlagBitsKHR);
 pub const CompositeAlphaFlagBitsKHR = enum(u32) {
     opaque_bit = 1,
     pre_multiplied_bit = 2,
@@ -6766,7 +6767,7 @@ pub const CompositeAlphaFlagBitsKHR = enum(u32) {
     inherit_bit = 8,
     max_enum = 2147483647,
 };
-pub const CompositeAlphaFlagsKHR = PES(CompositeAlphaFlagBitsKHR);
+pub const CompositeAlphaFlagsKHR = EES(CompositeAlphaFlagBitsKHR);
 pub const SurfaceCapabilitiesKHR = extern struct {
     min_image_count: u32 = @import("std").mem.zeroes(u32),
     max_image_count: u32 = @import("std").mem.zeroes(u32),
@@ -6814,7 +6815,7 @@ pub const SwapchainCreateFlagBitsKHR = enum(u32) {
     deferred_memory_allocation_bit = 8,
     max_enum = 2147483647,
 };
-pub const SwapchainCreateFlagsKHR = PES(SwapchainCreateFlagBitsKHR);
+pub const SwapchainCreateFlagsKHR = EES(SwapchainCreateFlagBitsKHR);
 pub const DeviceGroupPresentModeFlagBitsKHR = enum(u32) {
     local_bit = 1,
     remote_bit = 2,
@@ -6822,7 +6823,7 @@ pub const DeviceGroupPresentModeFlagBitsKHR = enum(u32) {
     local_multi_device_bit = 8,
     max_enum = 2147483647,
 };
-pub const DeviceGroupPresentModeFlagsKHR = PES(DeviceGroupPresentModeFlagBitsKHR);
+pub const DeviceGroupPresentModeFlagsKHR = EES(DeviceGroupPresentModeFlagBitsKHR);
 pub const SwapchainCreateInfoKHR = extern struct {
     s_type: StructureType = .swapchain_create_info_khr,
     p_next: ?*const anyopaque = null,
@@ -6943,7 +6944,7 @@ pub const DisplayPlaneAlphaFlagBitsKHR = enum(u32) {
     per_pixel_premultiplied_bit = 8,
     max_enum = 2147483647,
 };
-pub const DisplayPlaneAlphaFlagsKHR = PES(DisplayPlaneAlphaFlagBitsKHR);
+pub const DisplayPlaneAlphaFlagsKHR = EES(DisplayPlaneAlphaFlagBitsKHR);
 pub const DisplaySurfaceCreateFlagsKHR = Flags;
 pub const DisplayModeParametersKHR = extern struct {
     visible_region: Extent2D = @import("std").mem.zeroes(Extent2D),
@@ -7049,7 +7050,7 @@ pub const QueryResultStatusKHR = enum(i32) {
     insufficient_bitstream_buffer_range = -1000299000,
     max_enum = 2147483647,
 };
-pub const QueryResultStatusKHRFlags = PES(QueryResultStatusKHR);
+pub const QueryResultStatusKHRFlags = EES(QueryResultStatusKHR);
 pub const VideoCodecOperationFlagBitsKHR = enum(u32) {
     none = 0,
     encode_h264_bit = 65536,
@@ -7061,7 +7062,7 @@ pub const VideoCodecOperationFlagBitsKHR = enum(u32) {
     decode_vp9_bit = 8,
     max_enum = 2147483647,
 };
-pub const VideoCodecOperationFlagsKHR = PES(VideoCodecOperationFlagBitsKHR);
+pub const VideoCodecOperationFlagsKHR = EES(VideoCodecOperationFlagBitsKHR);
 pub const VideoChromaSubsamplingFlagBitsKHR = enum(u32) {
     invalid = 0,
     monochrome_bit = 1,
@@ -7070,7 +7071,7 @@ pub const VideoChromaSubsamplingFlagBitsKHR = enum(u32) {
     @"444_bit" = 8,
     max_enum = 2147483647,
 };
-pub const VideoChromaSubsamplingFlagsKHR = PES(VideoChromaSubsamplingFlagBitsKHR);
+pub const VideoChromaSubsamplingFlagsKHR = EES(VideoChromaSubsamplingFlagBitsKHR);
 pub const VideoComponentBitDepthFlagBitsKHR = enum(u32) {
     invalid = 0,
     @"8_bit" = 1,
@@ -7078,13 +7079,13 @@ pub const VideoComponentBitDepthFlagBitsKHR = enum(u32) {
     @"12_bit" = 16,
     max_enum = 2147483647,
 };
-pub const VideoComponentBitDepthFlagsKHR = PES(VideoComponentBitDepthFlagBitsKHR);
+pub const VideoComponentBitDepthFlagsKHR = EES(VideoComponentBitDepthFlagBitsKHR);
 pub const VideoCapabilityFlagBitsKHR = enum(u32) {
     protected_content_bit = 1,
     separate_reference_images_bit = 2,
     max_enum = 2147483647,
 };
-pub const VideoCapabilityFlagsKHR = PES(VideoCapabilityFlagBitsKHR);
+pub const VideoCapabilityFlagsKHR = EES(VideoCapabilityFlagBitsKHR);
 pub const VideoSessionCreateFlagBitsKHR = enum(u32) {
     protected_content_bit = 1,
     allow_encode_parameter_optimizations_bit = 2,
@@ -7094,12 +7095,12 @@ pub const VideoSessionCreateFlagBitsKHR = enum(u32) {
     inline_session_parameters_bit = 32,
     max_enum = 2147483647,
 };
-pub const VideoSessionCreateFlagsKHR = PES(VideoSessionCreateFlagBitsKHR);
+pub const VideoSessionCreateFlagsKHR = EES(VideoSessionCreateFlagBitsKHR);
 pub const VideoSessionParametersCreateFlagBitsKHR = enum(u32) {
     quantization_map_compatible_bit = 1,
     max_enum = 2147483647,
 };
-pub const VideoSessionParametersCreateFlagsKHR = PES(VideoSessionParametersCreateFlagBitsKHR);
+pub const VideoSessionParametersCreateFlagsKHR = EES(VideoSessionParametersCreateFlagBitsKHR);
 pub const VideoBeginCodingFlagsKHR = Flags;
 pub const VideoEndCodingFlagsKHR = Flags;
 pub const VideoCodingControlFlagBitsKHR = enum(u32) {
@@ -7108,7 +7109,7 @@ pub const VideoCodingControlFlagBitsKHR = enum(u32) {
     encode_quality_level_bit = 4,
     max_enum = 2147483647,
 };
-pub const VideoCodingControlFlagsKHR = PES(VideoCodingControlFlagBitsKHR);
+pub const VideoCodingControlFlagsKHR = EES(VideoCodingControlFlagBitsKHR);
 pub const QueueFamilyQueryResultStatusPropertiesKHR = extern struct {
     s_type: StructureType = .queue_family_query_result_status_properties_khr,
     p_next: ?*anyopaque = null,
@@ -7286,7 +7287,7 @@ pub const VideoDecodeCapabilityFlagBitsKHR = enum(u32) {
     dpb_and_output_distinct_bit = 2,
     max_enum = 2147483647,
 };
-pub const VideoDecodeCapabilityFlagsKHR = PES(VideoDecodeCapabilityFlagBitsKHR);
+pub const VideoDecodeCapabilityFlagsKHR = EES(VideoDecodeCapabilityFlagBitsKHR);
 pub const VideoDecodeUsageFlagBitsKHR = enum(u32) {
     default = 0,
     transcoding_bit = 1,
@@ -7294,7 +7295,7 @@ pub const VideoDecodeUsageFlagBitsKHR = enum(u32) {
     streaming_bit = 4,
     max_enum = 2147483647,
 };
-pub const VideoDecodeUsageFlagsKHR = PES(VideoDecodeUsageFlagBitsKHR);
+pub const VideoDecodeUsageFlagsKHR = EES(VideoDecodeUsageFlagBitsKHR);
 pub const VideoDecodeFlagsKHR = Flags;
 pub const VideoDecodeCapabilitiesKHR = extern struct {
     s_type: StructureType = .video_decode_capabilities_khr,
@@ -7329,7 +7330,7 @@ pub const VideoH264ChromaFormatIdc = enum(u32) {
     @"444" = 3,
     invalid = 2147483647,
 };
-pub const VideoH264ChromaFormatIdcFlags = PES(VideoH264ChromaFormatIdc);
+pub const VideoH264ChromaFormatIdcFlags = EES(VideoH264ChromaFormatIdc);
 pub const VideoH264ProfileIdc = enum(u32) {
     baseline = 66,
     main = 77,
@@ -7337,7 +7338,7 @@ pub const VideoH264ProfileIdc = enum(u32) {
     high_444_predictive = 244,
     invalid = 2147483647,
 };
-pub const VideoH264ProfileIdcFlags = PES(VideoH264ProfileIdc);
+pub const VideoH264ProfileIdcFlags = EES(VideoH264ProfileIdc);
 pub const VideoH264LevelIdc = enum(u32) {
     @"1_0" = 0,
     @"1_1" = 1,
@@ -7360,14 +7361,14 @@ pub const VideoH264LevelIdc = enum(u32) {
     @"6_2" = 18,
     invalid = 2147483647,
 };
-pub const VideoH264LevelIdcFlags = PES(VideoH264LevelIdc);
+pub const VideoH264LevelIdcFlags = EES(VideoH264LevelIdc);
 pub const VideoH264PocType = enum(u32) {
     @"0" = 0,
     @"1" = 1,
     @"2" = 2,
     invalid = 2147483647,
 };
-pub const VideoH264PocTypeFlags = PES(VideoH264PocType);
+pub const VideoH264PocTypeFlags = EES(VideoH264PocType);
 pub const VideoH264AspectRatioIdc = enum(u32) {
     unspecified = 0,
     square = 1,
@@ -7389,14 +7390,14 @@ pub const VideoH264AspectRatioIdc = enum(u32) {
     extended_sar = 255,
     invalid = 2147483647,
 };
-pub const VideoH264AspectRatioIdcFlags = PES(VideoH264AspectRatioIdc);
+pub const VideoH264AspectRatioIdcFlags = EES(VideoH264AspectRatioIdc);
 pub const VideoH264WeightedBipredIdc = enum(u32) {
     default = 0,
     explicit = 1,
     implicit = 2,
     invalid = 2147483647,
 };
-pub const VideoH264WeightedBipredIdcFlags = PES(VideoH264WeightedBipredIdc);
+pub const VideoH264WeightedBipredIdcFlags = EES(VideoH264WeightedBipredIdc);
 pub const VideoH264ModificationOfPicNumsIdc = enum(u32) {
     short_term_subtract = 0,
     short_term_add = 1,
@@ -7404,7 +7405,7 @@ pub const VideoH264ModificationOfPicNumsIdc = enum(u32) {
     end = 3,
     invalid = 2147483647,
 };
-pub const VideoH264ModificationOfPicNumsIdcFlags = PES(VideoH264ModificationOfPicNumsIdc);
+pub const VideoH264ModificationOfPicNumsIdcFlags = EES(VideoH264ModificationOfPicNumsIdc);
 pub const VideoH264MemMgmtControlOp = enum(u32) {
     end = 0,
     unmark_short_term = 1,
@@ -7415,28 +7416,28 @@ pub const VideoH264MemMgmtControlOp = enum(u32) {
     mark_current_as_long_term = 6,
     invalid = 2147483647,
 };
-pub const VideoH264MemMgmtControlOpFlags = PES(VideoH264MemMgmtControlOp);
+pub const VideoH264MemMgmtControlOpFlags = EES(VideoH264MemMgmtControlOp);
 pub const VideoH264CabacInitIdc = enum(u32) {
     @"0" = 0,
     @"1" = 1,
     @"2" = 2,
     invalid = 2147483647,
 };
-pub const VideoH264CabacInitIdcFlags = PES(VideoH264CabacInitIdc);
+pub const VideoH264CabacInitIdcFlags = EES(VideoH264CabacInitIdc);
 pub const VideoH264DisableDeblockingFilterIdc = enum(u32) {
     disabled = 0,
     enabled = 1,
     partial = 2,
     invalid = 2147483647,
 };
-pub const VideoH264DisableDeblockingFilterIdcFlags = PES(VideoH264DisableDeblockingFilterIdc);
+pub const VideoH264DisableDeblockingFilterIdcFlags = EES(VideoH264DisableDeblockingFilterIdc);
 pub const VideoH264SliceType = enum(u32) {
     p = 0,
     b = 1,
     i = 2,
     invalid = 2147483647,
 };
-pub const VideoH264SliceTypeFlags = PES(VideoH264SliceType);
+pub const VideoH264SliceTypeFlags = EES(VideoH264SliceType);
 pub const VideoH264PictureType = enum(u32) {
     p = 0,
     b = 1,
@@ -7444,7 +7445,7 @@ pub const VideoH264PictureType = enum(u32) {
     idr = 5,
     invalid = 2147483647,
 };
-pub const VideoH264PictureTypeFlags = PES(VideoH264PictureType);
+pub const VideoH264PictureTypeFlags = EES(VideoH264PictureType);
 pub const VideoH264NonVclNaluType = enum(u32) {
     sps = 0,
     pps = 1,
@@ -7455,7 +7456,7 @@ pub const VideoH264NonVclNaluType = enum(u32) {
     precoded = 6,
     invalid = 2147483647,
 };
-pub const VideoH264NonVclNaluTypeFlags = PES(VideoH264NonVclNaluType);
+pub const VideoH264NonVclNaluTypeFlags = EES(VideoH264NonVclNaluType);
 pub const VideoH264SpsVuiFlags = enum(isize) {
     null = 0,
     _,
@@ -7653,7 +7654,7 @@ pub const VideoEncodeH264CapabilityFlagBitsKHR = enum(u32) {
     mb_qp_diff_wraparound_bit = 512,
     max_enum = 2147483647,
 };
-pub const VideoEncodeH264CapabilityFlagsKHR = PES(VideoEncodeH264CapabilityFlagBitsKHR);
+pub const VideoEncodeH264CapabilityFlagsKHR = EES(VideoEncodeH264CapabilityFlagBitsKHR);
 pub const VideoEncodeH264StdFlagBitsKHR = enum(u32) {
     separate_color_plane_set_bit = 1,
     qpprime_y_zero_transform_bypass_set_bit = 2,
@@ -7677,7 +7678,7 @@ pub const VideoEncodeH264StdFlagBitsKHR = enum(u32) {
     different_slice_qp_delta_bit = 1048576,
     max_enum = 2147483647,
 };
-pub const VideoEncodeH264StdFlagsKHR = PES(VideoEncodeH264StdFlagBitsKHR);
+pub const VideoEncodeH264StdFlagsKHR = EES(VideoEncodeH264StdFlagBitsKHR);
 pub const VideoEncodeH264RateControlFlagBitsKHR = enum(u32) {
     attempt_hrd_compliance_bit = 1,
     regular_gop_bit = 2,
@@ -7686,7 +7687,7 @@ pub const VideoEncodeH264RateControlFlagBitsKHR = enum(u32) {
     temporal_layer_pattern_dyadic_bit = 16,
     max_enum = 2147483647,
 };
-pub const VideoEncodeH264RateControlFlagsKHR = PES(VideoEncodeH264RateControlFlagBitsKHR);
+pub const VideoEncodeH264RateControlFlagsKHR = EES(VideoEncodeH264RateControlFlagBitsKHR);
 pub const VideoEncodeH264CapabilitiesKHR = extern struct {
     s_type: StructureType = .video_encode_h264_capabilities_khr,
     p_next: ?*anyopaque = null,
@@ -7820,7 +7821,7 @@ pub const VideoH265ChromaFormatIdc = enum(u32) {
     @"444" = 3,
     invalid = 2147483647,
 };
-pub const VideoH265ChromaFormatIdcFlags = PES(VideoH265ChromaFormatIdc);
+pub const VideoH265ChromaFormatIdcFlags = EES(VideoH265ChromaFormatIdc);
 pub const VideoH265ProfileIdc = enum(u32) {
     main = 1,
     main_10 = 2,
@@ -7829,7 +7830,7 @@ pub const VideoH265ProfileIdc = enum(u32) {
     scc_extensions = 9,
     invalid = 2147483647,
 };
-pub const VideoH265ProfileIdcFlags = PES(VideoH265ProfileIdc);
+pub const VideoH265ProfileIdcFlags = EES(VideoH265ProfileIdc);
 pub const VideoH265LevelIdc = enum(u32) {
     @"1_0" = 0,
     @"2_0" = 1,
@@ -7846,14 +7847,14 @@ pub const VideoH265LevelIdc = enum(u32) {
     @"6_2" = 12,
     invalid = 2147483647,
 };
-pub const VideoH265LevelIdcFlags = PES(VideoH265LevelIdc);
+pub const VideoH265LevelIdcFlags = EES(VideoH265LevelIdc);
 pub const VideoH265SliceType = enum(u32) {
     b = 0,
     p = 1,
     i = 2,
     invalid = 2147483647,
 };
-pub const VideoH265SliceTypeFlags = PES(VideoH265SliceType);
+pub const VideoH265SliceTypeFlags = EES(VideoH265SliceType);
 pub const VideoH265PictureType = enum(u32) {
     p = 0,
     b = 1,
@@ -7861,7 +7862,7 @@ pub const VideoH265PictureType = enum(u32) {
     idr = 3,
     invalid = 2147483647,
 };
-pub const VideoH265PictureTypeFlags = PES(VideoH265PictureType);
+pub const VideoH265PictureTypeFlags = EES(VideoH265PictureType);
 pub const VideoH265AspectRatioIdc = enum(u32) {
     unspecified = 0,
     square = 1,
@@ -7883,7 +7884,7 @@ pub const VideoH265AspectRatioIdc = enum(u32) {
     extended_sar = 255,
     invalid = 2147483647,
 };
-pub const VideoH265AspectRatioIdcFlags = PES(VideoH265AspectRatioIdc);
+pub const VideoH265AspectRatioIdcFlags = EES(VideoH265AspectRatioIdc);
 pub const VideoH265DecPicBufMgr = extern struct {
     max_latency_increase_plus1: [7]u32 = @import("std").mem.zeroes([7]u32),
     max_dec_pic_buffering_minus1: [7]u8 = @import("std").mem.zeroes([7]u8),
@@ -8203,7 +8204,7 @@ pub const VideoEncodeH265CapabilityFlagBitsKHR = enum(u32) {
     cu_qp_diff_wraparound_bit = 1024,
     max_enum = 2147483647,
 };
-pub const VideoEncodeH265CapabilityFlagsKHR = PES(VideoEncodeH265CapabilityFlagBitsKHR);
+pub const VideoEncodeH265CapabilityFlagsKHR = EES(VideoEncodeH265CapabilityFlagBitsKHR);
 pub const VideoEncodeH265StdFlagBitsKHR = enum(u32) {
     separate_color_plane_set_bit = 1,
     sample_adaptive_offset_enabled_set_bit = 2,
@@ -8228,14 +8229,14 @@ pub const VideoEncodeH265StdFlagBitsKHR = enum(u32) {
     different_slice_qp_delta_bit = 1048576,
     max_enum = 2147483647,
 };
-pub const VideoEncodeH265StdFlagsKHR = PES(VideoEncodeH265StdFlagBitsKHR);
+pub const VideoEncodeH265StdFlagsKHR = EES(VideoEncodeH265StdFlagBitsKHR);
 pub const VideoEncodeH265CtbSizeFlagBitsKHR = enum(u32) {
     @"16_bit" = 1,
     @"32_bit" = 2,
     @"64_bit" = 4,
     max_enum = 2147483647,
 };
-pub const VideoEncodeH265CtbSizeFlagsKHR = PES(VideoEncodeH265CtbSizeFlagBitsKHR);
+pub const VideoEncodeH265CtbSizeFlagsKHR = EES(VideoEncodeH265CtbSizeFlagBitsKHR);
 pub const VideoEncodeH265TransformBlockSizeFlagBitsKHR = enum(u32) {
     @"4_bit" = 1,
     @"8_bit" = 2,
@@ -8243,7 +8244,7 @@ pub const VideoEncodeH265TransformBlockSizeFlagBitsKHR = enum(u32) {
     @"32_bit" = 8,
     max_enum = 2147483647,
 };
-pub const VideoEncodeH265TransformBlockSizeFlagsKHR = PES(VideoEncodeH265TransformBlockSizeFlagBitsKHR);
+pub const VideoEncodeH265TransformBlockSizeFlagsKHR = EES(VideoEncodeH265TransformBlockSizeFlagBitsKHR);
 pub const VideoEncodeH265RateControlFlagBitsKHR = enum(u32) {
     attempt_hrd_compliance_bit = 1,
     regular_gop_bit = 2,
@@ -8252,7 +8253,7 @@ pub const VideoEncodeH265RateControlFlagBitsKHR = enum(u32) {
     temporal_sub_layer_pattern_dyadic_bit = 16,
     max_enum = 2147483647,
 };
-pub const VideoEncodeH265RateControlFlagsKHR = PES(VideoEncodeH265RateControlFlagBitsKHR);
+pub const VideoEncodeH265RateControlFlagsKHR = EES(VideoEncodeH265RateControlFlagBitsKHR);
 pub const VideoEncodeH265CapabilitiesKHR = extern struct {
     s_type: StructureType = .video_encode_h265_capabilities_khr,
     p_next: ?*anyopaque = null,
@@ -8391,7 +8392,7 @@ pub const VideoDecodeH264FieldOrderCount = enum(u32) {
     bottom = 1,
     invalid = 2147483647,
 };
-pub const VideoDecodeH264FieldOrderCountFlags = PES(VideoDecodeH264FieldOrderCount);
+pub const VideoDecodeH264FieldOrderCountFlags = EES(VideoDecodeH264FieldOrderCount);
 pub const VideoDecodeH264PictureInfoFlags = enum(isize) {
     null = 0,
     _,
@@ -8422,7 +8423,7 @@ pub const VideoDecodeH264PictureLayoutFlagBitsKHR = enum(u32) {
     interlaced_separate_planes_bit = 2,
     max_enum = 2147483647,
 };
-pub const VideoDecodeH264PictureLayoutFlagsKHR = PES(VideoDecodeH264PictureLayoutFlagBitsKHR);
+pub const VideoDecodeH264PictureLayoutFlagsKHR = EES(VideoDecodeH264PictureLayoutFlagBitsKHR);
 pub const VideoDecodeH264ProfileInfoKHR = extern struct {
     s_type: StructureType = .video_decode_h264_profile_info_khr,
     p_next: ?*const anyopaque = null,
@@ -8757,14 +8758,14 @@ pub const PerformanceCounterUnitKHR = enum(u32) {
     cycles = 10,
     max_enum = 2147483647,
 };
-pub const PerformanceCounterUnitKHRFlags = PES(PerformanceCounterUnitKHR);
+pub const PerformanceCounterUnitKHRFlags = EES(PerformanceCounterUnitKHR);
 pub const PerformanceCounterScopeKHR = enum(u32) {
     command_buffer = 0,
     render_pass = 1,
     command = 2,
     max_enum = 2147483647,
 };
-pub const PerformanceCounterScopeKHRFlags = PES(PerformanceCounterScopeKHR);
+pub const PerformanceCounterScopeKHRFlags = EES(PerformanceCounterScopeKHR);
 pub const PerformanceCounterStorageKHR = enum(u32) {
     int32 = 0,
     int64 = 1,
@@ -8774,17 +8775,17 @@ pub const PerformanceCounterStorageKHR = enum(u32) {
     float64 = 5,
     max_enum = 2147483647,
 };
-pub const PerformanceCounterStorageKHRFlags = PES(PerformanceCounterStorageKHR);
+pub const PerformanceCounterStorageKHRFlags = EES(PerformanceCounterStorageKHR);
 pub const PerformanceCounterDescriptionFlagBitsKHR = enum(u32) {
     performance_impacting_bit = 1,
     concurrently_impacted_bit = 2,
     max_enum = 2147483647,
 };
-pub const PerformanceCounterDescriptionFlagsKHR = PES(PerformanceCounterDescriptionFlagBitsKHR);
+pub const PerformanceCounterDescriptionFlagsKHR = EES(PerformanceCounterDescriptionFlagBitsKHR);
 pub const AcquireProfilingLockFlagBitsKHR = enum(u32) {
     max_enum = 2147483647,
 };
-pub const AcquireProfilingLockFlagsKHR = PES(AcquireProfilingLockFlagBitsKHR);
+pub const AcquireProfilingLockFlagsKHR = EES(AcquireProfilingLockFlagBitsKHR);
 pub const PhysicalDevicePerformanceQueryFeaturesKHR = extern struct {
     s_type: StructureType = .physical_device_performance_query_features_khr,
     p_next: ?*anyopaque = null,
@@ -9115,7 +9116,7 @@ pub const FragmentShadingRateCombinerOpKHR = enum(u32) {
     mul = 4,
     max_enum = 2147483647,
 };
-pub const FragmentShadingRateCombinerOpKHRFlags = PES(FragmentShadingRateCombinerOpKHR);
+pub const FragmentShadingRateCombinerOpKHRFlags = EES(FragmentShadingRateCombinerOpKHR);
 pub const FragmentShadingRateAttachmentInfoKHR = extern struct {
     s_type: StructureType = .fragment_shading_rate_attachment_info_khr,
     p_next: ?*const anyopaque = null,
@@ -9259,7 +9260,7 @@ pub const PipelineExecutableStatisticFormatKHR = enum(u32) {
     float64 = 3,
     max_enum = 2147483647,
 };
-pub const PipelineExecutableStatisticFormatKHRFlags = PES(PipelineExecutableStatisticFormatKHR);
+pub const PipelineExecutableStatisticFormatKHRFlags = EES(PipelineExecutableStatisticFormatKHR);
 pub const PhysicalDevicePipelineExecutablePropertiesFeaturesKHR = extern struct {
     s_type: StructureType = .physical_device_pipeline_executable_properties_features_khr,
     p_next: ?*anyopaque = null,
@@ -9358,14 +9359,14 @@ pub const VideoEncodeTuningModeKHR = enum(u32) {
     lossless = 4,
     max_enum = 2147483647,
 };
-pub const VideoEncodeTuningModeKHRFlags = PES(VideoEncodeTuningModeKHR);
+pub const VideoEncodeTuningModeKHRFlags = EES(VideoEncodeTuningModeKHR);
 pub const VideoEncodeFlagBitsKHR = enum(u32) {
     intra_refresh_bit = 4,
     with_quantization_delta_map_bit = 1,
     with_emphasis_map_bit = 2,
     max_enum = 2147483647,
 };
-pub const VideoEncodeFlagsKHR = PES(VideoEncodeFlagBitsKHR);
+pub const VideoEncodeFlagsKHR = EES(VideoEncodeFlagBitsKHR);
 pub const VideoEncodeCapabilityFlagBitsKHR = enum(u32) {
     preceding_externally_encoded_bytes_bit = 1,
     insufficient_bitstream_buffer_range_detection_bit = 2,
@@ -9373,7 +9374,7 @@ pub const VideoEncodeCapabilityFlagBitsKHR = enum(u32) {
     emphasis_map_bit = 8,
     max_enum = 2147483647,
 };
-pub const VideoEncodeCapabilityFlagsKHR = PES(VideoEncodeCapabilityFlagBitsKHR);
+pub const VideoEncodeCapabilityFlagsKHR = EES(VideoEncodeCapabilityFlagBitsKHR);
 pub const VideoEncodeRateControlModeFlagBitsKHR = enum(u32) {
     default = 0,
     disabled_bit = 1,
@@ -9381,14 +9382,14 @@ pub const VideoEncodeRateControlModeFlagBitsKHR = enum(u32) {
     vbr_bit = 4,
     max_enum = 2147483647,
 };
-pub const VideoEncodeRateControlModeFlagsKHR = PES(VideoEncodeRateControlModeFlagBitsKHR);
+pub const VideoEncodeRateControlModeFlagsKHR = EES(VideoEncodeRateControlModeFlagBitsKHR);
 pub const VideoEncodeFeedbackFlagBitsKHR = enum(u32) {
     bitstream_buffer_offset_bit = 1,
     bitstream_bytes_written_bit = 2,
     bitstream_has_overrides_bit = 4,
     max_enum = 2147483647,
 };
-pub const VideoEncodeFeedbackFlagsKHR = PES(VideoEncodeFeedbackFlagBitsKHR);
+pub const VideoEncodeFeedbackFlagsKHR = EES(VideoEncodeFeedbackFlagBitsKHR);
 pub const VideoEncodeUsageFlagBitsKHR = enum(u32) {
     default = 0,
     transcoding_bit = 1,
@@ -9397,7 +9398,7 @@ pub const VideoEncodeUsageFlagBitsKHR = enum(u32) {
     conferencing_bit = 8,
     max_enum = 2147483647,
 };
-pub const VideoEncodeUsageFlagsKHR = PES(VideoEncodeUsageFlagBitsKHR);
+pub const VideoEncodeUsageFlagsKHR = EES(VideoEncodeUsageFlagBitsKHR);
 pub const VideoEncodeContentFlagBitsKHR = enum(u32) {
     default = 0,
     camera_bit = 1,
@@ -9405,7 +9406,7 @@ pub const VideoEncodeContentFlagBitsKHR = enum(u32) {
     rendered_bit = 4,
     max_enum = 2147483647,
 };
-pub const VideoEncodeContentFlagsKHR = PES(VideoEncodeContentFlagBitsKHR);
+pub const VideoEncodeContentFlagsKHR = EES(VideoEncodeContentFlagBitsKHR);
 pub const VideoEncodeRateControlFlagsKHR = Flags;
 pub const VideoEncodeInfoKHR = extern struct {
     s_type: StructureType = .video_encode_info_khr,
@@ -9814,14 +9815,14 @@ pub const PresentScalingFlagBitsKHR = enum(u32) {
     stretch_bit = 4,
     max_enum = 2147483647,
 };
-pub const PresentScalingFlagsKHR = PES(PresentScalingFlagBitsKHR);
+pub const PresentScalingFlagsKHR = EES(PresentScalingFlagBitsKHR);
 pub const PresentGravityFlagBitsKHR = enum(u32) {
     min_bit = 1,
     max_bit = 2,
     centered_bit = 4,
     max_enum = 2147483647,
 };
-pub const PresentGravityFlagsKHR = PES(PresentGravityFlagBitsKHR);
+pub const PresentGravityFlagsKHR = EES(PresentGravityFlagBitsKHR);
 pub const SurfacePresentModeKHR = extern struct {
     s_type: StructureType = .surface_present_mode_khr,
     p_next: ?*anyopaque = null,
@@ -9901,7 +9902,7 @@ pub const ComponentTypeKHR = enum(u32) {
     float8_e4m3_ext = 1000491002,
     max_enum = 2147483647,
 };
-pub const ComponentTypeKHRFlags = PES(ComponentTypeKHR);
+pub const ComponentTypeKHRFlags = EES(ComponentTypeKHR);
 pub const ScopeKHR = enum(u32) {
     device = 1,
     workgroup = 2,
@@ -9909,7 +9910,7 @@ pub const ScopeKHR = enum(u32) {
     queue_family = 5,
     max_enum = 2147483647,
 };
-pub const ScopeKHRFlags = PES(ScopeKHR);
+pub const ScopeKHRFlags = EES(ScopeKHR);
 pub const CooperativeMatrixPropertiesKHR = extern struct {
     s_type: StructureType = .cooperative_matrix_properties_khr,
     p_next: ?*anyopaque = null,
@@ -9955,7 +9956,7 @@ pub const VideoAV1Profile = enum(u32) {
     av1_profile_professional = 2,
     av1_profile_invalid = 2147483647,
 };
-pub const VideoAV1ProfileFlags = PES(VideoAV1Profile);
+pub const VideoAV1ProfileFlags = EES(VideoAV1Profile);
 pub const VideoAV1Level = enum(u32) {
     av1_level_3_0 = 4,
     av1_level_3_1 = 5,
@@ -9974,7 +9975,7 @@ pub const VideoAV1Level = enum(u32) {
     av1_level_7_3 = 23,
     av1_level_invalid = 2147483647,
 };
-pub const VideoAV1LevelFlags = PES(VideoAV1Level);
+pub const VideoAV1LevelFlags = EES(VideoAV1Level);
 pub const VideoAV1FrameType = enum(u32) {
     av1_frame_key = 0,
     av1_frame_inter = 1,
@@ -9982,7 +9983,7 @@ pub const VideoAV1FrameType = enum(u32) {
     av1_frame_switch = 3,
     av1_frame_invalid = 2147483647,
 };
-pub const VideoAV1FrameTypeFlags = PES(VideoAV1FrameType);
+pub const VideoAV1FrameTypeFlags = EES(VideoAV1FrameType);
 pub const VideoAV1ReferenceName = enum(u32) {
     av1_reference_intra_frame = 0,
     av1_reference_last_frame = 1,
@@ -9992,7 +9993,7 @@ pub const VideoAV1ReferenceName = enum(u32) {
     av1_reference_altref_frame = 7,
     av1_reference_invalid = 2147483647,
 };
-pub const VideoAV1ReferenceNameFlags = PES(VideoAV1ReferenceName);
+pub const VideoAV1ReferenceNameFlags = EES(VideoAV1ReferenceName);
 pub const VideoAV1InterpolationFilter = enum(u32) {
     av1_interpolation_eighttap = 0,
     av1_interpolation_eighttap_smooth = 1,
@@ -10001,14 +10002,14 @@ pub const VideoAV1InterpolationFilter = enum(u32) {
     av1_interpolation_switchable = 4,
     av1_interpolation_invalid = 2147483647,
 };
-pub const VideoAV1InterpolationFilterFlags = PES(VideoAV1InterpolationFilter);
+pub const VideoAV1InterpolationFilterFlags = EES(VideoAV1InterpolationFilter);
 pub const VideoAV1TxMode = enum(u32) {
     av1_tx_only_4x4 = 0,
     av1_tx_largest = 1,
     av1_tx_select = 2,
     av1_tx_invalid = 2147483647,
 };
-pub const VideoAV1TxModeFlags = PES(VideoAV1TxMode);
+pub const VideoAV1TxModeFlags = EES(VideoAV1TxMode);
 pub const VideoAV1FrameRestorationType = enum(u32) {
     av1_frame_none = 0,
     av1_frame_wiener = 1,
@@ -10016,7 +10017,7 @@ pub const VideoAV1FrameRestorationType = enum(u32) {
     av1_frame_switchable = 3,
     av1_frame_invalid = 2147483647,
 };
-pub const VideoAV1FrameRestorationTypeFlags = PES(VideoAV1FrameRestorationType);
+pub const VideoAV1FrameRestorationTypeFlags = EES(VideoAV1FrameRestorationType);
 pub const VideoAV1ColorPrimaries = enum(u32) {
     av1_color_bt_709 = 1,
     av1_color_unspecified = 2,
@@ -10032,7 +10033,7 @@ pub const VideoAV1ColorPrimaries = enum(u32) {
     av1_color_ebu_3213 = 22,
     av1_color_invalid = 2147483647,
 };
-pub const VideoAV1ColorPrimariesFlags = PES(VideoAV1ColorPrimaries);
+pub const VideoAV1ColorPrimariesFlags = EES(VideoAV1ColorPrimaries);
 pub const VideoAV1TransferCharacteristics = enum(u32) {
     av1_transfer_reserved_0 = 0,
     av1_transfer_bt_709 = 1,
@@ -10055,7 +10056,7 @@ pub const VideoAV1TransferCharacteristics = enum(u32) {
     av1_transfer_hlg = 18,
     av1_transfer_invalid = 2147483647,
 };
-pub const VideoAV1TransferCharacteristicsFlags = PES(VideoAV1TransferCharacteristics);
+pub const VideoAV1TransferCharacteristicsFlags = EES(VideoAV1TransferCharacteristics);
 pub const VideoAV1MatrixCoefficients = enum(u32) {
     av1_matrix_identity = 0,
     av1_matrix_bt_709 = 1,
@@ -10074,7 +10075,7 @@ pub const VideoAV1MatrixCoefficients = enum(u32) {
     av1_matrix_ictcp = 14,
     av1_matrix_invalid = 2147483647,
 };
-pub const VideoAV1MatrixCoefficientsFlags = PES(VideoAV1MatrixCoefficients);
+pub const VideoAV1MatrixCoefficientsFlags = EES(VideoAV1MatrixCoefficients);
 pub const VideoAV1ChromaSamplePosition = enum(u32) {
     av1_chroma_unknown = 0,
     av1_chroma_vertical = 1,
@@ -10082,7 +10083,7 @@ pub const VideoAV1ChromaSamplePosition = enum(u32) {
     av1_chroma_reserved = 3,
     av1_chroma_invalid = 2147483647,
 };
-pub const VideoAV1ChromaSamplePositionFlags = PES(VideoAV1ChromaSamplePosition);
+pub const VideoAV1ChromaSamplePositionFlags = EES(VideoAV1ChromaSamplePosition);
 pub const VideoAV1ColorConfigFlags = enum(isize) {
     null = 0,
     _,
@@ -10372,14 +10373,14 @@ pub const VideoEncodeAV1PredictionModeKHR = enum(u32) {
     av1_prediction_bidirectional_compound = 3,
     av1_prediction_max_enum = 2147483647,
 };
-pub const VideoEncodeAV1PredictionModeKHRFlags = PES(VideoEncodeAV1PredictionModeKHR);
+pub const VideoEncodeAV1PredictionModeKHRFlags = EES(VideoEncodeAV1PredictionModeKHR);
 pub const VideoEncodeAV1RateControlGroupKHR = enum(u32) {
     av1_rate_intra = 0,
     av1_rate_predictive = 1,
     av1_rate_bipredictive = 2,
     av1_rate_max_enum = 2147483647,
 };
-pub const VideoEncodeAV1RateControlGroupKHRFlags = PES(VideoEncodeAV1RateControlGroupKHR);
+pub const VideoEncodeAV1RateControlGroupKHRFlags = EES(VideoEncodeAV1RateControlGroupKHR);
 pub const VideoEncodeAV1CapabilityFlagBitsKHR = enum(u32) {
     av1_capability_per_rate_control_group_min_max_q_index_bit = 1,
     av1_capability_generate_obu_extension_header_bit = 2,
@@ -10389,7 +10390,7 @@ pub const VideoEncodeAV1CapabilityFlagBitsKHR = enum(u32) {
     av1_capability_compound_prediction_intra_refresh_bit = 32,
     av1_capability_max_enum = 2147483647,
 };
-pub const VideoEncodeAV1CapabilityFlagsKHR = PES(VideoEncodeAV1CapabilityFlagBitsKHR);
+pub const VideoEncodeAV1CapabilityFlagsKHR = EES(VideoEncodeAV1CapabilityFlagBitsKHR);
 pub const VideoEncodeAV1StdFlagBitsKHR = enum(u32) {
     av1_std_uniform_tile_spacing_set_bit = 1,
     av1_std_skip_mode_present_unset_bit = 2,
@@ -10397,13 +10398,13 @@ pub const VideoEncodeAV1StdFlagBitsKHR = enum(u32) {
     av1_std_delta_q_bit = 8,
     av1_std_max_enum = 2147483647,
 };
-pub const VideoEncodeAV1StdFlagsKHR = PES(VideoEncodeAV1StdFlagBitsKHR);
+pub const VideoEncodeAV1StdFlagsKHR = EES(VideoEncodeAV1StdFlagBitsKHR);
 pub const VideoEncodeAV1SuperblockSizeFlagBitsKHR = enum(u32) {
     av1_superblock_64_bit = 1,
     av1_superblock_128_bit = 2,
     av1_superblock_max_enum = 2147483647,
 };
-pub const VideoEncodeAV1SuperblockSizeFlagsKHR = PES(VideoEncodeAV1SuperblockSizeFlagBitsKHR);
+pub const VideoEncodeAV1SuperblockSizeFlagsKHR = EES(VideoEncodeAV1SuperblockSizeFlagBitsKHR);
 pub const VideoEncodeAV1RateControlFlagBitsKHR = enum(u32) {
     av1_rate_regular_gop_bit = 1,
     av1_rate_temporal_layer_pattern_dyadic_bit = 2,
@@ -10411,7 +10412,7 @@ pub const VideoEncodeAV1RateControlFlagBitsKHR = enum(u32) {
     av1_rate_reference_pattern_dyadic_bit = 8,
     av1_rate_max_enum = 2147483647,
 };
-pub const VideoEncodeAV1RateControlFlagsKHR = PES(VideoEncodeAV1RateControlFlagBitsKHR);
+pub const VideoEncodeAV1RateControlFlagsKHR = EES(VideoEncodeAV1RateControlFlagBitsKHR);
 pub const PhysicalDeviceVideoEncodeAV1FeaturesKHR = extern struct {
     s_type: StructureType = .physical_device_video_encode_av1features_khr,
     p_next: ?*anyopaque = null,
@@ -10542,7 +10543,7 @@ pub const VideoVP9Profile = enum(u32) {
     vp9_profile_3 = 3,
     vp9_profile_invalid = 2147483647,
 };
-pub const VideoVP9ProfileFlags = PES(VideoVP9Profile);
+pub const VideoVP9ProfileFlags = EES(VideoVP9Profile);
 pub const VideoVP9Level = enum(u32) {
     vp9_level_1_0 = 0,
     vp9_level_1_1 = 1,
@@ -10556,13 +10557,13 @@ pub const VideoVP9Level = enum(u32) {
     vp9_level_6_1 = 12,
     vp9_level_invalid = 2147483647,
 };
-pub const VideoVP9LevelFlags = PES(VideoVP9Level);
+pub const VideoVP9LevelFlags = EES(VideoVP9Level);
 pub const VideoVP9FrameType = enum(u32) {
     vp9_frame_key = 0,
     vp9_frame_non_key = 1,
     vp9_frame_invalid = 2147483647,
 };
-pub const VideoVP9FrameTypeFlags = PES(VideoVP9FrameType);
+pub const VideoVP9FrameTypeFlags = EES(VideoVP9FrameType);
 pub const VideoVP9ReferenceName = enum(u32) {
     vp9_reference_intra_frame = 0,
     vp9_reference_last_frame = 1,
@@ -10570,7 +10571,7 @@ pub const VideoVP9ReferenceName = enum(u32) {
     vp9_reference_altref_frame = 3,
     vp9_reference_invalid = 2147483647,
 };
-pub const VideoVP9ReferenceNameFlags = PES(VideoVP9ReferenceName);
+pub const VideoVP9ReferenceNameFlags = EES(VideoVP9ReferenceName);
 pub const VideoVP9InterpolationFilter = enum(u32) {
     vp9_interpolation_eighttap = 0,
     vp9_interpolation_eighttap_smooth = 1,
@@ -10579,7 +10580,7 @@ pub const VideoVP9InterpolationFilter = enum(u32) {
     vp9_interpolation_switchable = 4,
     vp9_interpolation_invalid = 2147483647,
 };
-pub const VideoVP9InterpolationFilterFlags = PES(VideoVP9InterpolationFilter);
+pub const VideoVP9InterpolationFilterFlags = EES(VideoVP9InterpolationFilter);
 pub const VideoVP9ColorSpace = enum(u32) {
     vp9_color_unknown = 0,
     vp9_color_bt_601 = 1,
@@ -10591,7 +10592,7 @@ pub const VideoVP9ColorSpace = enum(u32) {
     vp9_color_rgb = 7,
     vp9_color_invalid = 2147483647,
 };
-pub const VideoVP9ColorSpaceFlags = PES(VideoVP9ColorSpace);
+pub const VideoVP9ColorSpaceFlags = EES(VideoVP9ColorSpace);
 pub const VideoVP9ColorConfigFlags = enum(isize) {
     null = 0,
     _,
@@ -10720,7 +10721,7 @@ pub const TimeDomainKHR = enum(u32) {
     query_performance_counter = 3,
     max_enum = 2147483647,
 };
-pub const TimeDomainKHRFlags = PES(TimeDomainKHR);
+pub const TimeDomainKHRFlags = EES(TimeDomainKHR);
 pub const CalibratedTimestampInfoKHR = extern struct {
     s_type: StructureType = .calibrated_timestamp_info_khr,
     p_next: ?*const anyopaque = null,
@@ -10791,7 +10792,7 @@ pub const VideoEncodeIntraRefreshModeFlagBitsKHR = enum(u32) {
     block_column_based_bit = 8,
     max_enum = 2147483647,
 };
-pub const VideoEncodeIntraRefreshModeFlagsKHR = PES(VideoEncodeIntraRefreshModeFlagBitsKHR);
+pub const VideoEncodeIntraRefreshModeFlagsKHR = EES(VideoEncodeIntraRefreshModeFlagBitsKHR);
 pub const VideoEncodeIntraRefreshCapabilitiesKHR = extern struct {
     s_type: StructureType = .video_encode_intra_refresh_capabilities_khr,
     p_next: ?*anyopaque = null,
@@ -10889,7 +10890,7 @@ pub const PhysicalDeviceLayeredApiKHR = enum(u32) {
     opengles = 4,
     max_enum = 2147483647,
 };
-pub const PhysicalDeviceLayeredApiKHRFlags = PES(PhysicalDeviceLayeredApiKHR);
+pub const PhysicalDeviceLayeredApiKHRFlags = EES(PhysicalDeviceLayeredApiKHR);
 pub const PhysicalDeviceMaintenance7FeaturesKHR = extern struct {
     s_type: StructureType = .physical_device_maintenance7features_khr,
     p_next: ?*anyopaque = null,
@@ -10944,7 +10945,7 @@ pub const DefaultVertexAttributeValueKHR = enum(u32) {
     zero_zero_zero_one = 1,
     max_enum = 2147483647,
 };
-pub const DefaultVertexAttributeValueKHRFlags = PES(DefaultVertexAttributeValueKHR);
+pub const DefaultVertexAttributeValueKHRFlags = EES(DefaultVertexAttributeValueKHR);
 pub const PhysicalDeviceMaintenance9FeaturesKHR = extern struct {
     s_type: StructureType = .physical_device_maintenance9features_khr,
     p_next: ?*anyopaque = null,
@@ -11055,7 +11056,7 @@ pub const DebugReportObjectTypeEXT = enum(u32) {
     buffer_collection_fuchsia = 1000366000,
     max_enum = 2147483647,
 };
-pub const DebugReportObjectTypeEXTFlags = PES(DebugReportObjectTypeEXT);
+pub const DebugReportObjectTypeEXTFlags = EES(DebugReportObjectTypeEXT);
 pub const DebugReportFlagBitsEXT = enum(u32) {
     information_bit = 1,
     warning_bit = 2,
@@ -11064,7 +11065,7 @@ pub const DebugReportFlagBitsEXT = enum(u32) {
     debug_bit = 16,
     max_enum = 2147483647,
 };
-pub const DebugReportFlagBitsEXTFlags = PES(DebugReportFlagBitsEXT);
+pub const DebugReportFlagBitsEXTFlags = EES(DebugReportFlagBitsEXT);
 pub const DebugReportFlagsEXT = Flags;
 const PFN_vkDebugReportCallbackEXT = ?*const fn (DebugReportFlagsEXT, DebugReportObjectTypeEXT, u64, usize, i32, [*c]const u8, [*c]const u8, ?*anyopaque) callconv(.c) Bool32;
 pub const PFN_debugReportCallbackEXT = PFN_vkDebugReportCallbackEXT;
@@ -11092,7 +11093,7 @@ pub const RasterizationOrderAMD = enum(u32) {
     relaxed = 1,
     max_enum = 2147483647,
 };
-pub const RasterizationOrderAMDFlags = PES(RasterizationOrderAMD);
+pub const RasterizationOrderAMDFlags = EES(RasterizationOrderAMD);
 pub const PipelineRasterizationStateRasterizationOrderAMD = extern struct {
     s_type: StructureType = .pipeline_rasterization_state_rasterization_order_amd,
     p_next: ?*const anyopaque = null,
@@ -11312,7 +11313,7 @@ pub const ShaderInfoTypeAMD = enum(u32) {
     disassembly = 2,
     max_enum = 2147483647,
 };
-pub const ShaderInfoTypeAMDFlags = PES(ShaderInfoTypeAMD);
+pub const ShaderInfoTypeAMDFlags = EES(ShaderInfoTypeAMD);
 pub const ShaderResourceUsageAMD = extern struct {
     num_used_vgprs: u32 = @import("std").mem.zeroes(u32),
     num_used_sgprs: u32 = @import("std").mem.zeroes(u32),
@@ -11345,7 +11346,7 @@ pub const ExternalMemoryHandleTypeFlagBitsNV = enum(u32) {
     d3d11_image_kmt_bit = 8,
     max_enum = 2147483647,
 };
-pub const ExternalMemoryHandleTypeFlagBitsNVFlags = PES(ExternalMemoryHandleTypeFlagBitsNV);
+pub const ExternalMemoryHandleTypeFlagBitsNVFlags = EES(ExternalMemoryHandleTypeFlagBitsNV);
 pub const ExternalMemoryHandleTypeFlagsNV = Flags;
 pub const ExternalMemoryFeatureFlagBitsNV = enum(u32) {
     dedicated_only_bit = 1,
@@ -11353,7 +11354,7 @@ pub const ExternalMemoryFeatureFlagBitsNV = enum(u32) {
     importable_bit = 4,
     max_enum = 2147483647,
 };
-pub const ExternalMemoryFeatureFlagBitsNVFlags = PES(ExternalMemoryFeatureFlagBitsNV);
+pub const ExternalMemoryFeatureFlagBitsNVFlags = EES(ExternalMemoryFeatureFlagBitsNV);
 pub const ExternalMemoryFeatureFlagsNV = Flags;
 pub const ExternalImageFormatPropertiesNV = extern struct {
     image_format_properties: ImageFormatProperties = @import("std").mem.zeroes(ImageFormatProperties),
@@ -11380,7 +11381,7 @@ pub const ValidationCheckEXT = enum(u32) {
     shaders = 1,
     max_enum = 2147483647,
 };
-pub const ValidationCheckEXTFlags = PES(ValidationCheckEXT);
+pub const ValidationCheckEXTFlags = EES(ValidationCheckEXT);
 pub const ValidationFlagsEXT = extern struct {
     s_type: StructureType = .validation_flags_ext,
     p_next: ?*const anyopaque = null,
@@ -11407,7 +11408,7 @@ pub const ConditionalRenderingFlagBitsEXT = enum(u32) {
     inverted_bit = 1,
     max_enum = 2147483647,
 };
-pub const ConditionalRenderingFlagBitsEXTFlags = PES(ConditionalRenderingFlagBitsEXT);
+pub const ConditionalRenderingFlagBitsEXTFlags = EES(ConditionalRenderingFlagBitsEXT);
 pub const ConditionalRenderingFlagsEXT = Flags;
 pub const ConditionalRenderingBeginInfoEXT = extern struct {
     s_type: StructureType = .conditional_rendering_begin_info_ext,
@@ -11458,7 +11459,7 @@ pub const SurfaceCounterFlagBitsEXT = enum(u32) {
     vblank_bit = 1,
     max_enum = 2147483647,
 };
-pub const SurfaceCounterFlagBitsEXTFlags = PES(SurfaceCounterFlagBitsEXT);
+pub const SurfaceCounterFlagBitsEXTFlags = EES(SurfaceCounterFlagBitsEXT);
 pub const SurfaceCounterFlagsEXT = Flags;
 pub const SurfaceCapabilities2EXT = extern struct {
     s_type: StructureType = .surface_capabilities2ext,
@@ -11485,17 +11486,17 @@ pub const DisplayPowerStateEXT = enum(u32) {
     on = 2,
     max_enum = 2147483647,
 };
-pub const DisplayPowerStateEXTFlags = PES(DisplayPowerStateEXT);
+pub const DisplayPowerStateEXTFlags = EES(DisplayPowerStateEXT);
 pub const DeviceEventTypeEXT = enum(u32) {
     display_hotplug = 0,
     max_enum = 2147483647,
 };
-pub const DeviceEventTypeEXTFlags = PES(DeviceEventTypeEXT);
+pub const DeviceEventTypeEXTFlags = EES(DeviceEventTypeEXT);
 pub const DisplayEventTypeEXT = enum(u32) {
     first_pixel_out = 0,
     max_enum = 2147483647,
 };
-pub const DisplayEventTypeEXTFlags = PES(DisplayEventTypeEXT);
+pub const DisplayEventTypeEXTFlags = EES(DisplayEventTypeEXT);
 pub const DisplayPowerInfoEXT = extern struct {
     s_type: StructureType = .display_power_info_ext,
     p_next: ?*const anyopaque = null,
@@ -11582,7 +11583,7 @@ pub const ViewportCoordinateSwizzleNV = enum(u32) {
     negative_w = 7,
     max_enum = 2147483647,
 };
-pub const ViewportCoordinateSwizzleNVFlags = PES(ViewportCoordinateSwizzleNV);
+pub const ViewportCoordinateSwizzleNVFlags = EES(ViewportCoordinateSwizzleNV);
 pub const PipelineViewportSwizzleStateCreateFlagsNV = Flags;
 pub const ViewportSwizzleNV = extern struct {
     x: ViewportCoordinateSwizzleNV = @import("std").mem.zeroes(ViewportCoordinateSwizzleNV),
@@ -11602,7 +11603,7 @@ pub const DiscardRectangleModeEXT = enum(u32) {
     exclusive = 1,
     max_enum = 2147483647,
 };
-pub const DiscardRectangleModeEXTFlags = PES(DiscardRectangleModeEXT);
+pub const DiscardRectangleModeEXTFlags = EES(DiscardRectangleModeEXT);
 pub const PipelineDiscardRectangleStateCreateFlagsEXT = Flags;
 pub const PhysicalDeviceDiscardRectanglePropertiesEXT = extern struct {
     s_type: StructureType = .physical_device_discard_rectangle_properties_ext,
@@ -11635,7 +11636,7 @@ pub const ConservativeRasterizationModeEXT = enum(u32) {
     underestimate = 2,
     max_enum = 2147483647,
 };
-pub const ConservativeRasterizationModeEXTFlags = PES(ConservativeRasterizationModeEXT);
+pub const ConservativeRasterizationModeEXTFlags = EES(ConservativeRasterizationModeEXT);
 pub const PipelineRasterizationConservativeStateCreateFlagsEXT = Flags;
 pub const PhysicalDeviceConservativeRasterizationPropertiesEXT = extern struct {
     s_type: StructureType = .physical_device_conservative_rasterization_properties_ext,
@@ -11706,7 +11707,7 @@ pub const DebugUtilsMessageSeverityFlagBitsEXT = enum(u32) {
     error_bit = 4096,
     max_enum = 2147483647,
 };
-pub const DebugUtilsMessageSeverityFlagBitsEXTFlags = PES(DebugUtilsMessageSeverityFlagBitsEXT);
+pub const DebugUtilsMessageSeverityFlagBitsEXTFlags = EES(DebugUtilsMessageSeverityFlagBitsEXT);
 pub const DebugUtilsMessageTypeFlagBitsEXT = enum(u32) {
     general_bit = 1,
     validation_bit = 2,
@@ -11714,7 +11715,7 @@ pub const DebugUtilsMessageTypeFlagBitsEXT = enum(u32) {
     device_address_binding_bit = 8,
     max_enum = 2147483647,
 };
-pub const DebugUtilsMessageTypeFlagBitsEXTFlags = PES(DebugUtilsMessageTypeFlagBitsEXT);
+pub const DebugUtilsMessageTypeFlagBitsEXTFlags = EES(DebugUtilsMessageTypeFlagBitsEXT);
 pub const DebugUtilsMessageTypeFlagsEXT = Flags;
 pub const DebugUtilsMessageSeverityFlagsEXT = Flags;
 pub const DebugUtilsMessengerCreateFlagsEXT = Flags;
@@ -11885,7 +11886,7 @@ pub const BlendOverlapEXT = enum(u32) {
     conjoint = 2,
     max_enum = 2147483647,
 };
-pub const BlendOverlapEXTFlags = PES(BlendOverlapEXT);
+pub const BlendOverlapEXTFlags = EES(BlendOverlapEXT);
 pub const PhysicalDeviceBlendOperationAdvancedFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_blend_operation_advanced_features_ext,
     p_next: ?*anyopaque = null,
@@ -11923,7 +11924,7 @@ pub const CoverageModulationModeNV = enum(u32) {
     rgba = 3,
     max_enum = 2147483647,
 };
-pub const CoverageModulationModeNVFlags = PES(CoverageModulationModeNV);
+pub const CoverageModulationModeNVFlags = EES(CoverageModulationModeNV);
 pub const PipelineCoverageModulationStateCreateFlagsNV = Flags;
 pub const PipelineCoverageModulationStateCreateInfoNV = extern struct {
     s_type: StructureType = .pipeline_coverage_modulation_state_create_info_nv,
@@ -12006,7 +12007,7 @@ pub const ValidationCacheHeaderVersionEXT = enum(u32) {
     one = 1,
     max_enum = 2147483647,
 };
-pub const ValidationCacheHeaderVersionEXTFlags = PES(ValidationCacheHeaderVersionEXT);
+pub const ValidationCacheHeaderVersionEXTFlags = EES(ValidationCacheHeaderVersionEXT);
 pub const ValidationCacheCreateFlagsEXT = Flags;
 pub const ValidationCacheCreateInfoEXT = extern struct {
     s_type: StructureType = .validation_cache_create_info_ext,
@@ -12052,7 +12053,7 @@ pub const ShadingRatePaletteEntryNV = enum(u32) {
     @"1_invocation_per_4x4_pixels" = 11,
     max_enum = 2147483647,
 };
-pub const ShadingRatePaletteEntryNVFlags = PES(ShadingRatePaletteEntryNV);
+pub const ShadingRatePaletteEntryNVFlags = EES(ShadingRatePaletteEntryNV);
 pub const CoarseSampleOrderTypeNV = enum(u32) {
     default = 0,
     custom = 1,
@@ -12060,7 +12061,7 @@ pub const CoarseSampleOrderTypeNV = enum(u32) {
     sample_major = 3,
     max_enum = 2147483647,
 };
-pub const CoarseSampleOrderTypeNVFlags = PES(CoarseSampleOrderTypeNV);
+pub const CoarseSampleOrderTypeNVFlags = EES(CoarseSampleOrderTypeNV);
 pub const ShadingRatePaletteNV = extern struct {
     shading_rate_palette_entry_count: u32 = @import("std").mem.zeroes(u32),
     p_shading_rate_palette_entries: [*c]const ShadingRatePaletteEntryNV = @import("std").mem.zeroes([*c]const ShadingRatePaletteEntryNV),
@@ -12125,7 +12126,7 @@ pub const RayTracingShaderGroupTypeKHR = enum(u32) {
     procedural_hit_group = 2,
     max_enum = 2147483647,
 };
-pub const RayTracingShaderGroupTypeKHRFlags = PES(RayTracingShaderGroupTypeKHR);
+pub const RayTracingShaderGroupTypeKHRFlags = EES(RayTracingShaderGroupTypeKHR);
 pub const RayTracingShaderGroupTypeNV = RayTracingShaderGroupTypeKHR;
 pub const GeometryTypeKHR = enum(u32) {
     triangles = 0,
@@ -12135,7 +12136,7 @@ pub const GeometryTypeKHR = enum(u32) {
     linear_swept_spheres_nv = 1000429005,
     max_enum = 2147483647,
 };
-pub const GeometryTypeKHRFlags = PES(GeometryTypeKHR);
+pub const GeometryTypeKHRFlags = EES(GeometryTypeKHR);
 pub const GeometryTypeNV = GeometryTypeKHR;
 pub const AccelerationStructureTypeKHR = enum(u32) {
     top_level = 0,
@@ -12143,7 +12144,7 @@ pub const AccelerationStructureTypeKHR = enum(u32) {
     generic = 2,
     max_enum = 2147483647,
 };
-pub const AccelerationStructureTypeKHRFlags = PES(AccelerationStructureTypeKHR);
+pub const AccelerationStructureTypeKHRFlags = EES(AccelerationStructureTypeKHR);
 pub const AccelerationStructureTypeNV = AccelerationStructureTypeKHR;
 pub const CopyAccelerationStructureModeKHR = enum(u32) {
     clone = 0,
@@ -12152,7 +12153,7 @@ pub const CopyAccelerationStructureModeKHR = enum(u32) {
     deserialize = 3,
     max_enum = 2147483647,
 };
-pub const CopyAccelerationStructureModeKHRFlags = PES(CopyAccelerationStructureModeKHR);
+pub const CopyAccelerationStructureModeKHRFlags = EES(CopyAccelerationStructureModeKHR);
 pub const CopyAccelerationStructureModeNV = CopyAccelerationStructureModeKHR;
 pub const AccelerationStructureMemoryRequirementsTypeNV = enum(u32) {
     object = 0,
@@ -12160,13 +12161,13 @@ pub const AccelerationStructureMemoryRequirementsTypeNV = enum(u32) {
     update_scratch = 2,
     max_enum = 2147483647,
 };
-pub const AccelerationStructureMemoryRequirementsTypeNVFlags = PES(AccelerationStructureMemoryRequirementsTypeNV);
+pub const AccelerationStructureMemoryRequirementsTypeNVFlags = EES(AccelerationStructureMemoryRequirementsTypeNV);
 pub const GeometryFlagBitsKHR = enum(u32) {
     opaque_bit = 1,
     no_duplicate_any_hit_invocation_bit = 2,
     max_enum = 2147483647,
 };
-pub const GeometryFlagsKHR = PES(GeometryFlagBitsKHR);
+pub const GeometryFlagsKHR = EES(GeometryFlagBitsKHR);
 pub const GeometryFlagsNV = GeometryFlagsKHR;
 pub const GeometryFlagBitsNV = GeometryFlagBitsKHR;
 pub const GeometryInstanceFlagBitsKHR = enum(u32) {
@@ -12177,7 +12178,7 @@ pub const GeometryInstanceFlagBitsKHR = enum(u32) {
     disable_opacity_micromaps_bit_ext = 32,
     max_enum = 2147483647,
 };
-pub const GeometryInstanceFlagsKHR = PES(GeometryInstanceFlagBitsKHR);
+pub const GeometryInstanceFlagsKHR = EES(GeometryInstanceFlagBitsKHR);
 pub const GeometryInstanceFlagsNV = GeometryInstanceFlagsKHR;
 pub const GeometryInstanceFlagBitsNV = GeometryInstanceFlagBitsKHR;
 pub const BuildAccelerationStructureFlagBitsKHR = enum(u32) {
@@ -12193,7 +12194,7 @@ pub const BuildAccelerationStructureFlagBitsKHR = enum(u32) {
     allow_data_access_bit = 2048,
     max_enum = 2147483647,
 };
-pub const BuildAccelerationStructureFlagsKHR = PES(BuildAccelerationStructureFlagBitsKHR);
+pub const BuildAccelerationStructureFlagsKHR = EES(BuildAccelerationStructureFlagBitsKHR);
 pub const BuildAccelerationStructureFlagsNV = BuildAccelerationStructureFlagsKHR;
 pub const BuildAccelerationStructureFlagBitsNV = BuildAccelerationStructureFlagBitsKHR;
 pub const RayTracingShaderGroupCreateInfoNV = extern struct {
@@ -12424,7 +12425,7 @@ pub const cmdWriteBufferMarker2AMD = vkCmdWriteBufferMarker2AMD;
 pub const PipelineCompilerControlFlagBitsAMD = enum(u32) {
     max_enum = 2147483647,
 };
-pub const PipelineCompilerControlFlagBitsAMDFlags = PES(PipelineCompilerControlFlagBitsAMD);
+pub const PipelineCompilerControlFlagBitsAMDFlags = EES(PipelineCompilerControlFlagBitsAMD);
 pub const PipelineCompilerControlFlagsAMD = Flags;
 pub const PipelineCompilerControlCreateInfoAMD = extern struct {
     s_type: StructureType = .pipeline_compiler_control_create_info_amd,
@@ -12465,7 +12466,7 @@ pub const MemoryOverallocationBehaviorAMD = enum(u32) {
     disallowed = 2,
     max_enum = 2147483647,
 };
-pub const MemoryOverallocationBehaviorAMDFlags = PES(MemoryOverallocationBehaviorAMD);
+pub const MemoryOverallocationBehaviorAMDFlags = EES(MemoryOverallocationBehaviorAMD);
 pub const DeviceMemoryOverallocationCreateInfoAMD = extern struct {
     s_type: StructureType = .device_memory_overallocation_create_info_amd,
     p_next: ?*const anyopaque = null,
@@ -12595,24 +12596,24 @@ pub const PerformanceConfigurationTypeINTEL = enum(u32) {
     command_queue_metrics_discovery_activated = 0,
     max_enum = 2147483647,
 };
-pub const PerformanceConfigurationTypeINTELFlags = PES(PerformanceConfigurationTypeINTEL);
+pub const PerformanceConfigurationTypeINTELFlags = EES(PerformanceConfigurationTypeINTEL);
 pub const QueryPoolSamplingModeINTEL = enum(u32) {
     manual = 0,
     max_enum = 2147483647,
 };
-pub const QueryPoolSamplingModeINTELFlags = PES(QueryPoolSamplingModeINTEL);
+pub const QueryPoolSamplingModeINTELFlags = EES(QueryPoolSamplingModeINTEL);
 pub const PerformanceOverrideTypeINTEL = enum(u32) {
     null_hardware = 0,
     flush_gpu_caches = 1,
     max_enum = 2147483647,
 };
-pub const PerformanceOverrideTypeINTELFlags = PES(PerformanceOverrideTypeINTEL);
+pub const PerformanceOverrideTypeINTELFlags = EES(PerformanceOverrideTypeINTEL);
 pub const PerformanceParameterTypeINTEL = enum(u32) {
     hw_counters_supported = 0,
     stream_marker_valid_bits = 1,
     max_enum = 2147483647,
 };
-pub const PerformanceParameterTypeINTELFlags = PES(PerformanceParameterTypeINTEL);
+pub const PerformanceParameterTypeINTELFlags = EES(PerformanceParameterTypeINTEL);
 pub const PerformanceValueTypeINTEL = enum(u32) {
     uint32 = 0,
     uint64 = 1,
@@ -12621,7 +12622,7 @@ pub const PerformanceValueTypeINTEL = enum(u32) {
     string = 4,
     max_enum = 2147483647,
 };
-pub const PerformanceValueTypeINTELFlags = PES(PerformanceValueTypeINTEL);
+pub const PerformanceValueTypeINTELFlags = EES(PerformanceValueTypeINTEL);
 pub const PerformanceValueDataINTEL = extern union {
     value32: u32,
     value64: u64,
@@ -12756,7 +12757,7 @@ pub const PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT = PipelineShaderS
 pub const ShaderCorePropertiesFlagBitsAMD = enum(u32) {
     max_enum = 2147483647,
 };
-pub const ShaderCorePropertiesFlagBitsAMDFlags = PES(ShaderCorePropertiesFlagBitsAMD);
+pub const ShaderCorePropertiesFlagBitsAMDFlags = EES(ShaderCorePropertiesFlagBitsAMD);
 pub const ShaderCorePropertiesFlagsAMD = Flags;
 pub const PhysicalDeviceShaderCoreProperties2AMD = extern struct {
     s_type: StructureType = .physical_device_shader_core_properties2amd,
@@ -12830,7 +12831,7 @@ pub const ValidationFeatureEnableEXT = enum(u32) {
     synchronization_validation = 4,
     max_enum = 2147483647,
 };
-pub const ValidationFeatureEnableEXTFlags = PES(ValidationFeatureEnableEXT);
+pub const ValidationFeatureEnableEXTFlags = EES(ValidationFeatureEnableEXT);
 pub const ValidationFeatureDisableEXT = enum(u32) {
     all = 0,
     shaders = 1,
@@ -12842,7 +12843,7 @@ pub const ValidationFeatureDisableEXT = enum(u32) {
     shader_validation_cache = 7,
     max_enum = 2147483647,
 };
-pub const ValidationFeatureDisableEXTFlags = PES(ValidationFeatureDisableEXT);
+pub const ValidationFeatureDisableEXTFlags = EES(ValidationFeatureDisableEXT);
 pub const ValidationFeaturesEXT = extern struct {
     s_type: StructureType = .validation_features_ext,
     p_next: ?*const anyopaque = null,
@@ -12885,7 +12886,7 @@ pub const CoverageReductionModeNV = enum(u32) {
     truncate = 1,
     max_enum = 2147483647,
 };
-pub const CoverageReductionModeNVFlags = PES(CoverageReductionModeNV);
+pub const CoverageReductionModeNVFlags = EES(CoverageReductionModeNV);
 pub const PipelineCoverageReductionStateCreateFlagsNV = Flags;
 pub const PhysicalDeviceCoverageReductionModeFeaturesNV = extern struct {
     s_type: StructureType = .physical_device_coverage_reduction_mode_features_nv,
@@ -12927,7 +12928,7 @@ pub const ProvokingVertexModeEXT = enum(u32) {
     last_vertex = 1,
     max_enum = 2147483647,
 };
-pub const ProvokingVertexModeEXTFlags = PES(ProvokingVertexModeEXT);
+pub const ProvokingVertexModeEXTFlags = EES(ProvokingVertexModeEXT);
 pub const PhysicalDeviceProvokingVertexFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_provoking_vertex_features_ext,
     p_next: ?*anyopaque = null,
@@ -13141,12 +13142,12 @@ pub const IndirectCommandsTokenTypeNV = enum(u32) {
     dispatch = 1000428004,
     max_enum = 2147483647,
 };
-pub const IndirectCommandsTokenTypeNVFlags = PES(IndirectCommandsTokenTypeNV);
+pub const IndirectCommandsTokenTypeNVFlags = EES(IndirectCommandsTokenTypeNV);
 pub const IndirectStateFlagBitsNV = enum(u32) {
     frontface_bit = 1,
     max_enum = 2147483647,
 };
-pub const IndirectStateFlagBitsNVFlags = PES(IndirectStateFlagBitsNV);
+pub const IndirectStateFlagBitsNVFlags = EES(IndirectStateFlagBitsNV);
 pub const IndirectStateFlagsNV = Flags;
 pub const IndirectCommandsLayoutUsageFlagBitsNV = enum(u32) {
     explicit_preprocess_bit = 1,
@@ -13154,7 +13155,7 @@ pub const IndirectCommandsLayoutUsageFlagBitsNV = enum(u32) {
     unordered_sequences_bit = 4,
     max_enum = 2147483647,
 };
-pub const IndirectCommandsLayoutUsageFlagBitsNVFlags = PES(IndirectCommandsLayoutUsageFlagBitsNV);
+pub const IndirectCommandsLayoutUsageFlagBitsNVFlags = EES(IndirectCommandsLayoutUsageFlagBitsNV);
 pub const IndirectCommandsLayoutUsageFlagsNV = Flags;
 pub const PhysicalDeviceDeviceGeneratedCommandsPropertiesNV = extern struct {
     s_type: StructureType = .physical_device_device_generated_commands_properties_nv,
@@ -13321,7 +13322,7 @@ pub const DepthBiasRepresentationEXT = enum(u32) {
     float = 2,
     max_enum = 2147483647,
 };
-pub const DepthBiasRepresentationEXTFlags = PES(DepthBiasRepresentationEXT);
+pub const DepthBiasRepresentationEXTFlags = EES(DepthBiasRepresentationEXT);
 pub const PhysicalDeviceDepthBiasControlFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_depth_bias_control_features_ext,
     p_next: ?*anyopaque = null,
@@ -13355,7 +13356,7 @@ pub const DeviceMemoryReportEventTypeEXT = enum(u32) {
     allocation_failed = 4,
     max_enum = 2147483647,
 };
-pub const DeviceMemoryReportEventTypeEXTFlags = PES(DeviceMemoryReportEventTypeEXT);
+pub const DeviceMemoryReportEventTypeEXTFlags = EES(DeviceMemoryReportEventTypeEXT);
 pub const DeviceMemoryReportFlagsEXT = Flags;
 pub const PhysicalDeviceDeviceMemoryReportFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_device_memory_report_features_ext,
@@ -13453,7 +13454,7 @@ pub const DeviceDiagnosticsConfigFlagBitsNV = enum(u32) {
     enable_shader_error_reporting_bit = 8,
     max_enum = 2147483647,
 };
-pub const DeviceDiagnosticsConfigFlagBitsNVFlags = PES(DeviceDiagnosticsConfigFlagBitsNV);
+pub const DeviceDiagnosticsConfigFlagBitsNVFlags = EES(DeviceDiagnosticsConfigFlagBitsNV);
 pub const DeviceDiagnosticsConfigFlagsNV = Flags;
 pub const PhysicalDeviceDiagnosticsConfigFeaturesNV = extern struct {
     s_type: StructureType = .physical_device_diagnostics_config_features_nv,
@@ -13470,7 +13471,7 @@ pub const TileShadingRenderPassFlagBitsQCOM = enum(u32) {
     per_tile_execution_bit = 2,
     max_enum = 2147483647,
 };
-pub const TileShadingRenderPassFlagBitsQCOMFlags = PES(TileShadingRenderPassFlagBitsQCOM);
+pub const TileShadingRenderPassFlagBitsQCOMFlags = EES(TileShadingRenderPassFlagBitsQCOM);
 pub const TileShadingRenderPassFlagsQCOM = Flags;
 pub const PhysicalDeviceTileShadingFeaturesQCOM = extern struct {
     s_type: StructureType = .physical_device_tile_shading_features_qcom,
@@ -13705,7 +13706,7 @@ pub const GraphicsPipelineLibraryFlagBitsEXT = enum(u32) {
     fragment_output_interface_bit = 8,
     max_enum = 2147483647,
 };
-pub const GraphicsPipelineLibraryFlagBitsEXTFlags = PES(GraphicsPipelineLibraryFlagBitsEXT);
+pub const GraphicsPipelineLibraryFlagBitsEXTFlags = EES(GraphicsPipelineLibraryFlagBitsEXT);
 pub const GraphicsPipelineLibraryFlagsEXT = Flags;
 pub const PhysicalDeviceGraphicsPipelineLibraryFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_graphics_pipeline_library_features_ext,
@@ -13733,7 +13734,7 @@ pub const FragmentShadingRateTypeNV = enum(u32) {
     enums = 1,
     max_enum = 2147483647,
 };
-pub const FragmentShadingRateTypeNVFlags = PES(FragmentShadingRateTypeNV);
+pub const FragmentShadingRateTypeNVFlags = EES(FragmentShadingRateTypeNV);
 pub const FragmentShadingRateNV = enum(u32) {
     @"1_invocation_per_pixel" = 0,
     @"1_invocation_per_4x4_pixels" = 10,
@@ -13743,7 +13744,7 @@ pub const FragmentShadingRateNV = enum(u32) {
     no_invocations = 15,
     max_enum = 2147483647,
 };
-pub const FragmentShadingRateNVFlags = PES(FragmentShadingRateNV);
+pub const FragmentShadingRateNVFlags = EES(FragmentShadingRateNV);
 pub const PhysicalDeviceFragmentShadingRateEnumsFeaturesNV = extern struct {
     s_type: StructureType = .physical_device_fragment_shading_rate_enums_features_nv,
     p_next: ?*anyopaque = null,
@@ -13773,7 +13774,7 @@ pub const AccelerationStructureMotionInstanceTypeNV = enum(u32) {
     srt_motion = 2,
     max_enum = 2147483647,
 };
-pub const AccelerationStructureMotionInstanceTypeNVFlags = PES(AccelerationStructureMotionInstanceTypeNV);
+pub const AccelerationStructureMotionInstanceTypeNVFlags = EES(AccelerationStructureMotionInstanceTypeNV);
 pub const AccelerationStructureMotionInfoFlagsNV = Flags;
 pub const AccelerationStructureMotionInstanceFlagsNV = Flags;
 pub const DeviceOrHostAddressConstKHR = extern union {
@@ -13864,7 +13865,7 @@ pub const ImageCompressionFlagBitsEXT = enum(u32) {
     disabled = 4,
     max_enum = 2147483647,
 };
-pub const ImageCompressionFlagBitsEXTFlags = PES(ImageCompressionFlagBitsEXT);
+pub const ImageCompressionFlagBitsEXTFlags = EES(ImageCompressionFlagBitsEXT);
 pub const ImageCompressionFlagsEXT = Flags;
 pub const ImageCompressionFixedRateFlagBitsEXT = enum(u32) {
     none = 0,
@@ -13893,7 +13894,7 @@ pub const ImageCompressionFixedRateFlagBitsEXT = enum(u32) {
     @"24bpc_bit" = 8388608,
     max_enum = 2147483647,
 };
-pub const ImageCompressionFixedRateFlagBitsEXTFlags = PES(ImageCompressionFixedRateFlagBitsEXT);
+pub const ImageCompressionFixedRateFlagBitsEXTFlags = EES(ImageCompressionFixedRateFlagBitsEXT);
 pub const ImageCompressionFixedRateFlagsEXT = Flags;
 pub const PhysicalDeviceImageCompressionControlFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_image_compression_control_features_ext,
@@ -13934,12 +13935,12 @@ pub const DeviceFaultAddressTypeEXT = enum(u32) {
     instruction_pointer_fault = 6,
     max_enum = 2147483647,
 };
-pub const DeviceFaultAddressTypeEXTFlags = PES(DeviceFaultAddressTypeEXT);
+pub const DeviceFaultAddressTypeEXTFlags = EES(DeviceFaultAddressTypeEXT);
 pub const DeviceFaultVendorBinaryHeaderVersionEXT = enum(u32) {
     one = 1,
     max_enum = 2147483647,
 };
-pub const DeviceFaultVendorBinaryHeaderVersionEXTFlags = PES(DeviceFaultVendorBinaryHeaderVersionEXT);
+pub const DeviceFaultVendorBinaryHeaderVersionEXTFlags = EES(DeviceFaultVendorBinaryHeaderVersionEXT);
 pub const PhysicalDeviceFaultFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_fault_features_ext,
     p_next: ?*anyopaque = null,
@@ -14059,12 +14060,12 @@ pub const DeviceAddressBindingTypeEXT = enum(u32) {
     unbind = 1,
     max_enum = 2147483647,
 };
-pub const DeviceAddressBindingTypeEXTFlags = PES(DeviceAddressBindingTypeEXT);
+pub const DeviceAddressBindingTypeEXTFlags = EES(DeviceAddressBindingTypeEXT);
 pub const DeviceAddressBindingFlagBitsEXT = enum(u32) {
     internal_object_bit = 1,
     max_enum = 2147483647,
 };
-pub const DeviceAddressBindingFlagBitsEXTFlags = PES(DeviceAddressBindingFlagBitsEXT);
+pub const DeviceAddressBindingFlagBitsEXTFlags = EES(DeviceAddressBindingFlagBitsEXT);
 pub const DeviceAddressBindingFlagsEXT = Flags;
 pub const PhysicalDeviceAddressBindingReportFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_address_binding_report_features_ext,
@@ -14164,7 +14165,7 @@ pub const FrameBoundaryFlagBitsEXT = enum(u32) {
     frame_end_bit = 1,
     max_enum = 2147483647,
 };
-pub const FrameBoundaryFlagBitsEXTFlags = PES(FrameBoundaryFlagBitsEXT);
+pub const FrameBoundaryFlagBitsEXTFlags = EES(FrameBoundaryFlagBitsEXT);
 pub const FrameBoundaryFlagsEXT = Flags;
 pub const PhysicalDeviceFrameBoundaryFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_frame_boundary_features_ext,
@@ -14316,12 +14317,12 @@ pub const MicromapTypeEXT = enum(u32) {
     opacity_micromap = 0,
     max_enum = 2147483647,
 };
-pub const MicromapTypeEXTFlags = PES(MicromapTypeEXT);
+pub const MicromapTypeEXTFlags = EES(MicromapTypeEXT);
 pub const BuildMicromapModeEXT = enum(u32) {
     build = 0,
     max_enum = 2147483647,
 };
-pub const BuildMicromapModeEXTFlags = PES(BuildMicromapModeEXT);
+pub const BuildMicromapModeEXTFlags = EES(BuildMicromapModeEXT);
 pub const CopyMicromapModeEXT = enum(u32) {
     clone = 0,
     serialize = 1,
@@ -14329,12 +14330,12 @@ pub const CopyMicromapModeEXT = enum(u32) {
     compact = 3,
     max_enum = 2147483647,
 };
-pub const CopyMicromapModeEXTFlags = PES(CopyMicromapModeEXT);
+pub const CopyMicromapModeEXTFlags = EES(CopyMicromapModeEXT);
 pub const OpacityMicromapFormatEXT = enum(u32) {
     @"4_state" = 2,
     max_enum = 2147483647,
 };
-pub const OpacityMicromapFormatEXTFlags = PES(OpacityMicromapFormatEXT);
+pub const OpacityMicromapFormatEXTFlags = EES(OpacityMicromapFormatEXT);
 pub const OpacityMicromapSpecialIndexEXT = enum(i32) {
     fully_transparent = -1,
     fully_opaque = -2,
@@ -14343,33 +14344,33 @@ pub const OpacityMicromapSpecialIndexEXT = enum(i32) {
     cluster_geometry_disable_opacity_micromap_nv = -5,
     max_enum = 2147483647,
 };
-pub const OpacityMicromapSpecialIndexEXTFlags = PES(OpacityMicromapSpecialIndexEXT);
+pub const OpacityMicromapSpecialIndexEXTFlags = EES(OpacityMicromapSpecialIndexEXT);
 pub const AccelerationStructureCompatibilityKHR = enum(u32) {
     compatible = 0,
     incompatible = 1,
     max_enum = 2147483647,
 };
-pub const AccelerationStructureCompatibilityKHRFlags = PES(AccelerationStructureCompatibilityKHR);
+pub const AccelerationStructureCompatibilityKHRFlags = EES(AccelerationStructureCompatibilityKHR);
 pub const AccelerationStructureBuildTypeKHR = enum(u32) {
     host = 0,
     device = 1,
     host_or_device = 2,
     max_enum = 2147483647,
 };
-pub const AccelerationStructureBuildTypeKHRFlags = PES(AccelerationStructureBuildTypeKHR);
+pub const AccelerationStructureBuildTypeKHRFlags = EES(AccelerationStructureBuildTypeKHR);
 pub const BuildMicromapFlagBitsEXT = enum(u32) {
     prefer_fast_trace_bit = 1,
     prefer_fast_build_bit = 2,
     allow_compaction_bit = 4,
     max_enum = 2147483647,
 };
-pub const BuildMicromapFlagBitsEXTFlags = PES(BuildMicromapFlagBitsEXT);
+pub const BuildMicromapFlagBitsEXTFlags = EES(BuildMicromapFlagBitsEXT);
 pub const BuildMicromapFlagsEXT = Flags;
 pub const MicromapCreateFlagBitsEXT = enum(u32) {
     device_address_capture_replay_bit = 1,
     max_enum = 2147483647,
 };
-pub const MicromapCreateFlagBitsEXTFlags = PES(MicromapCreateFlagBitsEXT);
+pub const MicromapCreateFlagBitsEXTFlags = EES(MicromapCreateFlagBitsEXT);
 pub const MicromapCreateFlagsEXT = Flags;
 pub const MicromapUsageEXT = extern struct {
     count: u32 = @import("std").mem.zeroes(u32),
@@ -14784,13 +14785,13 @@ pub const RayTracingLssIndexingModeNV = enum(u32) {
     successive = 1,
     max_enum = 2147483647,
 };
-pub const RayTracingLssIndexingModeNVFlags = PES(RayTracingLssIndexingModeNV);
+pub const RayTracingLssIndexingModeNVFlags = EES(RayTracingLssIndexingModeNV);
 pub const RayTracingLssPrimitiveEndCapsModeNV = enum(u32) {
     none = 0,
     chained = 1,
     max_enum = 2147483647,
 };
-pub const RayTracingLssPrimitiveEndCapsModeNVFlags = PES(RayTracingLssPrimitiveEndCapsModeNV);
+pub const RayTracingLssPrimitiveEndCapsModeNVFlags = EES(RayTracingLssPrimitiveEndCapsModeNV);
 pub const PhysicalDeviceRayTracingLinearSweptSpheresFeaturesNV = extern struct {
     s_type: StructureType = .physical_device_ray_tracing_linear_swept_spheres_features_nv,
     p_next: ?*anyopaque = null,
@@ -15070,7 +15071,7 @@ pub const SubpassMergeStatusEXT = enum(u32) {
     not_merged_unspecified = 13,
     max_enum = 2147483647,
 };
-pub const SubpassMergeStatusEXTFlags = PES(SubpassMergeStatusEXT);
+pub const SubpassMergeStatusEXTFlags = EES(SubpassMergeStatusEXT);
 pub const PhysicalDeviceSubpassMergeFeedbackFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_subpass_merge_feedback_features_ext,
     p_next: ?*anyopaque = null,
@@ -15104,7 +15105,7 @@ pub const DirectDriverLoadingModeLUNARG = enum(u32) {
     inclusive = 1,
     max_enum = 2147483647,
 };
-pub const DirectDriverLoadingModeLUNARGFlags = PES(DirectDriverLoadingModeLUNARG);
+pub const DirectDriverLoadingModeLUNARGFlags = EES(DirectDriverLoadingModeLUNARG);
 pub const DirectDriverLoadingFlagsLUNARG = Flags;
 const PFN_vkGetInstanceProcAddrLUNARG = ?*const fn (Instance, [*c]const u8) callconv(.c) PFN_vkVoidFunction;
 pub const PFN_getInstanceProcAddrLUNARG = PFN_vkGetInstanceProcAddrLUNARG;
@@ -15134,7 +15135,7 @@ pub const TensorTilingARM = enum(u32) {
     linear = 1,
     max_enum = 2147483647,
 };
-pub const TensorTilingARMFlags = PES(TensorTilingARM);
+pub const TensorTilingARMFlags = EES(TensorTilingARM);
 pub const TensorCreateFlagsARM = Flags64;
 pub const TensorCreateFlagBitsARM = Flags64;
 pub const TensorViewCreateFlagsARM = Flags64;
@@ -15396,7 +15397,7 @@ pub const OpticalFlowPerformanceLevelNV = enum(u32) {
     fast = 3,
     max_enum = 2147483647,
 };
-pub const OpticalFlowPerformanceLevelNVFlags = PES(OpticalFlowPerformanceLevelNV);
+pub const OpticalFlowPerformanceLevelNVFlags = EES(OpticalFlowPerformanceLevelNV);
 pub const OpticalFlowSessionBindingPointNV = enum(u32) {
     unknown = 0,
     input = 1,
@@ -15409,7 +15410,7 @@ pub const OpticalFlowSessionBindingPointNV = enum(u32) {
     global_flow = 8,
     max_enum = 2147483647,
 };
-pub const OpticalFlowSessionBindingPointNVFlags = PES(OpticalFlowSessionBindingPointNV);
+pub const OpticalFlowSessionBindingPointNVFlags = EES(OpticalFlowSessionBindingPointNV);
 pub const OpticalFlowGridSizeFlagBitsNV = enum(u32) {
     unknown = 0,
     @"1x1_bit" = 1,
@@ -15417,7 +15418,7 @@ pub const OpticalFlowGridSizeFlagBitsNV = enum(u32) {
     @"8x8_bit" = 8,
     max_enum = 2147483647,
 };
-pub const OpticalFlowGridSizeFlagBitsNVFlags = PES(OpticalFlowGridSizeFlagBitsNV);
+pub const OpticalFlowGridSizeFlagBitsNVFlags = EES(OpticalFlowGridSizeFlagBitsNV);
 pub const OpticalFlowGridSizeFlagsNV = Flags;
 pub const OpticalFlowUsageFlagBitsNV = enum(u32) {
     unknown = 0,
@@ -15428,7 +15429,7 @@ pub const OpticalFlowUsageFlagBitsNV = enum(u32) {
     global_flow_bit = 16,
     max_enum = 2147483647,
 };
-pub const OpticalFlowUsageFlagBitsNVFlags = PES(OpticalFlowUsageFlagBitsNV);
+pub const OpticalFlowUsageFlagBitsNVFlags = EES(OpticalFlowUsageFlagBitsNV);
 pub const OpticalFlowUsageFlagsNV = Flags;
 pub const OpticalFlowSessionCreateFlagBitsNV = enum(u32) {
     enable_hint_bit = 1,
@@ -15438,13 +15439,13 @@ pub const OpticalFlowSessionCreateFlagBitsNV = enum(u32) {
     both_directions_bit = 16,
     max_enum = 2147483647,
 };
-pub const OpticalFlowSessionCreateFlagBitsNVFlags = PES(OpticalFlowSessionCreateFlagBitsNV);
+pub const OpticalFlowSessionCreateFlagBitsNVFlags = EES(OpticalFlowSessionCreateFlagBitsNV);
 pub const OpticalFlowSessionCreateFlagsNV = Flags;
 pub const OpticalFlowExecuteFlagBitsNV = enum(u32) {
     disable_temporal_hints_bit = 1,
     max_enum = 2147483647,
 };
-pub const OpticalFlowExecuteFlagBitsNVFlags = PES(OpticalFlowExecuteFlagBitsNV);
+pub const OpticalFlowExecuteFlagBitsNVFlags = EES(OpticalFlowExecuteFlagBitsNV);
 pub const OpticalFlowExecuteFlagsNV = Flags;
 pub const PhysicalDeviceOpticalFlowFeaturesNV = extern struct {
     s_type: StructureType = .physical_device_optical_flow_features_nv,
@@ -15535,13 +15536,13 @@ pub const AntiLagModeAMD = enum(u32) {
     off = 2,
     max_enum = 2147483647,
 };
-pub const AntiLagModeAMDFlags = PES(AntiLagModeAMD);
+pub const AntiLagModeAMDFlags = EES(AntiLagModeAMD);
 pub const AntiLagStageAMD = enum(u32) {
     input = 0,
     present = 1,
     max_enum = 2147483647,
 };
-pub const AntiLagStageAMDFlags = PES(AntiLagStageAMD);
+pub const AntiLagStageAMDFlags = EES(AntiLagStageAMD);
 pub const PhysicalDeviceAntiLagFeaturesAMD = extern struct {
     s_type: StructureType = .physical_device_anti_lag_features_amd,
     p_next: ?*anyopaque = null,
@@ -15573,13 +15574,13 @@ pub const ShaderCodeTypeEXT = enum(u32) {
     spirv = 1,
     max_enum = 2147483647,
 };
-pub const ShaderCodeTypeEXTFlags = PES(ShaderCodeTypeEXT);
+pub const ShaderCodeTypeEXTFlags = EES(ShaderCodeTypeEXT);
 pub const DepthClampModeEXT = enum(u32) {
     viewport_range = 0,
     user_defined_range = 1,
     max_enum = 2147483647,
 };
-pub const DepthClampModeEXTFlags = PES(DepthClampModeEXT);
+pub const DepthClampModeEXTFlags = EES(DepthClampModeEXT);
 pub const ShaderCreateFlagBitsEXT = enum(u32) {
     link_stage_bit = 1,
     allow_varying_subgroup_size_bit = 2,
@@ -15591,7 +15592,7 @@ pub const ShaderCreateFlagBitsEXT = enum(u32) {
     indirect_bindable_bit = 128,
     max_enum = 2147483647,
 };
-pub const ShaderCreateFlagBitsEXTFlags = PES(ShaderCreateFlagBitsEXT);
+pub const ShaderCreateFlagBitsEXTFlags = EES(ShaderCreateFlagBitsEXT);
 pub const ShaderCreateFlagsEXT = Flags;
 pub const PhysicalDeviceShaderObjectFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_shader_object_features_ext,
@@ -15686,7 +15687,7 @@ pub const RayTracingInvocationReorderModeNV = enum(u32) {
     reorder = 1,
     max_enum = 2147483647,
 };
-pub const RayTracingInvocationReorderModeNVFlags = PES(RayTracingInvocationReorderModeNV);
+pub const RayTracingInvocationReorderModeNVFlags = EES(RayTracingInvocationReorderModeNV);
 pub const PhysicalDeviceRayTracingInvocationReorderPropertiesNV = extern struct {
     s_type: StructureType = .physical_device_ray_tracing_invocation_reorder_properties_nv,
     p_next: ?*anyopaque = null,
@@ -15704,7 +15705,7 @@ pub const CooperativeVectorMatrixLayoutNV = enum(u32) {
     training_optimal = 3,
     max_enum = 2147483647,
 };
-pub const CooperativeVectorMatrixLayoutNVFlags = PES(CooperativeVectorMatrixLayoutNV);
+pub const CooperativeVectorMatrixLayoutNVFlags = EES(CooperativeVectorMatrixLayoutNV);
 pub const PhysicalDeviceCooperativeVectorPropertiesNV = extern struct {
     s_type: StructureType = .physical_device_cooperative_vector_properties_nv,
     p_next: ?*anyopaque = null,
@@ -15790,7 +15791,7 @@ pub const LayerSettingTypeEXT = enum(u32) {
     string = 7,
     max_enum = 2147483647,
 };
-pub const LayerSettingTypeEXTFlags = PES(LayerSettingTypeEXT);
+pub const LayerSettingTypeEXTFlags = EES(LayerSettingTypeEXT);
 pub const LayerSettingEXT = extern struct {
     p_layer_name: [*c]const u8 = @import("std").mem.zeroes([*c]const u8),
     p_setting_name: [*c]const u8 = @import("std").mem.zeroes([*c]const u8),
@@ -15841,13 +15842,13 @@ pub const LatencyMarkerNV = enum(u32) {
     out_of_band_present_end = 11,
     max_enum = 2147483647,
 };
-pub const LatencyMarkerNVFlags = PES(LatencyMarkerNV);
+pub const LatencyMarkerNVFlags = EES(LatencyMarkerNV);
 pub const OutOfBandQueueTypeNV = enum(u32) {
     render = 0,
     present = 1,
     max_enum = 2147483647,
 };
-pub const OutOfBandQueueTypeNVFlags = PES(OutOfBandQueueTypeNV);
+pub const OutOfBandQueueTypeNVFlags = EES(OutOfBandQueueTypeNV);
 pub const LatencySleepModeInfoNV = extern struct {
     s_type: StructureType = .latency_sleep_mode_info_nv,
     p_next: ?*const anyopaque = null,
@@ -15940,28 +15941,28 @@ pub const DataGraphPipelineSessionBindPointARM = enum(u32) {
     transient = 0,
     max_enum = 2147483647,
 };
-pub const DataGraphPipelineSessionBindPointARMFlags = PES(DataGraphPipelineSessionBindPointARM);
+pub const DataGraphPipelineSessionBindPointARMFlags = EES(DataGraphPipelineSessionBindPointARM);
 pub const DataGraphPipelineSessionBindPointTypeARM = enum(u32) {
     memory = 0,
     max_enum = 2147483647,
 };
-pub const DataGraphPipelineSessionBindPointTypeARMFlags = PES(DataGraphPipelineSessionBindPointTypeARM);
+pub const DataGraphPipelineSessionBindPointTypeARMFlags = EES(DataGraphPipelineSessionBindPointTypeARM);
 pub const DataGraphPipelinePropertyARM = enum(u32) {
     creation_log = 0,
     identifier = 1,
     max_enum = 2147483647,
 };
-pub const DataGraphPipelinePropertyARMFlags = PES(DataGraphPipelinePropertyARM);
+pub const DataGraphPipelinePropertyARMFlags = EES(DataGraphPipelinePropertyARM);
 pub const PhysicalDeviceDataGraphProcessingEngineTypeARM = enum(u32) {
     default = 0,
     max_enum = 2147483647,
 };
-pub const PhysicalDeviceDataGraphProcessingEngineTypeARMFlags = PES(PhysicalDeviceDataGraphProcessingEngineTypeARM);
+pub const PhysicalDeviceDataGraphProcessingEngineTypeARMFlags = EES(PhysicalDeviceDataGraphProcessingEngineTypeARM);
 pub const PhysicalDeviceDataGraphOperationTypeARM = enum(u32) {
     spirv_extended_instruction_set = 0,
     max_enum = 2147483647,
 };
-pub const PhysicalDeviceDataGraphOperationTypeARMFlags = PES(PhysicalDeviceDataGraphOperationTypeARM);
+pub const PhysicalDeviceDataGraphOperationTypeARMFlags = EES(PhysicalDeviceDataGraphOperationTypeARM);
 pub const DataGraphPipelineSessionCreateFlagsARM = Flags64;
 pub const DataGraphPipelineSessionCreateFlagBitsARM = Flags64;
 pub const DataGraphPipelineDispatchFlagsARM = Flags64;
@@ -16174,7 +16175,7 @@ pub const BlockMatchWindowCompareModeQCOM = enum(u32) {
     max = 1,
     max_enum = 2147483647,
 };
-pub const BlockMatchWindowCompareModeQCOMFlags = PES(BlockMatchWindowCompareModeQCOM);
+pub const BlockMatchWindowCompareModeQCOMFlags = EES(BlockMatchWindowCompareModeQCOM);
 pub const PhysicalDeviceImageProcessing2FeaturesQCOM = extern struct {
     s_type: StructureType = .physical_device_image_processing2features_qcom,
     p_next: ?*anyopaque = null,
@@ -16198,7 +16199,7 @@ pub const CubicFilterWeightsQCOM = enum(u32) {
     mitchell_netravali = 3,
     max_enum = 2147483647,
 };
-pub const CubicFilterWeightsQCOMFlags = PES(CubicFilterWeightsQCOM);
+pub const CubicFilterWeightsQCOMFlags = EES(CubicFilterWeightsQCOM);
 pub const PhysicalDeviceCubicWeightsFeaturesQCOM = extern struct {
     s_type: StructureType = .physical_device_cubic_weights_features_qcom,
     p_next: ?*anyopaque = null,
@@ -16244,7 +16245,7 @@ pub const LayeredDriverUnderlyingApiMSFT = enum(u32) {
     d3d12 = 1,
     max_enum = 2147483647,
 };
-pub const LayeredDriverUnderlyingApiMSFTFlags = PES(LayeredDriverUnderlyingApiMSFT);
+pub const LayeredDriverUnderlyingApiMSFTFlags = EES(LayeredDriverUnderlyingApiMSFT);
 pub const PhysicalDeviceLayeredDriverPropertiesMSFT = extern struct {
     s_type: StructureType = .physical_device_layered_driver_properties_msft,
     p_next: ?*anyopaque = null,
@@ -16293,7 +16294,7 @@ pub const DisplaySurfaceStereoTypeNV = enum(u32) {
     inband_displayport = 3,
     max_enum = 2147483647,
 };
-pub const DisplaySurfaceStereoTypeNVFlags = PES(DisplaySurfaceStereoTypeNV);
+pub const DisplaySurfaceStereoTypeNVFlags = EES(DisplaySurfaceStereoTypeNV);
 pub const DisplaySurfaceStereoCreateInfoNV = extern struct {
     s_type: StructureType = .display_surface_stereo_create_info_nv,
     p_next: ?*const anyopaque = null,
@@ -16378,7 +16379,7 @@ pub const ClusterAccelerationStructureTypeNV = enum(u32) {
     triangle_cluster_template = 2,
     max_enum = 2147483647,
 };
-pub const ClusterAccelerationStructureTypeNVFlags = PES(ClusterAccelerationStructureTypeNV);
+pub const ClusterAccelerationStructureTypeNVFlags = EES(ClusterAccelerationStructureTypeNV);
 pub const ClusterAccelerationStructureOpTypeNV = enum(u32) {
     move_objects = 0,
     build_clusters_bottom_level = 1,
@@ -16388,14 +16389,14 @@ pub const ClusterAccelerationStructureOpTypeNV = enum(u32) {
     get_cluster_template_indices = 5,
     max_enum = 2147483647,
 };
-pub const ClusterAccelerationStructureOpTypeNVFlags = PES(ClusterAccelerationStructureOpTypeNV);
+pub const ClusterAccelerationStructureOpTypeNVFlags = EES(ClusterAccelerationStructureOpTypeNV);
 pub const ClusterAccelerationStructureOpModeNV = enum(u32) {
     implicit_destinations = 0,
     explicit_destinations = 1,
     compute_sizes = 2,
     max_enum = 2147483647,
 };
-pub const ClusterAccelerationStructureOpModeNVFlags = PES(ClusterAccelerationStructureOpModeNV);
+pub const ClusterAccelerationStructureOpModeNVFlags = EES(ClusterAccelerationStructureOpModeNV);
 pub const ClusterAccelerationStructureAddressResolutionFlagBitsNV = enum(u32) {
     none = 0,
     indirected_dst_implicit_data_bit = 1,
@@ -16406,13 +16407,13 @@ pub const ClusterAccelerationStructureAddressResolutionFlagBitsNV = enum(u32) {
     indirected_src_infos_count_bit = 32,
     max_enum = 2147483647,
 };
-pub const ClusterAccelerationStructureAddressResolutionFlagBitsNVFlags = PES(ClusterAccelerationStructureAddressResolutionFlagBitsNV);
+pub const ClusterAccelerationStructureAddressResolutionFlagBitsNVFlags = EES(ClusterAccelerationStructureAddressResolutionFlagBitsNV);
 pub const ClusterAccelerationStructureAddressResolutionFlagsNV = Flags;
 pub const ClusterAccelerationStructureClusterFlagBitsNV = enum(u32) {
     allow_disable_opacity_micromaps = 1,
     max_enum = 2147483647,
 };
-pub const ClusterAccelerationStructureClusterFlagBitsNVFlags = PES(ClusterAccelerationStructureClusterFlagBitsNV);
+pub const ClusterAccelerationStructureClusterFlagBitsNVFlags = EES(ClusterAccelerationStructureClusterFlagBitsNV);
 pub const ClusterAccelerationStructureClusterFlagsNV = Flags;
 pub const ClusterAccelerationStructureGeometryFlagBitsNV = enum(u32) {
     cull_disable_bit = 1,
@@ -16420,7 +16421,7 @@ pub const ClusterAccelerationStructureGeometryFlagBitsNV = enum(u32) {
     opaque_bit = 4,
     max_enum = 2147483647,
 };
-pub const ClusterAccelerationStructureGeometryFlagBitsNVFlags = PES(ClusterAccelerationStructureGeometryFlagBitsNV);
+pub const ClusterAccelerationStructureGeometryFlagBitsNVFlags = EES(ClusterAccelerationStructureGeometryFlagBitsNV);
 pub const ClusterAccelerationStructureGeometryFlagsNV = Flags;
 pub const ClusterAccelerationStructureIndexFormatFlagBitsNV = enum(u32) {
     @"8bit" = 1,
@@ -16428,7 +16429,7 @@ pub const ClusterAccelerationStructureIndexFormatFlagBitsNV = enum(u32) {
     @"32bit" = 4,
     max_enum = 2147483647,
 };
-pub const ClusterAccelerationStructureIndexFormatFlagBitsNVFlags = PES(ClusterAccelerationStructureIndexFormatFlagBitsNV);
+pub const ClusterAccelerationStructureIndexFormatFlagBitsNVFlags = EES(ClusterAccelerationStructureIndexFormatFlagBitsNV);
 pub const ClusterAccelerationStructureIndexFormatFlagsNV = Flags;
 pub const PhysicalDeviceClusterAccelerationStructureFeaturesNV = extern struct {
     s_type: StructureType = .physical_device_cluster_acceleration_structure_features_nv,
@@ -16560,7 +16561,7 @@ pub const PartitionedAccelerationStructureOpTypeNV = enum(u32) {
     write_partition_translation = 2,
     max_enum = 2147483647,
 };
-pub const PartitionedAccelerationStructureOpTypeNVFlags = PES(PartitionedAccelerationStructureOpTypeNV);
+pub const PartitionedAccelerationStructureOpTypeNVFlags = EES(PartitionedAccelerationStructureOpTypeNV);
 pub const PartitionedAccelerationStructureInstanceFlagBitsNV = enum(u32) {
     triangle_facing_cull_disable_bit = 1,
     triangle_flip_facing_bit = 2,
@@ -16569,7 +16570,7 @@ pub const PartitionedAccelerationStructureInstanceFlagBitsNV = enum(u32) {
     enable_explicit_bounding_box = 16,
     max_enum = 2147483647,
 };
-pub const PartitionedAccelerationStructureInstanceFlagBitsNVFlags = PES(PartitionedAccelerationStructureInstanceFlagBitsNV);
+pub const PartitionedAccelerationStructureInstanceFlagBitsNVFlags = EES(PartitionedAccelerationStructureInstanceFlagBitsNV);
 pub const PartitionedAccelerationStructureInstanceFlagsNV = Flags;
 pub const PhysicalDevicePartitionedAccelerationStructureFeaturesNV = extern struct {
     s_type: StructureType = .physical_device_partitioned_acceleration_structure_features_nv,
@@ -16657,7 +16658,7 @@ pub const IndirectExecutionSetInfoTypeEXT = enum(u32) {
     shader_objects = 1,
     max_enum = 2147483647,
 };
-pub const IndirectExecutionSetInfoTypeEXTFlags = PES(IndirectExecutionSetInfoTypeEXT);
+pub const IndirectExecutionSetInfoTypeEXTFlags = EES(IndirectExecutionSetInfoTypeEXT);
 pub const IndirectCommandsTokenTypeEXT = enum(u32) {
     execution_set = 0,
     push_constant = 1,
@@ -16675,20 +16676,20 @@ pub const IndirectCommandsTokenTypeEXT = enum(u32) {
     draw_mesh_tasks_count = 1000328001,
     max_enum = 2147483647,
 };
-pub const IndirectCommandsTokenTypeEXTFlags = PES(IndirectCommandsTokenTypeEXT);
+pub const IndirectCommandsTokenTypeEXTFlags = EES(IndirectCommandsTokenTypeEXT);
 pub const IndirectCommandsInputModeFlagBitsEXT = enum(u32) {
     vulkan_index_buffer = 1,
     dxgi_index_buffer = 2,
     max_enum = 2147483647,
 };
-pub const IndirectCommandsInputModeFlagBitsEXTFlags = PES(IndirectCommandsInputModeFlagBitsEXT);
+pub const IndirectCommandsInputModeFlagBitsEXTFlags = EES(IndirectCommandsInputModeFlagBitsEXT);
 pub const IndirectCommandsInputModeFlagsEXT = Flags;
 pub const IndirectCommandsLayoutUsageFlagBitsEXT = enum(u32) {
     explicit_preprocess_bit = 1,
     unordered_sequences_bit = 2,
     max_enum = 2147483647,
 };
-pub const IndirectCommandsLayoutUsageFlagBitsEXTFlags = PES(IndirectCommandsLayoutUsageFlagBitsEXT);
+pub const IndirectCommandsLayoutUsageFlagBitsEXTFlags = EES(IndirectCommandsLayoutUsageFlagBitsEXT);
 pub const IndirectCommandsLayoutUsageFlagsEXT = Flags;
 pub const PhysicalDeviceDeviceGeneratedCommandsFeaturesEXT = extern struct {
     s_type: StructureType = .physical_device_device_generated_commands_features_ext,
@@ -17013,14 +17014,14 @@ pub const BuildAccelerationStructureModeKHR = enum(u32) {
     update = 1,
     max_enum = 2147483647,
 };
-pub const BuildAccelerationStructureModeKHRFlags = PES(BuildAccelerationStructureModeKHR);
+pub const BuildAccelerationStructureModeKHRFlags = EES(BuildAccelerationStructureModeKHR);
 pub const AccelerationStructureCreateFlagBitsKHR = enum(u32) {
     device_address_capture_replay_bit = 1,
     descriptor_buffer_capture_replay_bit_ext = 8,
     motion_bit_nv = 4,
     max_enum = 2147483647,
 };
-pub const AccelerationStructureCreateFlagsKHR = PES(AccelerationStructureCreateFlagBitsKHR);
+pub const AccelerationStructureCreateFlagsKHR = EES(AccelerationStructureCreateFlagBitsKHR);
 pub const AccelerationStructureBuildRangeInfoKHR = extern struct {
     primitive_count: u32 = @import("std").mem.zeroes(u32),
     primitive_offset: u32 = @import("std").mem.zeroes(u32),
@@ -17214,7 +17215,7 @@ pub const ShaderGroupShaderKHR = enum(u32) {
     intersection = 3,
     max_enum = 2147483647,
 };
-pub const ShaderGroupShaderKHRFlags = PES(ShaderGroupShaderKHR);
+pub const ShaderGroupShaderKHRFlags = EES(ShaderGroupShaderKHR);
 pub const RayTracingShaderGroupCreateInfoKHR = extern struct {
     s_type: StructureType = .ray_tracing_shader_group_create_info_khr,
     p_next: ?*const anyopaque = null,
@@ -17522,7 +17523,7 @@ pub const FullScreenExclusiveEXT = enum(u32) {
     application_controlled = 3,
     max_enum = 2147483647,
 };
-pub const FullScreenExclusiveEXTFlags = PES(FullScreenExclusiveEXT);
+pub const FullScreenExclusiveEXTFlags = EES(FullScreenExclusiveEXT);
 pub const SurfaceFullScreenExclusiveInfoEXT = extern struct {
     s_type: StructureType = .surface_full_screen_exclusive_info_ext,
     p_next: ?*anyopaque = null,
