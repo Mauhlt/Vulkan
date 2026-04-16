@@ -1,5 +1,5 @@
 pub const Errors = @import("vulkan_errors.zig").Errors;
-pub const EES = @import("PackedEnumSet").PackedEnumSet;
+pub const PES = @import("PackedEnumSet").PackedEnumSet;
 pub const EES = @import("ExternEnumSet").ExternEnumSet;
 pub const DWORD = @import("Windows").DWORD;
 pub const HINSTANCE = @import("Windows").HINSTANCE;
