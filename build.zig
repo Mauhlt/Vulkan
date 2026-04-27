@@ -10,12 +10,15 @@ pub fn build(b: *std.Build) void {
         .root_module = mod,
     });
     // imports
-    const Windows = b.dependency("Windows", .{});
-    mod.addImport("Windows", Windows.module("Windows"));
-    const PES = b.dependency("PackedEnumSet", .{});
-    mod.addImport("PackedEnumSet", PES.module("PackedEnumSet"));
-    const EES = b.dependency("ExternEnumSet", .{});
-    mod.addImport("ExternEnumSet", EES.module("ExternEnumSet"));
+    const libraries = [_][]const u8{
+        "Windows",
+        // "PackedEnumSet",
+        "ExternEnumSet",
+    };
+    for (libraries) |library| {
+        const dep = b.dependency(library, .{});
+        dep.addImport(library, dep.module(library));
+    }
     // create tests
     const run_mod_tests = b.addRunArtifact(mod_tests);
     const test_step = b.step("test", "Run tests");
