@@ -8,13 +8,9 @@
             .url = "git+https://github.com/Mauhlt/Windows.git#774660d51f08de41b9657068a5aa6bfbc6176c80",
             .hash = "Windows-0.0.0-F1HWOdklAABGWA-p_WXmHI0StbqQVyGIaZrXupcakcjz",
         },
-        .PackedEnumSet = .{
-            .url = "git+https://github.com/Mauhlt/PackedEnumSet.git#5bc91f5da86b2785235107a17229dfabc66142fd",
-            .hash = "PackedEnumSet-0.0.0-oZSdHoMmAAAYreJImJtxf7SvOhnpKrPqiB2krj9gDaQt",
-        },
         .ExternEnumSet = .{
-            .url = "git+https://github.com/Mauhlt/ExternEnumSet.git#ba66b8033f10988d53451cb917341f769c20a5e1",
-            .hash = "ExternEnumSet-0.0.0-G_EVp0oiAABVr3LLVPLmAglK08V4aEAbMwH-vSvKCqN1",
+            .url = "git+https://github.com/Mauhlt/ExternEnumSet.git#e441ef22b7bbef2f13ea628337366bb203ec245f",
+            .hash = "ExternEnumSet-0.0.0-xLS3VQQpAACX7eV_u_7v7-0pKLK48mBTGL1KVhhpz6Mz",
         },
     },
     .paths = .{
