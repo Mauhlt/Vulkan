@@ -17,7 +17,7 @@ pub fn build(b: *std.Build) void {
     };
     for (libraries) |library| {
         const dep = b.dependency(library, .{});
-        dep.addImport(library, dep.module(library));
+        mod.addImport(library, dep.module(library));
     }
     // create tests
     const run_mod_tests = b.addRunArtifact(mod_tests);
