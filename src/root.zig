@@ -1,4 +1,4 @@
-pub const Errors = @import("vulkan_errors.zig").Errors;
+// windows
 pub const EES = @import("ExternEnumSet").ExternEnumSet;
 pub const DWORD = @import("Windows").DWORD;
 pub const HINSTANCE = @import("Windows").HINSTANCE;
@@ -9,6 +9,54 @@ pub const SECURITY_ATTRIBUTES = @import("Windows").SECURITY_ATTRIBUTES;
 pub const LPCWSTR = @import("Windows").LPCWSTR;
 pub const SubpassExternal = ~@as(c_uint, 0);
 pub const QueueFamilyIgnored = ~@as(c_uint, 0);
+// errors
+pub const Errors = error{
+    FailedToEnumerateInstanceExtensions,
+    MissingRequiredInstanceExtension,
+    FailedToCreateInstance,
+    FailedToEnumeratePhysicalDevice,
+    NoPhysicalDevicesSupportVulkan,
+    NoPhysicalDevicesAreSuitableForApp,
+    FailedToCreateSurface,
+    FailedToEnumerateDeviceExtensions,
+    FailedToCreateDevice,
+    FailedToGetPhysicalDeviceSurfaceSupport,
+    FailedToGetQueueFamilyIndices,
+    FailedToCreateSwapchain,
+    FailedToGetNumSwapchainImages,
+    FailedToGetSwapchainImages,
+    FailedToCreateImageView,
+    FailedToCreateShaderModule,
+    FailedToCreateRenderPass,
+    FailedToCreatePipelineLayout,
+    FailedToCreatePipeline,
+    FailedToCreateFramebuffer,
+    FailedToCreateCommandPool,
+    FailedToAllocateCommandBuffers,
+    FailedToBeginRecordingCommandBuffer,
+    FailedToRecordCommandBuffer,
+    FailedToCreateSemaphore,
+    FailedToCreateFence,
+    FailedToWaitForFence,
+    FailedToResetFences,
+    FailedToAcquireNextImage,
+    FailedToResetCommandBuffer,
+    FailedToSubmitDrawCommandBuffer,
+    FailedToPresentQueue,
+    FailedToIdleDevice,
+    FailedToFindSuitableMemoryType,
+    FailedToCreateTextureImageView,
+    FailedToCreateBuffer,
+    FailedToMapMemory,
+    FailedToAllocateCommandBuffer,
+    FailedToBeginCommandBuffer,
+    FailedToEndCommandBuffer,
+    FailedToSubmitQueue,
+    FailedToIdleQueue,
+    FailedToAllocateBufferMemory,
+    FailedToBindBufferMemory,
+};
+// vulkan
 pub const Bool32 = enum(u32) {
     false = 0,
     true = 1,
@@ -168,6 +216,12 @@ pub const Result = enum(i32) {
     pipeline_binary_missing_khr = 1000483000,
     error_not_enough_space_khr = -1000483000,
     max_enum = 2147483647,
+    pub fn handle(self: @This(), error_field_name: .enum_literal) Errors!void {
+        return switch (self) {
+            .success => {},
+            else => @field(Errors, @tagName(error_field_name)),
+        };
+    }
 };
 pub const ResultFlags = EES(Result);
 pub const StructureType = enum(u32) {
