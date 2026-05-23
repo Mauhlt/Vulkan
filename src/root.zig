@@ -216,7 +216,7 @@ pub const Result = enum(i32) {
     pipeline_binary_missing_khr = 1000483000,
     error_not_enough_space_khr = -1000483000,
     max_enum = 2147483647,
-    pub fn handle(self: @This(), error_field_name: @Type(.enum_literal)) Errors!void {
+    pub fn handle(self: @This(), error_field_name: @TypeOf(.enum_literal)) Errors!void {
         return switch (self) {
             .success => {},
             else => @field(Errors, @tagName(error_field_name)),
