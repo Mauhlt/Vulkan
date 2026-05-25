@@ -22,6 +22,7 @@ pub const Errors = error{
     FailedToCreateDevice,
     FailedToGetPhysicalDeviceSurfaceSupport,
     FailedToGetPhysicalDeviceSurfaceFormatsKHR,
+    FailedToGetPhysicalDeviceSurfacePresentModesKHR,
     FailedToGetPhysicalDeviceSurfaceCapabilities,
     FailedToGetQueueFamilyIndices,
     FailedToCreateSwapchain,
