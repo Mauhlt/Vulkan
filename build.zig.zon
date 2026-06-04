@@ -5,8 +5,8 @@
     .minimum_zig_version = "0.16.0-dev.2676+4e2cec265",
     .dependencies = .{
         .Windows = .{
-            .url = "git+https://github.com/Mauhlt/Windows.git#a7624df56316f767bc7a98000a79328998cdf11c",
-            .hash = "Windows-0.0.0-F1HWOdQ2AACslmwvtCMfj6BLK8EzCHCsSyTepCR6tDA0",
+            .url = "git+https://github.com/Mauhlt/Windows.git#0e1b415b44ba3267d64c20f6713bb9c363556cf9",
+            .hash = "Windows-0.0.0-F1HWORo2AACrGEjRryklOJ2VmMzOKAVTwVHbmGn3goP9",
         },
         .ExternEnumSet = .{
             .url = "git+https://github.com/Mauhlt/ExternEnumSet.git#e441ef22b7bbef2f13ea628337366bb203ec245f",
