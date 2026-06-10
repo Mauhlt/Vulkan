@@ -12,10 +12,6 @@
             .url = "git+https://github.com/Mauhlt/ExternEnumSet.git#e441ef22b7bbef2f13ea628337366bb203ec245f",
             .hash = "ExternEnumSet-0.0.0-xLS3VQQpAACX7eV_u_7v7-0pKLK48mBTGL1KVhhpz6Mz",
         },
-        .Vulkan = .{
-            .url = "git+https://github.com/Mauhlt/Vulkan.git#8c4e0023b5662bc86250471504e21d1489e85c96",
-            .hash = "Vulkan-0.0.0-9v7hoaBxEQBMAba8-SrURE7Ee0bni3-2Es4e3qZnQJmz",
-        },
     },
     .paths = .{
         "build.zig",
