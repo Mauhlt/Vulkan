@@ -2492,6 +2492,7 @@ pub const AttachmentDescriptionFlagBits = enum(u32) {
 };
 pub const AttachmentDescriptionFlags = EES(AttachmentDescriptionFlagBits);
 pub const DependencyFlagBits = enum(u32) {
+    null = 0,
     by_region_bit = 1,
     device_group_bit = 4,
     view_local_bit = 2,
