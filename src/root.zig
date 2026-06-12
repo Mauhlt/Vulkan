@@ -76,6 +76,7 @@ pub const Errors = error{
     // physical devices
     NoPhysicalDevicesSupportVulkan,
     NoPhysicalDevicesAreSuitableForApp,
+    UnsupportedLayoutTransition,
 };
 // vulkan
 pub const Bool32 = enum(u32) {
