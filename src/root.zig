@@ -11,53 +11,69 @@ pub const SubpassExternal = ~@as(c_uint, 0);
 pub const QueueFamilyIgnored = ~@as(c_uint, 0);
 // errors
 pub const Errors = error{
-    FailedToEnumerateInstanceExtensions,
-    MissingRequiredInstanceExtension,
-    FailedToCreateInstance,
-    FailedToEnumeratePhysicalDevice,
-    NoPhysicalDevicesSupportVulkan,
-    NoPhysicalDevicesAreSuitableForApp,
-    FailedToCreateSurface,
-    FailedToEnumerateDeviceExtensions,
+    // acquires
+    FailedToAcquireNextImage,
+    // allocate
+    FailedToAllocateBufferMemory,
+    FailedToAllocateCommandBuffer,
+    FailedToAllocateCommandBuffers,
+    // begins
+    FailedToBeginCommandBuffer,
+    FailedToBeginRecordingCommandBuffer,
+    // binds
+    FailedToBindBufferMemory,
+    // create
+    FailedToCreateBuffer,
+    FailedToCreateCommandPool,
     FailedToCreateDevice,
-    FailedToGetPhysicalDeviceSurfaceSupport,
+    FailedToCreateFence,
+    FailedToCreateFramebuffer,
+    FailedToCreateImage,
+    FailedToCreateImageView,
+    FailedToCreateInstance,
+    FailedToCreatePipeline,
+    FailedToCreatePipelineLayout,
+    FailedToCreateSemaphore,
+    FailedToCreateShaderModule,
+    FailedToCreateSurface,
+    FailedToCreateSwapchain,
+    FailedToCreateRenderPass,
+    FailedToCreateTextureImageView,
+    // end
+    FailedToEndCommandBuffer,
+    // enumerate
+    FailedToEnumerateDeviceExtensions,
+    FailedToEnumerateInstanceExtensions,
+    FailedToEnumeratePhysicalDevice,
+    // get
+    FailedToGetNumSwapchainImages,
+    FailedToGetPhysicalDeviceSurfaceCapabilities,
     FailedToGetPhysicalDeviceSurfaceFormatsKHR,
     FailedToGetPhysicalDeviceSurfacePresentModesKHR,
-    FailedToGetPhysicalDeviceSurfaceCapabilities,
+    FailedToGetPhysicalDeviceSurfaceSupport,
     FailedToGetQueueFamilyIndices,
-    FailedToCreateSwapchain,
-    FailedToGetNumSwapchainImages,
     FailedToGetSwapchainImages,
-    FailedToCreateImageView,
-    FailedToCreateShaderModule,
-    FailedToCreateRenderPass,
-    FailedToCreatePipelineLayout,
-    FailedToCreatePipeline,
-    FailedToCreateFramebuffer,
-    FailedToCreateCommandPool,
-    FailedToAllocateCommandBuffers,
-    FailedToBeginRecordingCommandBuffer,
-    FailedToRecordCommandBuffer,
-    FailedToCreateSemaphore,
-    FailedToCreateFence,
-    FailedToWaitForFence,
-    FailedToResetFences,
-    FailedToAcquireNextImage,
-    FailedToResetCommandBuffer,
-    FailedToSubmitDrawCommandBuffer,
-    FailedToPresentQueue,
-    FailedToIdleDevice,
+    // find
     FailedToFindSuitableMemoryType,
-    FailedToCreateTextureImageView,
-    FailedToCreateBuffer,
-    FailedToMapMemory,
-    FailedToAllocateCommandBuffer,
-    FailedToBeginCommandBuffer,
-    FailedToEndCommandBuffer,
-    FailedToSubmitQueue,
+    // idle
+    FailedToIdleDevice,
     FailedToIdleQueue,
-    FailedToAllocateBufferMemory,
-    FailedToBindBufferMemory,
+    // misc
+    FailedToMapMemory,
+    FailedToPresentQueue,
+    FailedToRecordCommandBuffer,
+    // resets
+    FailedToResetCommandBuffer,
+    FailedToResetFences,
+    // submits
+    FailedToSubmitDrawCommandBuffer,
+    FailedToSubmitQueue,
+    FailedToWaitForFence,
+    // missing
+    MissingRequiredInstanceExtension,
+    // physical devices
+    NoPhysicalDevicesSupportVulkan,
+    NoPhysicalDevicesAreSuitableForApp,
 };
 // vulkan
 pub const Bool32 = enum(u32) {
