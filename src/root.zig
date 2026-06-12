@@ -17,11 +17,13 @@ pub const Errors = error{
     FailedToAllocateBufferMemory,
     FailedToAllocateCommandBuffer,
     FailedToAllocateCommandBuffers,
+    FailedToAllocateImageMemory,
     // begins
     FailedToBeginCommandBuffer,
     FailedToBeginRecordingCommandBuffer,
     // binds
     FailedToBindBufferMemory,
+    FailedToBindImageMemory,
     // create
     FailedToCreateBuffer,
     FailedToCreateCommandPool,
