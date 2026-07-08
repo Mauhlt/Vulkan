@@ -28,6 +28,7 @@ pub const Errors = error{
     FailedToCreateBuffer,
     FailedToCreateCommandPool,
     FailedToCreateDevice,
+    FailedToCreateDescriptorSetLayout,
     FailedToCreateFence,
     FailedToCreateFramebuffer,
     FailedToCreateImage,
