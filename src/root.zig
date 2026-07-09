@@ -42,6 +42,7 @@ pub const Errors = error{
     FailedToCreateSwapchain,
     FailedToCreateRenderPass,
     FailedToCreateTextureImageView,
+    FailedToCreateTextureSampler,
     // end
     FailedToEndCommandBuffer,
     // enumerate
