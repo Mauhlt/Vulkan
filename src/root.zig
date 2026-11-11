@@ -1347,7 +1347,7 @@ pub const google_hdr_smpte_st_209450_metadata_spec_version = 1;
 pub const google_hdr_smpte_st_209450_metadata_extension_name = "VK_GOOGLE_hdr_smpte_st_209450_metadata";
 
 // Types
-pub const StdVideoH264ChromaFormatIdc = enum(i32) {
+pub const StdVideoH264ChromaFormatIdc = enum(u32) {
     monochrome = 0,
     @"420" = 1,
     @"422" = 2,
@@ -1355,7 +1355,7 @@ pub const StdVideoH264ChromaFormatIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264ProfileIdc = enum(i32) {
+pub const StdVideoH264ProfileIdc = enum(u32) {
     baseline = 66,
     main = 77,
     high = 100,
@@ -1365,7 +1365,7 @@ pub const StdVideoH264ProfileIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264LevelIdc = enum(i32) {
+pub const StdVideoH264LevelIdc = enum(u32) {
     @"1_0" = 0,
     @"1_1" = 1,
     @"1_2" = 2,
@@ -1388,14 +1388,14 @@ pub const StdVideoH264LevelIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264PocType = enum(i32) {
+pub const StdVideoH264PocType = enum(u32) {
     @"0" = 0,
     @"1" = 1,
     @"2" = 2,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264AspectRatioIdc = enum(i32) {
+pub const StdVideoH264AspectRatioIdc = enum(u32) {
     unspecified = 0,
     square = 1,
     @"12_11" = 2,
@@ -1417,14 +1417,14 @@ pub const StdVideoH264AspectRatioIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264WeightedBipredIdc = enum(i32) {
+pub const StdVideoH264WeightedBipredIdc = enum(u32) {
     default = 0,
     explicit = 1,
     implicit = 2,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264ModificationOfPicNumsIdc = enum(i32) {
+pub const StdVideoH264ModificationOfPicNumsIdc = enum(u32) {
     short_term_subtract = 0,
     short_term_add = 1,
     long_term = 2,
@@ -1432,7 +1432,7 @@ pub const StdVideoH264ModificationOfPicNumsIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264MemMgmtControlOp = enum(i32) {
+pub const StdVideoH264MemMgmtControlOp = enum(u32) {
     end = 0,
     unmark_short_term = 1,
     unmark_long_term = 2,
@@ -1443,28 +1443,28 @@ pub const StdVideoH264MemMgmtControlOp = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264CabacInitIdc = enum(i32) {
+pub const StdVideoH264CabacInitIdc = enum(u32) {
     @"0" = 0,
     @"1" = 1,
     @"2" = 2,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264DisableDeblockingFilterIdc = enum(i32) {
+pub const StdVideoH264DisableDeblockingFilterIdc = enum(u32) {
     disabled = 0,
     enabled = 1,
     partial = 2,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264SliceType = enum(i32) {
+pub const StdVideoH264SliceType = enum(u32) {
     p = 0,
     b = 1,
     i = 2,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264PictureType = enum(i32) {
+pub const StdVideoH264PictureType = enum(u32) {
     p = 0,
     b = 1,
     i = 2,
@@ -1472,7 +1472,7 @@ pub const StdVideoH264PictureType = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH264NonVclNaluType = enum(i32) {
+pub const StdVideoH264NonVclNaluType = enum(u32) {
     sps = 0,
     pps = 1,
     aud = 2,
@@ -1483,13 +1483,13 @@ pub const StdVideoH264NonVclNaluType = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoDecodeH264FieldOrderCount = enum(i32) {
+pub const StdVideoDecodeH264FieldOrderCount = enum(u32) {
     top = 0,
     bottom = 1,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH265ChromaFormatIdc = enum(i32) {
+pub const StdVideoH265ChromaFormatIdc = enum(u32) {
     monochrome = 0,
     @"420" = 1,
     @"422" = 2,
@@ -1497,7 +1497,7 @@ pub const StdVideoH265ChromaFormatIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH265ProfileIdc = enum(i32) {
+pub const StdVideoH265ProfileIdc = enum(u32) {
     main = 1,
     main_10 = 2,
     main_still_picture = 3,
@@ -1506,7 +1506,7 @@ pub const StdVideoH265ProfileIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH265LevelIdc = enum(i32) {
+pub const StdVideoH265LevelIdc = enum(u32) {
     @"1_0" = 0,
     @"2_0" = 1,
     @"2_1" = 2,
@@ -1523,14 +1523,14 @@ pub const StdVideoH265LevelIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH265SliceType = enum(i32) {
+pub const StdVideoH265SliceType = enum(u32) {
     b = 0,
     p = 1,
     i = 2,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH265PictureType = enum(i32) {
+pub const StdVideoH265PictureType = enum(u32) {
     p = 0,
     b = 1,
     i = 2,
@@ -1538,7 +1538,7 @@ pub const StdVideoH265PictureType = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoH265AspectRatioIdc = enum(i32) {
+pub const StdVideoH265AspectRatioIdc = enum(u32) {
     unspecified = 0,
     square = 1,
     @"12_11" = 2,
@@ -1560,7 +1560,7 @@ pub const StdVideoH265AspectRatioIdc = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoVP9Profile = enum(i32) {
+pub const StdVideoVP9Profile = enum(u32) {
     @"0" = 0,
     @"1" = 1,
     @"2" = 2,
@@ -1568,7 +1568,7 @@ pub const StdVideoVP9Profile = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoVP9Level = enum(i32) {
+pub const StdVideoVP9Level = enum(u32) {
     @"1_0" = 0,
     @"1_1" = 1,
     @"2_0" = 2,
@@ -1586,13 +1586,13 @@ pub const StdVideoVP9Level = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoVP9FrameType = enum(i32) {
+pub const StdVideoVP9FrameType = enum(u32) {
     key = 0,
     non_key = 1,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoVP9ReferenceName = enum(i32) {
+pub const StdVideoVP9ReferenceName = enum(u32) {
     intra_frame = 0,
     last_frame = 1,
     golden_frame = 2,
@@ -1600,7 +1600,7 @@ pub const StdVideoVP9ReferenceName = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoVP9InterpolationFilter = enum(i32) {
+pub const StdVideoVP9InterpolationFilter = enum(u32) {
     eighttap = 0,
     eighttap_smooth = 1,
     eighttap_sharp = 2,
@@ -1609,7 +1609,7 @@ pub const StdVideoVP9InterpolationFilter = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoVP9ColorSpace = enum(i32) {
+pub const StdVideoVP9ColorSpace = enum(u32) {
     unknown = 0,
     bt_601 = 1,
     bt_709 = 2,
@@ -1621,14 +1621,14 @@ pub const StdVideoVP9ColorSpace = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1Profile = enum(i32) {
+pub const StdVideoAV1Profile = enum(u32) {
     main = 0,
     high = 1,
     professional = 2,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1Level = enum(i32) {
+pub const StdVideoAV1Level = enum(u32) {
     @"2_0" = 0,
     @"2_1" = 1,
     @"2_2" = 2,
@@ -1656,7 +1656,7 @@ pub const StdVideoAV1Level = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1FrameType = enum(i32) {
+pub const StdVideoAV1FrameType = enum(u32) {
     key = 0,
     inter = 1,
     intra_only = 2,
@@ -1664,7 +1664,7 @@ pub const StdVideoAV1FrameType = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1ReferenceName = enum(i32) {
+pub const StdVideoAV1ReferenceName = enum(u32) {
     intra_frame = 0,
     last_frame = 1,
     last2_frame = 2,
@@ -1676,7 +1676,7 @@ pub const StdVideoAV1ReferenceName = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1InterpolationFilter = enum(i32) {
+pub const StdVideoAV1InterpolationFilter = enum(u32) {
     eighttap = 0,
     eighttap_smooth = 1,
     eighttap_sharp = 2,
@@ -1685,14 +1685,14 @@ pub const StdVideoAV1InterpolationFilter = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1TxMode = enum(i32) {
+pub const StdVideoAV1TxMode = enum(u32) {
     only_4x4 = 0,
     largest = 1,
     select = 2,
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1FrameRestorationType = enum(i32) {
+pub const StdVideoAV1FrameRestorationType = enum(u32) {
     none = 0,
     wiener = 1,
     sgrproj = 2,
@@ -1700,7 +1700,7 @@ pub const StdVideoAV1FrameRestorationType = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1ColorPrimaries = enum(i32) {
+pub const StdVideoAV1ColorPrimaries = enum(u32) {
     bt_709 = 1,
     unspecified = 2,
     bt_470_m = 4,
@@ -1717,7 +1717,7 @@ pub const StdVideoAV1ColorPrimaries = enum(i32) {
     _,
     pub const bt_unspecified: StdVideoAV1ColorPrimaries = .unspecified;
 };
-pub const StdVideoAV1TransferCharacteristics = enum(i32) {
+pub const StdVideoAV1TransferCharacteristics = enum(u32) {
     reserved_0 = 0,
     bt_709 = 1,
     unspecified = 2,
@@ -1740,7 +1740,7 @@ pub const StdVideoAV1TransferCharacteristics = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1MatrixCoefficients = enum(i32) {
+pub const StdVideoAV1MatrixCoefficients = enum(u32) {
     identity = 0,
     bt_709 = 1,
     unspecified = 2,
@@ -1759,7 +1759,7 @@ pub const StdVideoAV1MatrixCoefficients = enum(i32) {
     invalid = 2147483647,
     _,
 };
-pub const StdVideoAV1ChromaSamplePosition = enum(i32) {
+pub const StdVideoAV1ChromaSamplePosition = enum(u32) {
     unknown = 0,
     vertical = 1,
     colocated = 2,
@@ -2136,7 +2136,7 @@ pub const DebugReportCallbackEXT = enum(u64) { null = 0, _ };
 pub const DebugUtilsMessengerEXT = enum(u64) { null = 0, _ };
 pub const VideoSessionKHR = enum(u64) { null = 0, _ };
 pub const VideoSessionParametersKHR = enum(u64) { null = 0, _ };
-pub const AttachmentLoadOp = enum(i32) {
+pub const AttachmentLoadOp = enum(u32) {
     load = 0,
     clear = 1,
     dont_care = 2,
@@ -2145,7 +2145,7 @@ pub const AttachmentLoadOp = enum(i32) {
     pub const none_ext: AttachmentLoadOp = .none;
     pub const none_khr: AttachmentLoadOp = .none;
 };
-pub const AttachmentStoreOp = enum(i32) {
+pub const AttachmentStoreOp = enum(u32) {
     store = 0,
     dont_care = 1,
     none = 1000301000,
@@ -2154,7 +2154,7 @@ pub const AttachmentStoreOp = enum(i32) {
     pub const none_qcom: AttachmentStoreOp = .none;
     pub const none_ext: AttachmentStoreOp = .none;
 };
-pub const BlendFactor = enum(i32) {
+pub const BlendFactor = enum(u32) {
     zero = 0,
     one = 1,
     src_color = 2,
@@ -2176,7 +2176,7 @@ pub const BlendFactor = enum(i32) {
     one_minus_src1_alpha = 18,
     _,
 };
-pub const BlendOp = enum(i32) {
+pub const BlendOp = enum(u32) {
     add = 0,
     subtract = 1,
     reverse_subtract = 2,
@@ -2230,7 +2230,7 @@ pub const BlendOp = enum(i32) {
     blue_ext = 1000148045,
     _,
 };
-pub const BorderColor = enum(i32) {
+pub const BorderColor = enum(u32) {
     float_transparent_black = 0,
     int_transparent_black = 1,
     float_opaque_black = 2,
@@ -2263,7 +2263,7 @@ pub const SamplerCreateFlagBits = enum(u32) {
     image_processing_bit_qcom = 0x10,
     _,
 };
-pub const PipelineCacheHeaderVersion = enum(i32) {
+pub const PipelineCacheHeaderVersion = enum(u32) {
     one = 1,
     data_graph_qcom = 1000629000,
     _,
@@ -2356,7 +2356,7 @@ pub const ColorComponentFlagBits = enum(u32) {
     a_bit = 0x8,
     _,
 };
-pub const ComponentSwizzle = enum(i32) {
+pub const ComponentSwizzle = enum(u32) {
     identity = 0,
     zero = 1,
     one = 2,
@@ -2380,7 +2380,7 @@ pub const CommandBufferResetFlagBits = enum(u32) {
     release_resources_bit = 0x1,
     _,
 };
-pub const CommandBufferLevel = enum(i32) {
+pub const CommandBufferLevel = enum(u32) {
     primary = 0,
     secondary = 1,
     _,
@@ -2391,7 +2391,7 @@ pub const CommandBufferUsageFlagBits = enum(u32) {
     simultaneous_use_bit = 0x4,
     _,
 };
-pub const CompareOp = enum(i32) {
+pub const CompareOp = enum(u32) {
     never = 0,
     less = 1,
     equal = 2,
@@ -2409,7 +2409,7 @@ pub const CullModeFlagBits = enum(u32) {
     front_and_back = 0x3,
     _,
 };
-pub const DescriptorType = enum(i32) {
+pub const DescriptorType = enum(u32) {
     sampler = 0,
     combined_image_sampler = 1,
     sampled_image = 2,
@@ -2433,7 +2433,7 @@ pub const DescriptorType = enum(i32) {
     pub const inline_uniform_block_ext: DescriptorType = .inline_uniform_block;
     pub const mutable_valve: DescriptorType = .mutable_ext;
 };
-pub const DynamicState = enum(i32) {
+pub const DynamicState = enum(u32) {
     viewport = 0,
     scissor = 1,
     line_width = 2,
@@ -2530,14 +2530,14 @@ pub const FenceCreateFlagBits = enum(u32) {
     signaled_bit = 0x1,
     _,
 };
-pub const PolygonMode = enum(i32) {
+pub const PolygonMode = enum(u32) {
     fill = 0,
     line = 1,
     point = 2,
     fill_rectangle_nv = 1000153000,
     _,
 };
-pub const Format = enum(i32) {
+pub const Format = enum(u32) {
     undefined = 0,
     r4g4_unorm_pack8 = 1,
     r4g4b4a4_unorm_pack16 = 2,
@@ -2940,7 +2940,7 @@ pub const FormatFeatureFlagBits = enum(u32) {
     pub const disjoint_bit_khr: FormatFeatureFlagBits = .disjoint_bit;
     pub const cosited_chroma_samples_bit_khr: FormatFeatureFlagBits = .cosited_chroma_samples_bit;
 };
-pub const FrontFace = enum(i32) {
+pub const FrontFace = enum(u32) {
     counter_clockwise = 0,
     clockwise = 1,
     _,
@@ -3000,7 +3000,7 @@ pub const ImageCreateFlagBits = enum(u32) {
     pub const descriptor_buffer_capture_replay_bit_ext: ImageCreateFlagBits = .descriptor_heap_capture_replay_bit_ext;
     pub const fragment_density_map_offset_bit_qcom: ImageCreateFlagBits = .fragment_density_map_offset_bit_ext;
 };
-pub const ImageLayout = enum(i32) {
+pub const ImageLayout = enum(u32) {
     undefined = 0,
     general = 1,
     color_attachment_optimal = 2,
@@ -3045,13 +3045,13 @@ pub const ImageLayout = enum(i32) {
     pub const read_only_optimal_khr: ImageLayout = .read_only_optimal;
     pub const attachment_optimal_khr: ImageLayout = .attachment_optimal;
 };
-pub const ImageTiling = enum(i32) {
+pub const ImageTiling = enum(u32) {
     optimal = 0,
     linear = 1,
     drm_format_modifier_ext = 1000158000,
     _,
 };
-pub const ImageType = enum(i32) {
+pub const ImageType = enum(u32) {
     @"1d" = 0,
     @"2d" = 1,
     @"3d" = 2,
@@ -3093,7 +3093,7 @@ pub const ImageViewCreateFlagBits = enum(u32) {
     fragment_density_map_deferred_bit_ext = 0x2,
     _,
 };
-pub const ImageViewType = enum(i32) {
+pub const ImageViewType = enum(u32) {
     @"1d" = 0,
     @"2d" = 1,
     @"3d" = 2,
@@ -3103,7 +3103,7 @@ pub const ImageViewType = enum(i32) {
     cube_array = 6,
     _,
 };
-pub const IndirectCommandsTokenTypeEXT = enum(i32) {
+pub const IndirectCommandsTokenTypeEXT = enum(u32) {
     execution_set = 0,
     push_constant = 1,
     sequence_index = 2,
@@ -3123,12 +3123,12 @@ pub const IndirectCommandsTokenTypeEXT = enum(i32) {
     trace_rays2 = 1000386004,
     _,
 };
-pub const SharingMode = enum(i32) {
+pub const SharingMode = enum(u32) {
     exclusive = 0,
     concurrent = 1,
     _,
 };
-pub const IndexType = enum(i32) {
+pub const IndexType = enum(u32) {
     uint16 = 0,
     uint32 = 1,
     uint8 = 1000265000,
@@ -3138,7 +3138,7 @@ pub const IndexType = enum(i32) {
     pub const uint8_ext: IndexType = .uint8;
     pub const uint8_khr: IndexType = .uint8;
 };
-pub const LogicOp = enum(i32) {
+pub const LogicOp = enum(u32) {
     clear = 0,
     @"and" = 1,
     and_reverse = 2,
@@ -3214,7 +3214,7 @@ pub const MemoryPropertyFlagBits = enum(u32) {
     rdma_capable_bit_nv = 0x100,
     _,
 };
-pub const PhysicalDeviceType = enum(i32) {
+pub const PhysicalDeviceType = enum(u32) {
     other = 0,
     integrated_gpu = 1,
     discrete_gpu = 2,
@@ -3222,7 +3222,7 @@ pub const PhysicalDeviceType = enum(i32) {
     cpu = 4,
     _,
 };
-pub const PipelineBindPoint = enum(i32) {
+pub const PipelineBindPoint = enum(u32) {
     graphics = 0,
     compute = 1,
     execution_graph_amdx = 1000134000,
@@ -3277,7 +3277,7 @@ pub const PipelineCreateFlagBits = enum(u32) {
     pub const no_protected_access_bit_ext: PipelineCreateFlagBits = .no_protected_access_bit;
     pub const protected_access_only_bit_ext: PipelineCreateFlagBits = .protected_access_only_bit;
 };
-pub const PrimitiveTopology = enum(i32) {
+pub const PrimitiveTopology = enum(u32) {
     point_list = 0,
     line_list = 1,
     line_strip = 2,
@@ -3320,7 +3320,7 @@ pub const QueryResultFlagBits = enum(u32) {
     with_status_bit_khr = 0x10,
     _,
 };
-pub const QueryType = enum(i32) {
+pub const QueryType = enum(u32) {
     occlusion = 0,
     pipeline_statistics = 1,
     timestamp = 2,
@@ -3353,7 +3353,7 @@ pub const QueueFlagBits = enum(u32) {
     data_graph_bit_arm = 0x400,
     _,
 };
-pub const SubpassContents = enum(i32) {
+pub const SubpassContents = enum(u32) {
     @"inline" = 0,
     secondary_command_buffers = 1,
     inline_and_secondary_command_buffers_khr = 1000451000,
@@ -3469,7 +3469,7 @@ pub const StencilFaceFlagBits = enum(u32) {
     front_and_back = 0x3,
     _,
 };
-pub const StencilOp = enum(i32) {
+pub const StencilOp = enum(u32) {
     keep = 0,
     zero = 1,
     replace = 2,
@@ -3480,7 +3480,7 @@ pub const StencilOp = enum(i32) {
     decrement_and_wrap = 7,
     _,
 };
-pub const StructureType = enum(i32) {
+pub const StructureType = enum(u32) {
     application_info = 0,
     instance_create_info = 1,
     device_queue_create_info = 2,
@@ -5003,7 +5003,7 @@ pub const StructureType = enum(i32) {
     pub const push_descriptor_set_with_template_info_khr: StructureType = .push_descriptor_set_with_template_info;
     pub const rendering_end_info_ext: StructureType = .rendering_end_info_khr;
 };
-pub const SystemAllocationScope = enum(i32) {
+pub const SystemAllocationScope = enum(u32) {
     command = 0,
     object = 1,
     cache = 2,
@@ -5011,11 +5011,11 @@ pub const SystemAllocationScope = enum(i32) {
     instance = 4,
     _,
 };
-pub const InternalAllocationType = enum(i32) {
+pub const InternalAllocationType = enum(u32) {
     executable = 0,
     _,
 };
-pub const SamplerAddressMode = enum(i32) {
+pub const SamplerAddressMode = enum(u32) {
     repeat = 0,
     mirrored_repeat = 1,
     clamp_to_edge = 2,
@@ -5024,19 +5024,19 @@ pub const SamplerAddressMode = enum(i32) {
     _,
     pub const mirror_clamp_to_edge_khr: SamplerAddressMode = .mirror_clamp_to_edge;
 };
-pub const Filter = enum(i32) {
+pub const Filter = enum(u32) {
     nearest = 0,
     linear = 1,
     cubic_ext = 1000015000,
     _,
     pub const cubic_img: Filter = .cubic_ext;
 };
-pub const SamplerMipmapMode = enum(i32) {
+pub const SamplerMipmapMode = enum(u32) {
     nearest = 0,
     linear = 1,
     _,
 };
-pub const VertexInputRate = enum(i32) {
+pub const VertexInputRate = enum(u32) {
     vertex = 0,
     instance = 1,
     _,
@@ -5090,13 +5090,13 @@ pub const ClusterAccelerationStructureIndexFormatFlagBitsNV = enum(u32) {
     @"32bit" = 0x4,
     _,
 };
-pub const ClusterAccelerationStructureTypeNV = enum(i32) {
+pub const ClusterAccelerationStructureTypeNV = enum(u32) {
     clusters_bottom_level = 0,
     triangle_cluster = 1,
     triangle_cluster_template = 2,
     _,
 };
-pub const ClusterAccelerationStructureOpTypeNV = enum(i32) {
+pub const ClusterAccelerationStructureOpTypeNV = enum(u32) {
     move_objects = 0,
     build_clusters_bottom_level = 1,
     build_triangle_cluster = 2,
@@ -5105,7 +5105,7 @@ pub const ClusterAccelerationStructureOpTypeNV = enum(i32) {
     get_cluster_template_indices = 5,
     _,
 };
-pub const ClusterAccelerationStructureOpModeNV = enum(i32) {
+pub const ClusterAccelerationStructureOpModeNV = enum(u32) {
     implicit_destinations = 0,
     explicit_destinations = 1,
     compute_sizes = 2,
@@ -5148,7 +5148,7 @@ pub const DependencyFlagBits = enum(u32) {
     pub const view_local_bit_khr: DependencyFlagBits = .view_local_bit;
     pub const device_group_bit_khr: DependencyFlagBits = .device_group_bit;
 };
-pub const ObjectType = enum(i32) {
+pub const ObjectType = enum(u32) {
     unknown = 0,
     instance = 1,
     physical_device = 2,
@@ -5224,7 +5224,7 @@ pub const PipelineLayoutCreateFlagBits = enum(u32) {
     no_task_shader_bit_khr = 0x4,
     _,
 };
-pub const RayTracingInvocationReorderModeEXT = enum(i32) {
+pub const RayTracingInvocationReorderModeEXT = enum(u32) {
     none = 0,
     reorder = 1,
     _,
@@ -5232,7 +5232,7 @@ pub const RayTracingInvocationReorderModeEXT = enum(i32) {
     pub const reorder_nv: RayTracingInvocationReorderModeEXT = .reorder;
 };
 pub const RayTracingInvocationReorderModeNV = RayTracingInvocationReorderModeEXT;
-pub const ImageTilingControlEXT = enum(i32) {
+pub const ImageTilingControlEXT = enum(u32) {
     default = 0,
     min_size = 1,
     max_performance = 2,
@@ -5244,7 +5244,7 @@ pub const IndirectCommandsLayoutUsageFlagBitsNV = enum(u32) {
     unordered_sequences_bit = 0x4,
     _,
 };
-pub const IndirectCommandsTokenTypeNV = enum(i32) {
+pub const IndirectCommandsTokenTypeNV = enum(u32) {
     shader_group = 0,
     state_flags = 1,
     index_buffer = 2,
@@ -5268,7 +5268,7 @@ pub const PrivateDataSlotCreateFlagBits = enum(u32) {
     _,
 };
 pub const PrivateDataSlotCreateFlagBitsEXT = PrivateDataSlotCreateFlagBits;
-pub const DescriptorUpdateTemplateType = enum(i32) {
+pub const DescriptorUpdateTemplateType = enum(u32) {
     descriptor_set = 0,
     push_descriptors = 1,
     _,
@@ -5276,7 +5276,7 @@ pub const DescriptorUpdateTemplateType = enum(i32) {
     pub const descriptor_set_khr: DescriptorUpdateTemplateType = .descriptor_set;
 };
 pub const DescriptorUpdateTemplateTypeKHR = DescriptorUpdateTemplateType;
-pub const ViewportCoordinateSwizzleNV = enum(i32) {
+pub const ViewportCoordinateSwizzleNV = enum(u32) {
     positive_x = 0,
     negative_x = 1,
     positive_y = 2,
@@ -5287,7 +5287,7 @@ pub const ViewportCoordinateSwizzleNV = enum(i32) {
     negative_w = 7,
     _,
 };
-pub const DiscardRectangleModeEXT = enum(i32) {
+pub const DiscardRectangleModeEXT = enum(u32) {
     inclusive = 0,
     exclusive = 1,
     _,
@@ -5309,7 +5309,7 @@ pub const SubpassDescriptionFlagBits = enum(u32) {
     pub const rasterization_order_attachment_depth_access_bit_arm: SubpassDescriptionFlagBits = .rasterization_order_attachment_depth_access_bit_ext;
     pub const rasterization_order_attachment_stencil_access_bit_arm: SubpassDescriptionFlagBits = .rasterization_order_attachment_stencil_access_bit_ext;
 };
-pub const PointClippingBehavior = enum(i32) {
+pub const PointClippingBehavior = enum(u32) {
     all_clip_planes = 0,
     user_clip_planes_only = 1,
     _,
@@ -5317,29 +5317,29 @@ pub const PointClippingBehavior = enum(i32) {
     pub const user_clip_planes_only_khr: PointClippingBehavior = .user_clip_planes_only;
 };
 pub const PointClippingBehaviorKHR = PointClippingBehavior;
-pub const CoverageModulationModeNV = enum(i32) {
+pub const CoverageModulationModeNV = enum(u32) {
     none = 0,
     rgb = 1,
     alpha = 2,
     rgba = 3,
     _,
 };
-pub const CoverageReductionModeNV = enum(i32) {
+pub const CoverageReductionModeNV = enum(u32) {
     merge = 0,
     truncate = 1,
     _,
 };
-pub const ValidationCacheHeaderVersionEXT = enum(i32) {
+pub const ValidationCacheHeaderVersionEXT = enum(u32) {
     one = 1,
     _,
 };
-pub const ShaderInfoTypeAMD = enum(i32) {
+pub const ShaderInfoTypeAMD = enum(u32) {
     statistics = 0,
     binary = 1,
     disassembly = 2,
     _,
 };
-pub const QueueGlobalPriority = enum(i32) {
+pub const QueueGlobalPriority = enum(u32) {
     low = 128,
     medium = 256,
     high = 512,
@@ -5356,7 +5356,7 @@ pub const QueueGlobalPriority = enum(i32) {
 };
 pub const QueueGlobalPriorityKHR = QueueGlobalPriority;
 pub const QueueGlobalPriorityEXT = QueueGlobalPriority;
-pub const TimeDomainKHR = enum(i32) {
+pub const TimeDomainKHR = enum(u32) {
     device = 0,
     clock_monotonic = 1,
     clock_monotonic_raw = 2,
@@ -5370,7 +5370,7 @@ pub const TimeDomainKHR = enum(i32) {
     pub const query_performance_counter_ext: TimeDomainKHR = .query_performance_counter;
 };
 pub const TimeDomainEXT = TimeDomainKHR;
-pub const ConservativeRasterizationModeEXT = enum(i32) {
+pub const ConservativeRasterizationModeEXT = enum(u32) {
     disabled = 0,
     overestimate = 1,
     underestimate = 2,
@@ -5409,7 +5409,7 @@ pub const ConditionalRenderingFlagBitsEXT = enum(u32) {
     inverted_bit = 0x1,
     _,
 };
-pub const SemaphoreType = enum(i32) {
+pub const SemaphoreType = enum(u32) {
     binary = 0,
     timeline = 1,
     _,
@@ -5499,12 +5499,12 @@ pub const AccelerationStructureCreateFlagBitsKHR = enum(u32) {
     motion_bit_nv = 0x4,
     _,
 };
-pub const BuildAccelerationStructureModeKHR = enum(i32) {
+pub const BuildAccelerationStructureModeKHR = enum(u32) {
     build = 0,
     update = 1,
     _,
 };
-pub const CopyAccelerationStructureModeKHR = enum(i32) {
+pub const CopyAccelerationStructureModeKHR = enum(u32) {
     clone = 0,
     compact = 1,
     serialize = 2,
@@ -5514,7 +5514,7 @@ pub const CopyAccelerationStructureModeKHR = enum(i32) {
     pub const compact_nv: CopyAccelerationStructureModeKHR = .compact;
 };
 pub const CopyAccelerationStructureModeNV = CopyAccelerationStructureModeKHR;
-pub const AccelerationStructureTypeKHR = enum(i32) {
+pub const AccelerationStructureTypeKHR = enum(u32) {
     top_level = 0,
     bottom_level = 1,
     generic = 2,
@@ -5524,7 +5524,7 @@ pub const AccelerationStructureTypeKHR = enum(i32) {
     pub const bottom_level_nv: AccelerationStructureTypeKHR = .bottom_level;
 };
 pub const AccelerationStructureTypeNV = AccelerationStructureTypeKHR;
-pub const GeometryTypeKHR = enum(i32) {
+pub const GeometryTypeKHR = enum(u32) {
     triangles = 0,
     aabbs = 1,
     instances = 2,
@@ -5537,7 +5537,7 @@ pub const GeometryTypeKHR = enum(i32) {
     pub const aabbs_nv: GeometryTypeKHR = .aabbs;
 };
 pub const GeometryTypeNV = GeometryTypeKHR;
-pub const RayTracingShaderGroupTypeKHR = enum(i32) {
+pub const RayTracingShaderGroupTypeKHR = enum(u32) {
     general = 0,
     triangles_hit_group = 1,
     procedural_hit_group = 2,
@@ -5547,41 +5547,41 @@ pub const RayTracingShaderGroupTypeKHR = enum(i32) {
     pub const procedural_hit_group_nv: RayTracingShaderGroupTypeKHR = .procedural_hit_group;
 };
 pub const RayTracingShaderGroupTypeNV = RayTracingShaderGroupTypeKHR;
-pub const AccelerationStructureMemoryRequirementsTypeNV = enum(i32) {
+pub const AccelerationStructureMemoryRequirementsTypeNV = enum(u32) {
     object = 0,
     build_scratch = 1,
     update_scratch = 2,
     _,
 };
-pub const AccelerationStructureBuildTypeKHR = enum(i32) {
+pub const AccelerationStructureBuildTypeKHR = enum(u32) {
     host = 0,
     device = 1,
     host_or_device = 2,
     _,
 };
-pub const AccelerationStructureCompatibilityKHR = enum(i32) {
+pub const AccelerationStructureCompatibilityKHR = enum(u32) {
     compatible = 0,
     incompatible = 1,
     _,
 };
-pub const RayTracingLssIndexingModeNV = enum(i32) {
+pub const RayTracingLssIndexingModeNV = enum(u32) {
     list = 0,
     successive = 1,
     _,
 };
-pub const RayTracingLssPrimitiveEndCapsModeNV = enum(i32) {
+pub const RayTracingLssPrimitiveEndCapsModeNV = enum(u32) {
     none = 0,
     chained = 1,
     _,
 };
-pub const ShaderGroupShaderKHR = enum(i32) {
+pub const ShaderGroupShaderKHR = enum(u32) {
     general = 0,
     closest_hit = 1,
     any_hit = 2,
     intersection = 3,
     _,
 };
-pub const MemoryOverallocationBehaviorAMD = enum(i32) {
+pub const MemoryOverallocationBehaviorAMD = enum(u32) {
     default = 0,
     allowed = 1,
     disallowed = 2,
@@ -5604,7 +5604,7 @@ pub const PipelineCreationFeedbackFlagBits = enum(u32) {
     pub const base_pipeline_acceleration_bit_ext: PipelineCreationFeedbackFlagBits = .base_pipeline_acceleration_bit;
 };
 pub const PipelineCreationFeedbackFlagBitsEXT = PipelineCreationFeedbackFlagBits;
-pub const PerformanceCounterScopeKHR = enum(i32) {
+pub const PerformanceCounterScopeKHR = enum(u32) {
     command_buffer = 0,
     render_pass = 1,
     command = 2,
@@ -5613,7 +5613,7 @@ pub const PerformanceCounterScopeKHR = enum(i32) {
     pub const query_scope_render_pass: PerformanceCounterScopeKHR = .render_pass;
     pub const query_scope_command: PerformanceCounterScopeKHR = .command;
 };
-pub const PerformanceCounterUnitKHR = enum(i32) {
+pub const PerformanceCounterUnitKHR = enum(u32) {
     generic = 0,
     percentage = 1,
     nanoseconds = 2,
@@ -5627,7 +5627,7 @@ pub const PerformanceCounterUnitKHR = enum(i32) {
     cycles = 10,
     _,
 };
-pub const PerformanceCounterStorageKHR = enum(i32) {
+pub const PerformanceCounterStorageKHR = enum(u32) {
     int32 = 0,
     int64 = 1,
     uint32 = 2,
@@ -5652,25 +5652,25 @@ pub const SemaphoreWaitFlagBits = enum(u32) {
     pub const any_bit_khr: SemaphoreWaitFlagBits = .any_bit;
 };
 pub const SemaphoreWaitFlagBitsKHR = SemaphoreWaitFlagBits;
-pub const PerformanceConfigurationTypeINTEL = enum(i32) {
+pub const PerformanceConfigurationTypeINTEL = enum(u32) {
     command_queue_metrics_discovery_activated = 0,
     _,
 };
-pub const QueryPoolSamplingModeINTEL = enum(i32) {
+pub const QueryPoolSamplingModeINTEL = enum(u32) {
     manual = 0,
     _,
 };
-pub const PerformanceOverrideTypeINTEL = enum(i32) {
+pub const PerformanceOverrideTypeINTEL = enum(u32) {
     null_hardware = 0,
     flush_gpu_caches = 1,
     _,
 };
-pub const PerformanceParameterTypeINTEL = enum(i32) {
+pub const PerformanceParameterTypeINTEL = enum(u32) {
     hw_counters_supported = 0,
     stream_marker_valid_bits = 1,
     _,
 };
-pub const PerformanceValueTypeINTEL = enum(i32) {
+pub const PerformanceValueTypeINTEL = enum(u32) {
     uint32 = 0,
     uint64 = 1,
     float = 2,
@@ -5678,7 +5678,7 @@ pub const PerformanceValueTypeINTEL = enum(i32) {
     string = 4,
     _,
 };
-pub const LineRasterizationMode = enum(i32) {
+pub const LineRasterizationMode = enum(u32) {
     default = 0,
     rectangular = 1,
     bresenham = 2,
@@ -5717,7 +5717,7 @@ pub const ToolPurposeFlagBits = enum(u32) {
     pub const modifying_features_bit_ext: ToolPurposeFlagBits = .modifying_features_bit;
 };
 pub const ToolPurposeFlagBitsEXT = ToolPurposeFlagBits;
-pub const FragmentShadingRateNV = enum(i32) {
+pub const FragmentShadingRateNV = enum(u32) {
     @"1_invocation_per_pixel" = 0,
     @"1_invocation_per_1x2_pixels" = 1,
     @"1_invocation_per_2x1_pixels" = 4,
@@ -5732,12 +5732,12 @@ pub const FragmentShadingRateNV = enum(i32) {
     no_invocations = 15,
     _,
 };
-pub const FragmentShadingRateTypeNV = enum(i32) {
+pub const FragmentShadingRateTypeNV = enum(u32) {
     fragment_size = 0,
     enums = 1,
     _,
 };
-pub const SubpassMergeStatusEXT = enum(i32) {
+pub const SubpassMergeStatusEXT = enum(u32) {
     merged = 0,
     disallowed = 1,
     not_merged_side_effects = 2,
@@ -5919,7 +5919,7 @@ pub const PipelineStageFlagBits2 = enum(u64) {
     pub const subpass_shading_bit_huawei: PipelineStageFlagBits2 = .subpass_shader_bit_huawei;
 };
 pub const PipelineStageFlagBits2KHR = PipelineStageFlagBits2;
-pub const ProvokingVertexModeEXT = enum(i32) {
+pub const ProvokingVertexModeEXT = enum(u32) {
     first_vertex = 0,
     last_vertex = 1,
     _,
@@ -6107,7 +6107,7 @@ pub const ExportMetalObjectTypeFlagBitsEXT = enum(u32) {
     metal_shared_event_bit = 0x20,
     _,
 };
-pub const PipelineRobustnessBufferBehavior = enum(i32) {
+pub const PipelineRobustnessBufferBehavior = enum(u32) {
     device_default = 0,
     disabled = 1,
     robust_buffer_access = 2,
@@ -6119,7 +6119,7 @@ pub const PipelineRobustnessBufferBehavior = enum(i32) {
     pub const robust_buffer_access_2_ext: PipelineRobustnessBufferBehavior = .robust_buffer_access_2;
 };
 pub const PipelineRobustnessBufferBehaviorEXT = PipelineRobustnessBufferBehavior;
-pub const PipelineRobustnessImageBehavior = enum(i32) {
+pub const PipelineRobustnessImageBehavior = enum(u32) {
     device_default = 0,
     disabled = 1,
     robust_image_access = 2,
@@ -6146,21 +6146,21 @@ pub const DeviceAddressBindingFlagBitsEXT = enum(u32) {
     internal_object_bit = 0x1,
     _,
 };
-pub const DeviceAddressBindingTypeEXT = enum(i32) {
+pub const DeviceAddressBindingTypeEXT = enum(u32) {
     bind = 0,
     unbind = 1,
     _,
 };
-pub const MicromapTypeEXT = enum(i32) {
+pub const MicromapTypeEXT = enum(u32) {
     opacity_micromap = 0,
     displacement_micromap_nv = 1000397000,
     _,
 };
-pub const BuildMicromapModeEXT = enum(i32) {
+pub const BuildMicromapModeEXT = enum(u32) {
     build = 0,
     _,
 };
-pub const CopyMicromapModeEXT = enum(i32) {
+pub const CopyMicromapModeEXT = enum(u32) {
     clone = 0,
     serialize = 1,
     deserialize = 2,
@@ -6177,7 +6177,7 @@ pub const MicromapCreateFlagBitsEXT = enum(u32) {
     device_address_capture_replay_bit = 0x1,
     _,
 };
-pub const OpacityMicromapFormatKHR = enum(i32) {
+pub const OpacityMicromapFormatKHR = enum(u32) {
     @"2_state" = 1,
     @"4_state" = 2,
     _,
@@ -6198,7 +6198,7 @@ pub const OpacityMicromapSpecialIndexKHR = enum(i32) {
     pub const fully_unknown_opaque_ext: OpacityMicromapSpecialIndexKHR = .fully_unknown_opaque;
 };
 pub const OpacityMicromapSpecialIndexEXT = OpacityMicromapSpecialIndexKHR;
-pub const AccelerationStructureSerializedBlockTypeKHR = enum(i32) {
+pub const AccelerationStructureSerializedBlockTypeKHR = enum(u32) {
     opacity_micromap = 0,
     _,
 };
@@ -6207,7 +6207,7 @@ pub const IndirectCommandsLayoutUsageFlagBitsEXT = enum(u32) {
     unordered_sequences_bit = 0x2,
     _,
 };
-pub const IndirectExecutionSetInfoTypeEXT = enum(i32) {
+pub const IndirectExecutionSetInfoTypeEXT = enum(u32) {
     pipelines = 0,
     shader_objects = 1,
     _,
@@ -6217,7 +6217,7 @@ pub const IndirectCommandsInputModeFlagBitsEXT = enum(u32) {
     dxgi_index_buffer = 0x2,
     _,
 };
-pub const DeviceFaultVendorBinaryHeaderVersionKHR = enum(i32) {
+pub const DeviceFaultVendorBinaryHeaderVersionKHR = enum(u32) {
     one = 1,
     _,
     pub const one_ext: DeviceFaultVendorBinaryHeaderVersionKHR = .one;
@@ -6233,13 +6233,13 @@ pub const MemoryDecompressionMethodFlagBitsEXT = enum(u64) {
     pub const gdeflate_1_0_bit_nv: MemoryDecompressionMethodFlagBitsEXT = .gdeflate_1_0_bit;
 };
 pub const MemoryDecompressionMethodFlagBitsNV = MemoryDecompressionMethodFlagBitsEXT;
-pub const DepthBiasRepresentationEXT = enum(i32) {
+pub const DepthBiasRepresentationEXT = enum(u32) {
     least_representable_value_format = 0,
     least_representable_value_force_unorm = 1,
     float = 2,
     _,
 };
-pub const DirectDriverLoadingModeLUNARG = enum(i32) {
+pub const DirectDriverLoadingModeLUNARG = enum(u32) {
     exclusive = 0,
     inclusive = 1,
     _,
@@ -6400,7 +6400,7 @@ pub const ImageCreateFlagBits2KHR = enum(u64) {
     video_profile_independent_bit = 0x100000,
     _,
 };
-pub const PartitionedAccelerationStructureOpTypeNV = enum(i32) {
+pub const PartitionedAccelerationStructureOpTypeNV = enum(u32) {
     write_instance = 0,
     update_instance = 1,
     write_partition_translation = 2,
@@ -6414,18 +6414,18 @@ pub const PartitionedAccelerationStructureInstanceFlagBitsNV = enum(u32) {
     flag_enable_explicit_bounding_box = 0x10,
     _,
 };
-pub const AntiLagModeAMD = enum(i32) {
+pub const AntiLagModeAMD = enum(u32) {
     driver_control = 0,
     on = 1,
     off = 2,
     _,
 };
-pub const AntiLagStageAMD = enum(i32) {
+pub const AntiLagStageAMD = enum(u32) {
     input = 0,
     present = 1,
     _,
 };
-pub const DisplacementMicromapFormatNV = enum(i32) {
+pub const DisplacementMicromapFormatNV = enum(u32) {
     @"64_triangles_64_bytes" = 1,
     @"256_triangles_128_bytes" = 2,
     @"1024_triangles_128_bytes" = 3,
@@ -6447,12 +6447,12 @@ pub const ShaderCreateFlagBitsEXT = enum(u32) {
     independent_sets_bit_khr = 0x40000,
     _,
 };
-pub const ShaderCodeTypeEXT = enum(i32) {
+pub const ShaderCodeTypeEXT = enum(u32) {
     binary = 0,
     spirv = 1,
     _,
 };
-pub const ScopeKHR = enum(i32) {
+pub const ScopeKHR = enum(u32) {
     device = 1,
     workgroup = 2,
     subgroup = 3,
@@ -6463,7 +6463,7 @@ pub const ScopeKHR = enum(i32) {
     pub const subgroup_nv: ScopeKHR = .subgroup;
     pub const queue_family_nv: ScopeKHR = .queue_family;
 };
-pub const ComponentTypeKHR = enum(i32) {
+pub const ComponentTypeKHR = enum(u32) {
     float16 = 0,
     float32 = 1,
     float64 = 2,
@@ -6506,24 +6506,24 @@ pub const CooperativeMatrixFlagBitsEXT = enum(u32) {
     saturating_accumulation_bit = 0x1,
     _,
 };
-pub const CubicFilterWeightsQCOM = enum(i32) {
+pub const CubicFilterWeightsQCOM = enum(u32) {
     catmull_rom = 0,
     zero_tangent_cardinal = 1,
     b_spline = 2,
     mitchell_netravali = 3,
     _,
 };
-pub const BlockMatchWindowCompareModeQCOM = enum(i32) {
+pub const BlockMatchWindowCompareModeQCOM = enum(u32) {
     min = 0,
     max = 1,
     _,
 };
-pub const LayeredDriverUnderlyingApiMSFT = enum(i32) {
+pub const LayeredDriverUnderlyingApiMSFT = enum(u32) {
     none = 0,
     d3d12 = 1,
     _,
 };
-pub const PhysicalDeviceLayeredApiKHR = enum(i32) {
+pub const PhysicalDeviceLayeredApiKHR = enum(u32) {
     vulkan = 0,
     d3d12 = 1,
     metal = 2,
@@ -6531,11 +6531,11 @@ pub const PhysicalDeviceLayeredApiKHR = enum(i32) {
     opengles = 4,
     _,
 };
-pub const CompressedTriangleFormatAMDX = enum(i32) {
+pub const CompressedTriangleFormatAMDX = enum(u32) {
     dgf1 = 0,
     _,
 };
-pub const DepthClampModeEXT = enum(i32) {
+pub const DepthClampModeEXT = enum(u32) {
     viewport_range = 0,
     user_defined_range = 1,
     _,
@@ -6545,7 +6545,7 @@ pub const TileShadingRenderPassFlagBitsQCOM = enum(u32) {
     per_tile_execution_bit = 0x2,
     _,
 };
-pub const CooperativeVectorMatrixLayoutNV = enum(i32) {
+pub const CooperativeVectorMatrixLayoutNV = enum(u32) {
     row_major = 0,
     column_major = 1,
     inferencing_optimal = 2,
@@ -6573,7 +6573,7 @@ pub const TensorUsageFlagBitsARM = enum(u64) {
     data_graph_bit = 0x20,
     _,
 };
-pub const TensorTilingARM = enum(i32) {
+pub const TensorTilingARM = enum(u32) {
     optimal = 0,
     linear = 1,
     brick_16_wide = 1000565000,
@@ -6592,44 +6592,44 @@ pub const DataGraphPipelineSessionCreateFlagBitsARM = enum(u64) {
     optical_flow_cache_bit = 0x2,
     _,
 };
-pub const DataGraphPipelinePropertyARM = enum(i32) {
+pub const DataGraphPipelinePropertyARM = enum(u32) {
     creation_log = 0,
     identifier = 1,
     neural_accelerator_debug_database = 1000676000,
     neural_accelerator_statistics_info = 1000676001,
     _,
 };
-pub const DataGraphPipelineSessionBindPointARM = enum(i32) {
+pub const DataGraphPipelineSessionBindPointARM = enum(u32) {
     transient = 0,
     optical_flow_cache = 1000631001,
     neural_accelerator_statistics = 1000676000,
     _,
 };
-pub const DataGraphPipelineSessionBindPointTypeARM = enum(i32) {
+pub const DataGraphPipelineSessionBindPointTypeARM = enum(u32) {
     memory = 0,
     _,
 };
 pub const DataGraphPipelineDispatchFlagBitsARM = enum(u64) {
     _,
 };
-pub const PhysicalDeviceDataGraphProcessingEngineTypeARM = enum(i32) {
+pub const PhysicalDeviceDataGraphProcessingEngineTypeARM = enum(u32) {
     default = 0,
     neural_qcom = 1000629000,
     compute_qcom = 1000629001,
     _,
 };
-pub const PhysicalDeviceDataGraphOperationTypeARM = enum(i32) {
+pub const PhysicalDeviceDataGraphOperationTypeARM = enum(u32) {
     spirv_extended_instruction_set = 0,
     neural_model_qcom = 1000629000,
     builtin_model_qcom = 1000629001,
     optical_flow = 1000631000,
     _,
 };
-pub const DataGraphModelCacheTypeQCOM = enum(i32) {
+pub const DataGraphModelCacheTypeQCOM = enum(u32) {
     generic_binary = 0,
     _,
 };
-pub const PerfHintTypeQCOM = enum(i32) {
+pub const PerfHintTypeQCOM = enum(u32) {
     default = 0,
     frequency_min = 1,
     frequency_max = 2,
@@ -6654,7 +6654,7 @@ pub const VideoEncodeRgbChromaOffsetFlagBitsVALVE = enum(u32) {
     midpoint_bit = 0x2,
     _,
 };
-pub const DescriptorMappingSourceEXT = enum(i32) {
+pub const DescriptorMappingSourceEXT = enum(u32) {
     heap_with_constant_offset = 0,
     heap_with_push_index = 1,
     heap_with_indirect_index = 2,
@@ -6692,7 +6692,7 @@ pub const GpaSqShaderStageFlagBitsAMD = enum(u32) {
     cs_bit = 0x40,
     _,
 };
-pub const GpaPerfBlockAMD = enum(i32) {
+pub const GpaPerfBlockAMD = enum(u32) {
     cpf = 0,
     ia = 1,
     vgt = 2,
@@ -6754,13 +6754,13 @@ pub const GpaPerfBlockAMD = enum(i32) {
     pub const ge1: GpaPerfBlockAMD = .ge;
     pub const rlclocal: GpaPerfBlockAMD = .rlcuser;
 };
-pub const GpaSampleTypeAMD = enum(i32) {
+pub const GpaSampleTypeAMD = enum(u32) {
     cumulative = 0,
     trace = 1,
     timing = 2,
     _,
 };
-pub const GpaDeviceClockModeAMD = enum(i32) {
+pub const GpaDeviceClockModeAMD = enum(u32) {
     default = 0,
     query = 1,
     profiling = 2,
@@ -6785,7 +6785,7 @@ pub const DataGraphTOSAQualityFlagBitsARM = enum(u32) {
     deprecated = 0x8,
     _,
 };
-pub const DataGraphTOSALevelARM = enum(i32) {
+pub const DataGraphTOSALevelARM = enum(u32) {
     none = 0,
     @"8k" = 1,
     _,
@@ -6806,14 +6806,14 @@ pub const DataGraphOpticalFlowImageUsageFlagBitsARM = enum(u32) {
     cost_bit = 0x8,
     _,
 };
-pub const DataGraphOpticalFlowPerformanceLevelARM = enum(i32) {
+pub const DataGraphOpticalFlowPerformanceLevelARM = enum(u32) {
     unknown = 0,
     slow = 1,
     medium = 2,
     fast = 3,
     _,
 };
-pub const DataGraphPipelineNodeConnectionTypeARM = enum(i32) {
+pub const DataGraphPipelineNodeConnectionTypeARM = enum(u32) {
     optical_flow_input = 1000631000,
     optical_flow_reference = 1000631001,
     optical_flow_hint = 1000631002,
@@ -6821,7 +6821,7 @@ pub const DataGraphPipelineNodeConnectionTypeARM = enum(i32) {
     optical_flow_cost = 1000631004,
     _,
 };
-pub const DataGraphPipelineNodeTypeARM = enum(i32) {
+pub const DataGraphPipelineNodeTypeARM = enum(u32) {
     optical_flow = 1000631000,
     _,
 };
@@ -6839,19 +6839,19 @@ pub const DataGraphOpticalFlowExecuteFlagBitsARM = enum(u32) {
     reference_is_previous_input_bit = 0x10,
     _,
 };
-pub const NeuralAcceleratorStatisticsModeARM = enum(i32) {
+pub const NeuralAcceleratorStatisticsModeARM = enum(u32) {
     disabled = 0,
     statistics0 = 1,
     statistics1 = 2,
     _,
 };
-pub const ThrottleHintTypeSEC = enum(i32) {
+pub const ThrottleHintTypeSEC = enum(u32) {
     default = 0,
     low = 1,
     high = 2,
     _,
 };
-pub const ColorSpaceKHR = enum(i32) {
+pub const ColorSpaceKHR = enum(u32) {
     srgb_nonlinear = 0,
     display_p3_nonlinear_ext = 1000104001,
     extended_srgb_linear_ext = 1000104002,
@@ -6886,7 +6886,7 @@ pub const DisplayPlaneAlphaFlagBitsKHR = enum(u32) {
     per_pixel_premultiplied_bit = 0x8,
     _,
 };
-pub const PresentModeKHR = enum(i32) {
+pub const PresentModeKHR = enum(u32) {
     immediate = 0,
     mailbox = 1,
     fifo = 2,
@@ -6909,7 +6909,7 @@ pub const SurfaceTransformFlagBitsKHR = enum(u32) {
     inherit_bit = 0x100,
     _,
 };
-pub const DisplaySurfaceStereoTypeNV = enum(i32) {
+pub const DisplaySurfaceStereoTypeNV = enum(u32) {
     none = 0,
     onboard_din = 1,
     hdmi_3d = 2,
@@ -6924,7 +6924,7 @@ pub const DebugReportFlagBitsEXT = enum(u32) {
     debug_bit = 0x10,
     _,
 };
-pub const DebugReportObjectTypeEXT = enum(i32) {
+pub const DebugReportObjectTypeEXT = enum(u32) {
     unknown = 0,
     instance = 1,
     physical_device = 2,
@@ -6972,7 +6972,7 @@ pub const DebugReportObjectTypeEXT = enum(i32) {
     pub const descriptor_update_template_khr: DebugReportObjectTypeEXT = .descriptor_update_template;
     pub const sampler_ycbcr_conversion_khr: DebugReportObjectTypeEXT = .sampler_ycbcr_conversion;
 };
-pub const DeviceMemoryReportEventTypeEXT = enum(i32) {
+pub const DeviceMemoryReportEventTypeEXT = enum(u32) {
     allocate = 0,
     free = 1,
     import = 2,
@@ -6980,7 +6980,7 @@ pub const DeviceMemoryReportEventTypeEXT = enum(i32) {
     allocation_failed = 4,
     _,
 };
-pub const RasterizationOrderAMD = enum(i32) {
+pub const RasterizationOrderAMD = enum(u32) {
     strict = 0,
     relaxed = 1,
     _,
@@ -6998,12 +6998,12 @@ pub const ExternalMemoryFeatureFlagBitsNV = enum(u32) {
     importable_bit = 0x4,
     _,
 };
-pub const ValidationCheckEXT = enum(i32) {
+pub const ValidationCheckEXT = enum(u32) {
     all = 0,
     shaders = 1,
     _,
 };
-pub const ValidationFeatureEnableEXT = enum(i32) {
+pub const ValidationFeatureEnableEXT = enum(u32) {
     gpu_assisted = 0,
     gpu_assisted_reserve_binding_slot = 1,
     best_practices = 2,
@@ -7011,7 +7011,7 @@ pub const ValidationFeatureEnableEXT = enum(i32) {
     synchronization_validation = 4,
     _,
 };
-pub const ValidationFeatureDisableEXT = enum(i32) {
+pub const ValidationFeatureDisableEXT = enum(u32) {
     all = 0,
     shaders = 1,
     thread_safety = 2,
@@ -7122,17 +7122,17 @@ pub const SurfaceCounterFlagBitsEXT = enum(u32) {
     _,
     pub const vblank: SurfaceCounterFlagBitsEXT = .vblank_bit;
 };
-pub const DisplayPowerStateEXT = enum(i32) {
+pub const DisplayPowerStateEXT = enum(u32) {
     off = 0,
     @"suspend" = 1,
     on = 2,
     _,
 };
-pub const DeviceEventTypeEXT = enum(i32) {
+pub const DeviceEventTypeEXT = enum(u32) {
     display_hotplug = 0,
     _,
 };
-pub const DisplayEventTypeEXT = enum(i32) {
+pub const DisplayEventTypeEXT = enum(u32) {
     first_pixel_out = 0,
     _,
 };
@@ -7195,7 +7195,7 @@ pub const SubgroupFeatureFlagBits = enum(u32) {
     pub const rotate_bit_khr: SubgroupFeatureFlagBits = .rotate_bit;
     pub const rotate_clustered_bit_khr: SubgroupFeatureFlagBits = .rotate_clustered_bit;
 };
-pub const TessellationDomainOrigin = enum(i32) {
+pub const TessellationDomainOrigin = enum(u32) {
     upper_left = 0,
     lower_left = 1,
     _,
@@ -7203,7 +7203,7 @@ pub const TessellationDomainOrigin = enum(i32) {
     pub const lower_left_khr: TessellationDomainOrigin = .lower_left;
 };
 pub const TessellationDomainOriginKHR = TessellationDomainOrigin;
-pub const SamplerYcbcrModelConversion = enum(i32) {
+pub const SamplerYcbcrModelConversion = enum(u32) {
     rgb_identity = 0,
     ycbcr_identity = 1,
     ycbcr_709 = 2,
@@ -7217,7 +7217,7 @@ pub const SamplerYcbcrModelConversion = enum(i32) {
     pub const ycbcr_2020_khr: SamplerYcbcrModelConversion = .ycbcr_2020;
 };
 pub const SamplerYcbcrModelConversionKHR = SamplerYcbcrModelConversion;
-pub const SamplerYcbcrRange = enum(i32) {
+pub const SamplerYcbcrRange = enum(u32) {
     itu_full = 0,
     itu_narrow = 1,
     _,
@@ -7225,7 +7225,7 @@ pub const SamplerYcbcrRange = enum(i32) {
     pub const itu_narrow_khr: SamplerYcbcrRange = .itu_narrow;
 };
 pub const SamplerYcbcrRangeKHR = SamplerYcbcrRange;
-pub const ChromaLocation = enum(i32) {
+pub const ChromaLocation = enum(u32) {
     cosited_even = 0,
     midpoint = 1,
     _,
@@ -7233,7 +7233,7 @@ pub const ChromaLocation = enum(i32) {
     pub const midpoint_khr: ChromaLocation = .midpoint;
 };
 pub const ChromaLocationKHR = ChromaLocation;
-pub const SamplerReductionMode = enum(i32) {
+pub const SamplerReductionMode = enum(u32) {
     weighted_average = 0,
     min = 1,
     max = 2,
@@ -7244,7 +7244,7 @@ pub const SamplerReductionMode = enum(i32) {
     pub const max_ext: SamplerReductionMode = .max;
 };
 pub const SamplerReductionModeEXT = SamplerReductionMode;
-pub const BlendOverlapEXT = enum(i32) {
+pub const BlendOverlapEXT = enum(u32) {
     uncorrelated = 0,
     disjoint = 1,
     conjoint = 2,
@@ -7264,14 +7264,14 @@ pub const DebugUtilsMessageTypeFlagBitsEXT = enum(u32) {
     device_address_binding_bit = 0x8,
     _,
 };
-pub const FullScreenExclusiveEXT = enum(i32) {
+pub const FullScreenExclusiveEXT = enum(u32) {
     default = 0,
     allowed = 1,
     disallowed = 2,
     application_controlled = 3,
     _,
 };
-pub const ShaderFloatControlsIndependence = enum(i32) {
+pub const ShaderFloatControlsIndependence = enum(u32) {
     @"32_bit_only" = 0,
     all = 1,
     none = 2,
@@ -7281,7 +7281,7 @@ pub const ShaderFloatControlsIndependence = enum(i32) {
     pub const none_khr: ShaderFloatControlsIndependence = .none;
 };
 pub const ShaderFloatControlsIndependenceKHR = ShaderFloatControlsIndependence;
-pub const FragmentShadingRateCombinerOpKHR = enum(i32) {
+pub const FragmentShadingRateCombinerOpKHR = enum(u32) {
     keep = 0,
     replace = 1,
     min = 2,
@@ -7319,14 +7319,14 @@ pub const OpticalFlowUsageFlagBitsNV = enum(u32) {
     global_flow_bit = 0x10,
     _,
 };
-pub const OpticalFlowPerformanceLevelNV = enum(i32) {
+pub const OpticalFlowPerformanceLevelNV = enum(u32) {
     unknown = 0,
     slow = 1,
     medium = 2,
     fast = 3,
     _,
 };
-pub const OpticalFlowSessionBindingPointNV = enum(i32) {
+pub const OpticalFlowSessionBindingPointNV = enum(u32) {
     unknown = 0,
     input = 1,
     reference = 2,
@@ -7350,7 +7350,7 @@ pub const OpticalFlowExecuteFlagBitsNV = enum(u32) {
     disable_temporal_hints_bit = 0x1,
     _,
 };
-pub const DeviceFaultAddressTypeKHR = enum(i32) {
+pub const DeviceFaultAddressTypeKHR = enum(u32) {
     none = 0,
     read_invalid = 1,
     write_invalid = 2,
@@ -7388,7 +7388,7 @@ pub const PresentGravityFlagBitsKHR = enum(u32) {
     pub const centered_bit_ext: PresentGravityFlagBitsKHR = .centered_bit;
 };
 pub const PresentGravityFlagBitsEXT = PresentGravityFlagBitsKHR;
-pub const LayerSettingTypeEXT = enum(i32) {
+pub const LayerSettingTypeEXT = enum(u32) {
     bool32 = 0,
     int32 = 1,
     int64 = 2,
@@ -7399,7 +7399,7 @@ pub const LayerSettingTypeEXT = enum(i32) {
     string = 7,
     _,
 };
-pub const LatencyMarkerNV = enum(i32) {
+pub const LatencyMarkerNV = enum(u32) {
     simulation_start = 0,
     simulation_end = 1,
     rendersubmit_start = 2,
@@ -7414,7 +7414,7 @@ pub const LatencyMarkerNV = enum(i32) {
     out_of_band_present_end = 11,
     _,
 };
-pub const OutOfBandQueueTypeNV = enum(i32) {
+pub const OutOfBandQueueTypeNV = enum(u32) {
     render = 0,
     present = 1,
     _,
@@ -7446,12 +7446,12 @@ pub const PresentTimingInfoFlagBitsEXT = enum(u32) {
     present_at_nearest_refresh_cycle_bit = 0x2,
     _,
 };
-pub const HdrSmpteSt209450PowerPreferenceGOOGLE = enum(i32) {
+pub const HdrSmpteSt209450PowerPreferenceGOOGLE = enum(u32) {
     st_209450_power_preference_color_accuracy = 0,
     st_209450_power_preference_low_power = 1,
     _,
 };
-pub const VendorId = enum(i32) {
+pub const VendorId = enum(u32) {
     khronos = 65536,
     viv = 65537,
     vsi = 65538,
@@ -7464,7 +7464,7 @@ pub const VendorId = enum(i32) {
     apex = 65545,
     _,
 };
-pub const DriverId = enum(i32) {
+pub const DriverId = enum(u32) {
     amd_proprietary = 1,
     amd_open_source = 2,
     mesa_radv = 3,
@@ -7515,7 +7515,7 @@ pub const DriverId = enum(i32) {
     pub const broadcom_proprietary_khr: DriverId = .broadcom_proprietary;
 };
 pub const DriverIdKHR = DriverId;
-pub const ShadingRatePaletteEntryNV = enum(i32) {
+pub const ShadingRatePaletteEntryNV = enum(u32) {
     no_invocations = 0,
     @"16_invocations_per_pixel" = 1,
     @"8_invocations_per_pixel" = 2,
@@ -7530,14 +7530,14 @@ pub const ShadingRatePaletteEntryNV = enum(i32) {
     @"1_invocation_per_4x4_pixels" = 11,
     _,
 };
-pub const CoarseSampleOrderTypeNV = enum(i32) {
+pub const CoarseSampleOrderTypeNV = enum(u32) {
     default = 0,
     custom = 1,
     pixel_major = 2,
     sample_major = 3,
     _,
 };
-pub const PipelineExecutableStatisticFormatKHR = enum(i32) {
+pub const PipelineExecutableStatisticFormatKHR = enum(u32) {
     bool32 = 0,
     int64 = 1,
     uint64 = 2,
@@ -7640,7 +7640,7 @@ pub const VideoEncodeContentFlagBitsKHR = enum(u32) {
     rendered_bit = 0x4,
     _,
 };
-pub const VideoEncodeTuningModeKHR = enum(i32) {
+pub const VideoEncodeTuningModeKHR = enum(u32) {
     default = 0,
     high_quality = 1,
     low_latency = 2,
@@ -7822,14 +7822,14 @@ pub const VideoEncodeAV1SuperblockSizeFlagBitsKHR = enum(u32) {
     @"128_bit" = 0x2,
     _,
 };
-pub const VideoEncodeAV1PredictionModeKHR = enum(i32) {
+pub const VideoEncodeAV1PredictionModeKHR = enum(u32) {
     intra_only = 0,
     single_reference = 1,
     unidirectional_compound = 2,
     bidirectional_compound = 3,
     _,
 };
-pub const VideoEncodeAV1RateControlGroupKHR = enum(i32) {
+pub const VideoEncodeAV1RateControlGroupKHR = enum(u32) {
     intra = 0,
     predictive = 1,
     bipredictive = 2,
@@ -7848,7 +7848,7 @@ pub const DeviceFaultFlagBitsKHR = enum(u32) {
     flag_overflow = 0x20,
     _,
 };
-pub const DefaultVertexAttributeValueKHR = enum(i32) {
+pub const DefaultVertexAttributeValueKHR = enum(u32) {
     zero_zero_zero_zero = 0,
     zero_zero_zero_one = 1,
     _,
@@ -8085,7 +8085,7 @@ pub const HostImageCopyDevicePerformanceQueryEXT = HostImageCopyDevicePerformanc
 pub const PhysicalDevicePipelineProtectedAccessFeaturesEXT = PhysicalDevicePipelineProtectedAccessFeatures;
 pub const PhysicalDeviceShaderIntegerDotProductFeaturesKHR = PhysicalDeviceShaderIntegerDotProductFeatures;
 pub const PhysicalDeviceShaderIntegerDotProductPropertiesKHR = PhysicalDeviceShaderIntegerDotProductProperties;
-pub const AccelerationStructureMotionInstanceTypeNV = enum(i32) {
+pub const AccelerationStructureMotionInstanceTypeNV = enum(u32) {
     static = 0,
     matrix_motion = 1,
     srt_motion = 2,
