@@ -1,21 +1,14 @@
 .{
     .name = .Vulkan,
-    .version = "0.0.0",
+    .version = "0.1.0",
     .fingerprint = 0xb9b95f35a1e1fef6,
-    .minimum_zig_version = "0.16.0-dev.2676+4e2cec265",
-    .dependencies = .{
-        .Windows = .{
-            .url = "git+https://github.com/Mauhlt/Windows.git#05cf23872ad4ffdebad2b1eebc3c75c876384ad9",
-            .hash = "Windows-0.0.0-F1HWOSU4AAAKZvjfdzk0xRYoJvRzXW52rjkR1aHNTeqL",
-        },
-        .ExternEnumSet = .{
-            .url = "git+https://github.com/Mauhlt/ExternEnumSet.git#e441ef22b7bbef2f13ea628337366bb203ec245f",
-            .hash = "ExternEnumSet-0.0.0-xLS3VQQpAACX7eV_u_7v7-0pKLK48mBTGL1KVhhpz6Mz",
-        },
-    },
+    .minimum_zig_version = "0.18.0-dev.4+5a23bf4b2",
+    // The generated bindings are self-contained: no dependencies.
+    .dependencies = .{},
     .paths = .{
         "build.zig",
         "build.zig.zon",
         "src",
+        "README.md",
     },
 }
