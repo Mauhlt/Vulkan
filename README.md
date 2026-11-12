@@ -38,3 +38,28 @@ Naming: `VkInstanceCreateInfo` → `vk.InstanceCreateInfo`, `vkCreateInstance` �
 `vk.createInstance`, `VK_FORMAT_R8G8B8A8_UNORM` → `vk.Format.r8g8b8a8_unorm`,
 `VK_ERROR_OUT_OF_DATE_KHR` → `error.OutOfDateKHR`. The full table is in the
 TranslateVulkan README.
+
+## Loader and MoltenVK (macOS / iOS)
+
+`vk.loadLibrary()` tries `vk.libraryCandidates(builtin.os.tag)` in order:
+
+| OS | Tried |
+|---|---|
+| Windows | `vulkan-1.dll` |
+| Linux | `libvulkan.so.1`, `libvulkan.so` |
+| macOS | the Khronos loader first (`libvulkan.1.dylib`: dyld search path, the app's `Contents/Frameworks`, `/usr/local/lib`, `/opt/homebrew/lib`), then MoltenVK directly (`libMoltenVK.dylib`, same places, or `MoltenVK.framework`) |
+| iOS | MoltenVK embedded in the app bundle, as Apple requires: `@executable_path/Frameworks/libMoltenVK.dylib`, then `.../MoltenVK.framework/MoltenVK`, `@rpath/...`, then a bundled `libvulkan.1.dylib` |
+
+`vk.loadLibraryFrom(candidates)` takes an app-chosen list instead, and
+`vk.libraryKind()` says whether a loader or MoltenVK itself was opened.
+
+MoltenVK is a portability implementation. `vk.portability` names what an
+application enables when the implementation offers it:
+`VK_KHR_portability_enumeration` + `InstanceCreateFlags.enumerate_portability_bit_khr`
+on the instance (with `VK_KHR_get_physical_device_properties2`), and
+`VK_KHR_portability_subset` on the device; `VK_EXT_metal_surface` for a
+`CAMetalLayer`.
+
+Note: this loader code lives in the hand-written preamble that
+TranslateVulkan splices into `src/root.zig`; the same change must go into
+TranslateVulkan's `src/preamble.zig` before the next regeneration.
