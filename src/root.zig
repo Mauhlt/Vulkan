@@ -144,7 +144,7 @@ const Library = if (builtin.os.tag == .windows) struct {
         return .{ .handle = LoadLibraryA(name) orelse return null };
     }
     fn lookup(self: @This(), comptime T: type, name: [:0]const u8) ?T {
-        return @ptrCast(GetProcAddress(self.handle, name) orelse return null);
+        return @ptrCast(@alignCast(GetProcAddress(self.handle, name) orelse return null));
     }
     fn close(self: @This()) void {
         _ = FreeLibrary(self.handle);
