@@ -60,6 +60,5 @@ on the instance (with `VK_KHR_get_physical_device_properties2`), and
 `VK_KHR_portability_subset` on the device; `VK_EXT_metal_surface` for a
 `CAMetalLayer`.
 
-Note: this loader code lives in the hand-written preamble that
-TranslateVulkan splices into `src/root.zig`; the same change must go into
-TranslateVulkan's `src/preamble.zig` before the next regeneration.
+This loader code is TranslateVulkan's hand-written preamble
+(`src/preamble.zig`, spliced into `src/root.zig`): a regeneration keeps it.
