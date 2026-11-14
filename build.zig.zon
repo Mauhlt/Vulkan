@@ -2,7 +2,7 @@
     .name = .Vulkan,
     .version = "0.1.0",
     .fingerprint = 0xb9b95f35a1e1fef6,
-    .minimum_zig_version = "0.18.0-dev.4+5a23bf4b2",
+    .minimum_zig_version = "0.18.0-dev.1005+75d48dfff",
     // The generated bindings are self-contained: no dependencies.
     .dependencies = .{},
     .paths = .{
