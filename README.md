@@ -1,11 +1,16 @@
 # Vulkan
 
-Vulkan bindings for Zig, as one self-contained file: `src/root.zig`.
+Vulkan bindings for Zig, as module `Vulkan`: one self-contained file (vk.zig).
 
-`src/root.zig` is **generated** by [TranslateVulkan](https://github.com/Mauhlt/TranslateVulkan)
-from the Khronos registry (vk.xml + video.xml). Don't edit it by hand. To update it, run
-`zig build update && zig build test snapshot compat` in TranslateVulkan, then copy
-`generated/vk.zig` here.
+vk.zig is **generated at build time** by the [TranslateVulkan](https://github.com/Mauhlt/TranslateVulkan)
+dependency from the Khronos registry (vk.xml + video.xml) it pins. Nothing generated is
+committed here. The generator compiles once per zig cache (about 3 s) and runs in about
+0.5 s; after that the result is cached.
+
+To move to a newer Vulkan: in TranslateVulkan run `zig build update && zig build test
+snapshot compat` and push; then here run `zig build pin` (re-pins TranslateVulkan to its
+latest commit on main), `zig build test`, commit and push. To try a local TranslateVulkan
+first: `zig build test --fork=../TranslateVulkan`.
 
 No `vulkan-1.lib` or C headers are needed: `vk.loadLibrary()` opens the system loader
 at runtime.
@@ -61,4 +66,4 @@ on the instance (with `VK_KHR_get_physical_device_properties2`), and
 `CAMetalLayer`.
 
 This loader code is TranslateVulkan's hand-written preamble
-(`src/preamble.zig`, spliced into `src/root.zig`): a regeneration keeps it.
+(`src/preamble.zig`, spliced into the generated vk.zig): a regeneration keeps it.

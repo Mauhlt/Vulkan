@@ -3,8 +3,14 @@
     .version = "0.1.0",
     .fingerprint = 0xb9b95f35a1e1fef6,
     .minimum_zig_version = "0.18.0-dev.1005+75d48dfff",
-    // The generated bindings are self-contained: no dependencies.
-    .dependencies = .{},
+    // TranslateVulkan generates the bindings (vk.zig) at build time from the
+    // Khronos registry it pins. Re-pin: zig build pin (see README).
+    .dependencies = .{
+        .TranslateVulkan = .{
+            .url = "git+https://github.com/Mauhlt/TranslateVulkan#8d2b78d732bafd161772ae9abc6f1e64a62636ce",
+            .hash = "translate_vulkan-0.2.0-a8Hg1fIFAgDdicnx33z3dzIwMLRg0AwkdyWjX4SbJCzy",
+        },
+    },
     .paths = .{
         "build.zig",
         "build.zig.zon",
